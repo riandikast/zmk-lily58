@@ -15,26 +15,26 @@
 
         space_right_arrow {
             bindings = <&kp LC(LS(RIGHT))>;
-            key-positions = <27 52>;
-            timeout-ms = <60>;
+            key-positions = <27 50>;
+            timeout-ms = <500>;
         };
 
         space_left_arrow {
             bindings = <&kp LS(LC(LEFT_ARROW))>;
-            key-positions = <25 52>;
-            timeout-ms = <60>;
+            key-positions = <25 50>;
+            timeout-ms = <500>;
         };
 
         up {
             bindings = <&kp LS(LC(UP_ARROW))>;
-            key-positions = <14 52>;
-            timeout-ms = <60>;
+            key-positions = <14 50>;
+            timeout-ms = <500>;
         };
 
         down {
             bindings = <&kp LS(LC(DOWN))>;
-            key-positions = <26 52>;
-            timeout-ms = <60>;
+            key-positions = <26 50>;
+            timeout-ms = <500>;
         };
 
         delete {
@@ -42,7 +42,6 @@
             key-positions = <12 50>;
             layers = <3>;
             timeout-ms = <500>;
-            slow-release;
         };
 
         layer0_delete {
@@ -50,7 +49,6 @@
             key-positions = <56 11>;
             layers = <0>;
             timeout-ms = <500>;
-            slow-release;
         };
 
         layer0_kurung {
@@ -58,7 +56,6 @@
             key-positions = <15 50>;
             layers = <0>;
             timeout-ms = <500>;
-            slow-release;
         };
 
         layer0_kurung2 {
@@ -66,7 +63,6 @@
             key-positions = <13 50>;
             layers = <0>;
             timeout-ms = <500>;
-            slow-release;
         };
 
         layer0_kurung3 {
@@ -74,7 +70,6 @@
             key-positions = <14 50>;
             layers = <0>;
             timeout-ms = <500>;
-            slow-release;
         };
 
         layer0_caps {
@@ -82,7 +77,6 @@
             key-positions = <26 50>;
             layers = <0>;
             timeout-ms = <500>;
-            slow-release;
         };
 
         layer0_win {
@@ -90,7 +84,6 @@
             key-positions = <0 50>;
             layers = <0>;
             timeout-ms = <500>;
-            slow-release;
         };
 
         game_wintab {
@@ -98,7 +91,6 @@
             key-positions = <0 53>;
             layers = <5>;
             timeout-ms = <500>;
-            slow-release;
         };
     };
 
