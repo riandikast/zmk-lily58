@@ -14,75 +14,87 @@
         compatible = "zmk,combos";
 
         space_right_arrow {
-            bindings = <&kp RIGHT>;
+            bindings = <&kp LC(LS(RIGHT))>;
             key-positions = <27 52>;
             layers = <0>;
+            timeout-ms = <60>;
         };
 
         space_left_arrow {
-            bindings = <&kp LEFT_ARROW>;
+            bindings = <&kp LS(LC(LEFT_ARROW))>;
             key-positions = <25 52>;
             layers = <0>;
+            timeout-ms = <60>;
         };
 
         up {
-            bindings = <&kp UP_ARROW>;
+            bindings = <&kp LS(LC(UP_ARROW))>;
             key-positions = <14 52>;
             layers = <0>;
+            timeout-ms = <60>;
         };
 
         down {
-            bindings = <&kp DOWN>;
+            bindings = <&kp LS(LC(DOWN))>;
             key-positions = <26 52>;
             layers = <0>;
+            timeout-ms = <60>;
         };
 
         delete {
             bindings = <&kp DELETE>;
             key-positions = <12 52>;
             layers = <3>;
+            timeout-ms = <60>;
         };
 
         layer0_delete {
             bindings = <&kp DEL>;
             key-positions = <56 11>;
             layers = <0>;
+            timeout-ms = <60>;
         };
 
         layer0_kurung {
             bindings = <&kurung>;
             key-positions = <15 52>;
             layers = <0>;
+            timeout-ms = <60>;
         };
 
         layer0_kurung2 {
             bindings = <&kurung2>;
             key-positions = <13 52>;
             layers = <0>;
+            timeout-ms = <60>;
         };
 
         layer0_kurung3 {
             bindings = <&kurung3>;
             key-positions = <14 52>;
             layers = <0>;
+            timeout-ms = <60>;
         };
 
         layer0_caps {
             bindings = <&kp CLCK>;
             key-positions = <26 52>;
             layers = <0>;
+            timeout-ms = <60>;
         };
 
         layer0_win {
             bindings = <&kp LEFT_WIN>;
             key-positions = <0 52>;
             layers = <0>;
+            timeout-ms = <60>;
         };
 
         game_wintab {
             bindings = <&kp LG(TAB)>;
             key-positions = <0 52>;
             layers = <5>;
+            timeout-ms = <60>;
         };
     };
 
@@ -171,11 +183,11 @@
 
         layer_3 {
             bindings = <
-&kp LC(Z)      &kp LC(C)               &kp LC(V)     &kp LC(A)                &trans     &trans                           &trans  &trans  &trans  &trans  &trans                &trans
-&kp BACKSPACE  &kp LS(LC(LEFT_ARROW))  &kp UP_ARROW  &kp LS(LC(RIGHT_ARROW))  &trans     &trans                           &trans  &trans  &trans  &trans  &kp NON_US_BACKSLASH  &kp EQUAL
-&kp LC(Y)      &kp LEFT_ARROW          &kp DOWN      &kp RIGHT                &kp LC(X)  &trans                           &trans  &trans  &trans  &trans  &trans                &trans
-&mkp LCLK      &kp HOME                &kp DEL       &kp END                  &trans     &trans         &trans    &trans  &trans  &trans  &trans  &trans  &trans                &trans
-                                                     &to 0                    &kp LSHFT  &kp LC(LS(Z))  &trans    &trans  &trans  &trans  &trans
+&kp LC(Z)      &kp LC(C)               &kp LC(V)     &kp LC(A)                &trans     &trans                              &trans  &trans  &trans  &trans  &trans                &trans
+&kp BACKSPACE  &kp LS(LC(LEFT_ARROW))  &kp UP_ARROW  &kp LS(LC(RIGHT_ARROW))  &trans     &trans                              &trans  &trans  &trans  &trans  &kp NON_US_BACKSLASH  &kp EQUAL
+&kp LC(Y)      &kp LEFT_ARROW          &kp DOWN      &kp RIGHT                &kp LC(X)  &trans                              &trans  &trans  &trans  &trans  &trans                &trans
+&mkp LCLK      &kp HOME                &kp DEL       &kp END                  &trans     &trans     &trans           &trans  &trans  &trans  &trans  &trans  &trans                &trans
+                                                     &to 0                    &kp LSHFT  &kp SPACE  &kp LC(LS(Z))    &trans  &trans  &trans  &trans
             >;
         };
 
