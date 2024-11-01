@@ -110,6 +110,20 @@
             timeout-ms = <30000>;
             layers = <0>;
         };
+
+        left {
+            bindings = <&kp LEFT_ARROW>;
+            key-positions = <25 38>;
+            timeout-ms = <30000>;
+            layers = <0>;
+        };
+
+        right {
+            bindings = <&kp RIGHT>;
+            key-positions = <27 38>;
+            timeout-ms = <30000>;
+            layers = <0>;
+        };
     };
 
     macros {
