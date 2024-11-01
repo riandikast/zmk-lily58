@@ -15,37 +15,30 @@
 
         space_right_arrow {
             bindings = <&kp LC(LS(RIGHT))>;
-            key-positions = <27 50>;
-            timeout-ms = <500>;
+            key-positions = <27 56>;
+            timeout-ms = <3000>;
             layers = <0>;
         };
 
         space_left_arrow {
             bindings = <&kp LS(LC(LEFT_ARROW))>;
-            key-positions = <25 50>;
-            timeout-ms = <500>;
+            key-positions = <25 56>;
+            timeout-ms = <3000>;
             layers = <0>;
         };
 
         up {
             bindings = <&kp LS(LC(UP_ARROW))>;
-            key-positions = <14 50>;
-            timeout-ms = <500>;
+            key-positions = <14 56>;
+            timeout-ms = <3000>;
             layers = <0>;
         };
 
         down {
             bindings = <&kp LS(LC(DOWN))>;
-            key-positions = <26 50>;
-            timeout-ms = <500>;
+            key-positions = <26 56>;
+            timeout-ms = <3000>;
             layers = <0>;
-        };
-
-        delete {
-            bindings = <&kp DELETE>;
-            key-positions = <12 50>;
-            layers = <3>;
-            timeout-ms = <500>;
         };
 
         layer0_delete {
@@ -57,30 +50,30 @@
 
         layer0_kurung {
             bindings = <&kurung>;
-            key-positions = <15 50>;
+            key-positions = <15 56>;
             layers = <0>;
-            timeout-ms = <500>;
+            timeout-ms = <3000>;
         };
 
         layer0_kurung2 {
             bindings = <&kurung2>;
-            key-positions = <13 50>;
+            key-positions = <13 56>;
             layers = <0>;
-            timeout-ms = <500>;
+            timeout-ms = <3000>;
         };
 
         layer0_kurung3 {
             bindings = <&kurung3>;
-            key-positions = <14 50>;
+            key-positions = <56 38>;
             layers = <0>;
-            timeout-ms = <500>;
+            timeout-ms = <3000>;
         };
 
         layer0_caps {
             bindings = <&kp CLCK>;
-            key-positions = <26 50>;
+            key-positions = <51 0>;
             layers = <0>;
-            timeout-ms = <500>;
+            timeout-ms = <3000>;
         };
 
         layer0_win {
@@ -92,7 +85,7 @@
 
         game_wintab {
             bindings = <&kp LG(TAB)>;
-            key-positions = <0 53>;
+            key-positions = <0 56>;
             layers = <5>;
             timeout-ms = <500>;
         };
