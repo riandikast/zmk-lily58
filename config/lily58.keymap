@@ -13,116 +13,102 @@
     combos {
         compatible = "zmk,combos";
 
-        space_right_arrow {
-            bindings = <&kp LC(LS(RIGHT))>;
-            key-positions = <27 56>;
+        backtick {
+            bindings = <&kp GRAVE>;
+            key-positions = <50 0>;
             timeout-ms = <30000>;
             layers = <0>;
         };
 
-        space_left_arrow {
-            bindings = <&kp LS(LC(LEFT_ARROW))>;
-            key-positions = <25 56>;
+        strip_bye {
+            bindings = <&kp LS(GRAVE)>;
+            key-positions = <50 0 57>;
             timeout-ms = <30000>;
-            layers = <0>;
+            layers = <0 3>;
         };
 
-        up {
-            bindings = <&kp LS(LC(UP_ARROW))>;
-            key-positions = <14 56>;
+        plus {
+            bindings = <&kp LS(EQUAL)>;
+            key-positions = <50 57 23>;
             timeout-ms = <30000>;
-            layers = <0>;
+            layers = <0 3>;
         };
 
-        down {
-            bindings = <&kp LS(LC(DOWN))>;
-            key-positions = <26 56>;
+        petik1 {
+            bindings = <&kp SQT>;
+            key-positions = <50 57 33>;
             timeout-ms = <30000>;
-            layers = <0>;
+            layers = <0 3>;
         };
 
-        layer0_delete {
-            bindings = <&kp DEL>;
-            key-positions = <56 11>;
-            layers = <0>;
+        reverse_backslash {
+            bindings = <&kp NON_US_BACKSLASH>;
+            key-positions = <50 57 22>;
             timeout-ms = <30000>;
+            layers = <0 3>;
         };
 
-        layer0_kurung {
-            bindings = <&kurung>;
-            key-positions = <15 56>;
-            layers = <0>;
+        game_layer {
+            bindings = <&to 5>;
+            key-positions = <50 57 12>;
             timeout-ms = <30000>;
+            layers = <0 3>;
         };
 
-        layer0_kurung2 {
-            bindings = <&kurung2>;
-            key-positions = <13 56>;
-            layers = <0>;
+        normal_layer {
+            bindings = <&to 0>;
+            key-positions = <50 57 12>;
             timeout-ms = <30000>;
-        };
-
-        layer0_kurung3 {
-            bindings = <&kurung3>;
-            key-positions = <56 38>;
-            layers = <0>;
-            timeout-ms = <30000>;
-        };
-
-        layer0_caps {
-            bindings = <&kp CLCK>;
-            key-positions = <51 0>;
-            layers = <0>;
-            timeout-ms = <5000>;
-        };
-
-        layer0_win {
-            bindings = <&kp LEFT_WIN>;
-            key-positions = <0 50>;
-            layers = <0>;
-            timeout-ms = <500>;
-        };
-
-        game_wintab {
-            bindings = <&kp LG(TAB)>;
-            key-positions = <0 56>;
             layers = <5>;
-            timeout-ms = <500>;
         };
 
-        copy {
-            bindings = <&kp LC(C)>;
-            key-positions = <56 1>;
+        forcw_close {
+            bindings = <&kp LA(F4)>;
+            key-positions = <52 11>;
             timeout-ms = <30000>;
-            layers = <0>;
+            layers = <5>;
         };
 
-        paste {
-            bindings = <&kp LC(V)>;
-            key-positions = <56 2>;
+        win {
+            bindings = <&kp LEFT_WIN>;
+            key-positions = <52 0>;
             timeout-ms = <30000>;
-            layers = <0>;
+            layers = <5>;
         };
 
-        sel_all {
-            bindings = <&kp LC(A)>;
-            key-positions = <56 3>;
+        alt {
+            bindings = <&kp LEFT_ALT>;
+            key-positions = <52 12>;
             timeout-ms = <30000>;
-            layers = <0>;
+            layers = <5>;
         };
 
-        left {
-            bindings = <&kp LEFT_ARROW>;
-            key-positions = <25 38>;
+        move5to6 {
+            bindings = <&to 6>;
+            key-positions = <12 50>;
             timeout-ms = <30000>;
-            layers = <0>;
+            layers = <5>;
         };
 
-        right {
-            bindings = <&kp RIGHT>;
-            key-positions = <27 38>;
+        move6to5 {
+            bindings = <&to 5>;
+            key-positions = <12 50>;
             timeout-ms = <30000>;
-            layers = <0>;
+            layers = <6>;
+        };
+
+        rbracket {
+            bindings = <&kp RIGHT_BRACKET>;
+            key-positions = <50 57 32>;
+            timeout-ms = <30000>;
+            layers = <0 3>;
+        };
+
+        lbracket {
+            bindings = <&kp LEFT_BRACKET>;
+            key-positions = <50 57 20>;
+            timeout-ms = <30000>;
+            layers = <0 3>;
         };
     };
 
@@ -161,11 +147,11 @@
             //                     | ALT  | GUI  | LOWER|  ENTER |  | SPACE | RAISE| BSPC  | GUI   |
 
             bindings = <
-&kp ESC    &kp N1  &kp N2  &kp N3  &kp N4          &kp N5                           &kp N6        &kp N7     &kp N8        &kp N9   &kp N0        &kp BSPC
-&kp TAB    &kp Q   &kp W   &kp E   &kp R           &kp T                            &kp Y         &kp U      &kp I         &kp O    &kp P         &kp MINUS
-&kp LCTRL  &kp A   &kp S   &kp D   &kp F           &kp G                            &kp H         &kp J      &kp K         &kp L    &kp SEMI      &kp SQT
-&mkp LCLK  &kp Z   &kp X   &kp C   &kp V           &kp B      &kp LBKT    &kp RBKT  &kp N         &kp M      &kp COMMA     &kp DOT  &kp LS(FSLH)  &kp ENTER
-                           &to 3   &kp LEFT_SHIFT  &kp SPACE  &to 5       &to 4     &kp LEFT_ALT  &kp RSHFT  &kp LEFT_WIN
+&kp ESC    &kp N1  &kp N2  &kp N3     &kp N4     &kp N5                                &kp N6        &kp N7     &kp N8     &kp N9   &kp N0        &kp BACKSPACE
+&kp TAB    &kp Q   &kp W   &kp E      &kp R      &kp T                                 &kp Y         &kp U      &kp I      &kp O    &kp P         &kp MINUS
+&kp LCTRL  &kp A   &kp S   &kp D      &kp F      &kp G                                 &kp H         &kp J      &kp K      &kp L    &kp SEMI      &kp ENTER
+&mkp LCLK  &kp Z   &kp X   &kp C      &kp V      &kp B      &kp CAPS     &mo 4         &kp N         &kp M      &kp COMMA  &kp DOT  &kp LS(FSLH)  &kp ENTER
+                           &kp LSHFT  &kp SPACE  &kp SPACE  &kp LC(Z)    &kp LEFT_WIN  &kp LEFT_ALT  &kp RSHFT  &mo 3
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -211,31 +197,43 @@
 
         layer_3 {
             bindings = <
-&kp LC(Z)      &kp LC(C)               &kp LC(V)     &kp LC(A)                &trans                &trans                           &trans  &trans     &trans        &kurung  &kurung2              &kurung3
-&kp BACKSPACE  &kp LS(LC(LEFT_ARROW))  &kp UP_ARROW  &kp LS(LC(RIGHT_ARROW))  &kp LS(LC(UP_ARROW))  &trans                           &trans  &trans     &trans        &trans   &kp NON_US_BACKSLASH  &kp EQUAL
-&kp LC(Y)      &kp LEFT_ARROW          &kp DOWN      &kp RIGHT                &kp LC(X)             &trans                           &trans  &trans     &trans        &trans   &trans                &trans
-&mkp LCLK      &kp HOME                &kp DEL       &kp END                  &kp LS(LC(DOWN))      &kp LC(LS(Z))  &trans    &trans  &trans  &trans     &trans        &trans   &kp SLASH             &trans
-                                                     &to 0                    &kp LSHFT             &kp SPACE      &to 5     &trans  &trans  &kp LSHFT  &kp LEFT_WIN
+&kp LC(Z)    &kp LS(NUMBER_1)        &kp LS(NUMBER_2)  &kp LS(NUMBER_3)         &kp LS(NUMBER_4)      &kp LS(N5)                       &kp LS(NUMBER_6)  &kp LS(N7)  &kp LS(N8)             &kp LS(N9)        &kp LS(N0)                &kp DEL
+&kp LA(TAB)  &kp LS(LC(LEFT_ARROW))  &kp UP_ARROW      &kp LS(LC(RIGHT_ARROW))  &kp LS(LC(UP_ARROW))  &trans                           &trans            &trans      &kp LS(LEFT_BRACKET)   &kp LS(NUMBER_4)  &kp LS(NON_US_BACKSLASH)  &kp EQUAL
+&kp LC(Y)    &kp LEFT_ARROW          &kp DOWN          &kp RIGHT                &kp LC(X)             &trans                           &trans            &trans      &kp LS(RIGHT_BRACKET)  &kp LS(EQUAL)     &kp LS(SEMICOLON)         &kp LS(ENTER)
+&mkp LCLK    &kp HOME                &kp DEL           &kp END                  &kp LS(LC(DOWN))      &kp LC(LS(Z))  &trans    &trans  &trans            &trans      &kp LS(COMMA)          &kp LS(PERIOD)    &kp SLASH                 &trans
+                                                       &to 0                    &kp LSHFT             &kp SPACE      &to 5     &trans  &trans            &kp LSHFT   &kp LEFT_WIN
             >;
         };
 
         layer_4 {
             bindings = <
-&kp GRAVE     &kp F1        &kp F2        &kp F3        &kp F4        &kp F5                          &kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &kp F11
-&bt BT_CLR    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                    &trans  &trans  &trans  &trans  &trans   &kp F12
-&trans        &trans        &trans        &trans        &trans        &trans                          &trans  &trans  &trans  &trans  &trans   &trans
-&kp LEFT_WIN  &kp LEFT_WIN  &trans        &trans        &trans        &trans        &trans    &trans  &trans  &trans  &trans  &trans  &trans   &trans
-                                          &kp LALT      &kp LSHFT     &trans        &to 0     &to 0   &to 0   &trans  &trans
+&kp GRAVE     &kp F1        &kp F2        &kp F3        &kp F4        &kp F5                          &kp F6        &kp F7  &kp F8  &kp F9  &kp F10  &kp F11
+&bt BT_CLR    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                    &trans        &trans  &trans  &trans  &trans   &kp F12
+&trans        &trans        &trans        &trans        &trans        &trans                          &trans        &trans  &trans  &trans  &trans   &trans
+&kp LEFT_WIN  &kp LEFT_WIN  &trans        &trans        &trans        &trans        &trans    &trans  &trans        &trans  &trans  &trans  &trans   &trans
+                                          &kp LSHFT     &kp LSHFT     &kp SPACE     &to 0     &to 0   &kp LEFT_ALT  &trans  &trans
             >;
         };
 
         game_layer {
             bindings = <
-&kp M      &kp N1  &kp N2  &kp N3        &kp N4          &kp N5                                    &kp N6     &kp N7     &kp N8     &kp N9   &kp N0    &kp ESC
-&kp TAB    &kp Q   &kp W   &kp E         &kp R           &kp T                                     &kp Y      &kp U      &kp I      &kp O    &kp P     &kp MINUS
-&kp LCTRL  &kp A   &kp S   &kp D         &kp F           &kp G                                     &kp H      &kp J      &kp K      &kp L    &kp SEMI  &kp SQT
-&mkp LCLK  &kp Z   &kp X   &kp C         &kp V           &kp B      &kp LG(LC(RIGHT))    &kp RBKT  &kp N      &kp M      &kp COMMA  &kp DOT  &kp FSLH  &kp ENTER
-                           &kp LEFT_ALT  &kp LEFT_SHIFT  &kp SPACE  &to 0                &to 4     &kp SPACE  &kp RSHFT  &kp RGUI
+&kp M      &kp N1  &kp N2  &kp N3     &kp N4          &kp N5                                                  &kp N6     &kp N7     &kp N8     &kp N9   &kp N0    &kp ESC
+&kp TAB    &kp Q   &kp W   &kp E      &kp R           &kp T                                                   &kp Y      &kp U      &kp I      &kp O    &kp P     &kp MINUS
+&kp LCTRL  &kp A   &kp S   &kp D      &kp F           &kp G                                                   &kp H      &kp J      &kp K      &kp L    &kp SEMI  &kp ENTER
+&mkp LCLK  &kp Z   &kp X   &kp C      &kp V           &kp B      &kp LG(LC(RIGHT))    &kp LG(LC(LEFT_ARROW))  &kp N      &kp M      &kp COMMA  &kp DOT  &kp FSLH  &kp ENTER
+                           &kp LSHFT  &kp LEFT_SHIFT  &kp SPACE  &to 0                &kp LG(LS(Q))           &kp SPACE  &kp RSHFT  &none
+            >;
+
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+        };
+
+        layer_6 {
+            bindings = <
+&kp M      &kp N1          &kp N2          &kp N3     &kp N4          &kp N5                                                  &kp N6     &kp N7     &kp N8     &kp N9   &kp N0    &kp ESC
+&kp TAB    &kp Q           &kp UP_ARROW    &kp E      &kp R           &kp T                                                   &kp Y      &kp U      &kp I      &kp O    &kp P     &kp MINUS
+&kp LCTRL  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT  &kp F           &kp G                                                   &kp H      &kp J      &kp K      &kp L    &kp SEMI  &kp ENTER
+&mkp LCLK  &kp Z           &kp X           &kp C      &kp V           &kp B      &kp LG(LC(RIGHT))    &kp LG(LC(LEFT_ARROW))  &kp N      &kp M      &kp COMMA  &kp DOT  &kp FSLH  &kp ENTER
+                                           &kp LSHFT  &kp LEFT_SHIFT  &kp SPACE  &to 0                &kp LG(LS(Q))           &kp SPACE  &kp RSHFT  &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
