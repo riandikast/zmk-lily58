@@ -113,21 +113,21 @@
 
         copy {
             bindings = <&kp LC(C)>;
-            key-positions = <50 57 1>;
+            key-positions = <57 1 52>;
             timeout-ms = <30000>;
             layers = <0 3>;
         };
 
         paste {
             bindings = <&kp LC(V)>;
-            key-positions = <50 57 2>;
+            key-positions = <57 2 52>;
             timeout-ms = <30000>;
             layers = <0 3>;
         };
 
         sel_all {
             bindings = <&kp LC(A)>;
-            key-positions = <50 57 3>;
+            key-positions = <57 3 52>;
             timeout-ms = <30000>;
             layers = <0 3>;
         };
