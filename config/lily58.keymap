@@ -218,11 +218,11 @@
 
         layer_3 {
             bindings = <
-&kp LC(Z)      &kp LS(NUMBER_1)        &kp LS(NUMBER_2)  &kp LS(NUMBER_3)         &kp LS(NUMBER_4)      &kp LS(N5)                       &kp LS(NUMBER_6)  &kp LS(N7)            &kp LS(N8)             &kp LS(N9)        &kp LS(N0)                &kp DEL
-&kp LC(LS(Z))  &kp LS(LC(LEFT_ARROW))  &kp UP_ARROW      &kp LS(LC(RIGHT_ARROW))  &kp LS(LC(UP_ARROW))  &trans                           &trans            &kp LC(LS(UP_ARROW))  &kp LS(LEFT_BRACKET)   &kp LS(NUMBER_4)  &kp LS(NON_US_BACKSLASH)  &kp EQUAL
-&kp LC(Y)      &kp LEFT_ARROW          &kp DOWN          &kp RIGHT                &kp LC(LS(R))         &trans                           &trans            &kp LC(LS(DOWN))      &kp LS(RIGHT_BRACKET)  &kp LS(SQT)       &kp LS(SEMICOLON)         &kp LS(ENTER)
-&mkp LCLK      &kp LC(A)               &kp LC(X)         &kp LC(C)                &kp LC(V)             &kp LC(LS(Z))  &trans    &trans  &trans            &trans                &kp LS(COMMA)          &kp LS(PERIOD)    &kp SLASH                 &trans
-                                                         &kp HOME                 &kp LSHFT             &kp SPACE      &to 5     &trans  &kp END           &kp LSHFT             &kp LEFT_WIN
+&kp LC(A)      &kp LS(NUMBER_1)        &kp LS(NUMBER_2)  &kp LS(NUMBER_3)         &kp LS(NUMBER_4)      &kp LS(N5)                              &kp LS(NUMBER_6)  &kp LS(N7)            &kp LS(N8)             &kp LS(N9)        &kp LS(N0)                &kp DEL
+&kp LC(LS(Z))  &kp LS(LC(LEFT_ARROW))  &kp UP_ARROW      &kp LS(LC(RIGHT_ARROW))  &kp LS(LC(UP_ARROW))  &trans                                  &trans            &kp LC(LS(UP_ARROW))  &kp LS(LEFT_BRACKET)   &kp LS(NUMBER_4)  &kp LS(NON_US_BACKSLASH)  &kp EQUAL
+&kp LC(Y)      &kp LEFT_ARROW          &kp DOWN          &kp RIGHT                &kp LC(LS(R))         &trans                                  &trans            &kp LC(LS(DOWN))      &kp LS(RIGHT_BRACKET)  &kp LS(SQT)       &kp LS(SEMICOLON)         &kp LS(ENTER)
+&mkp LCLK      &kp LC(Z)               &kp LC(X)         &kp LC(C)                &kp LC(V)             &kp LC(LS(Z))  &trans    &trans         &trans            &trans                &kp LS(COMMA)          &kp LS(PERIOD)    &kp SLASH                 &trans
+                                                         &kp HOME                 &kp LSHFT             &kp SPACE      &to 5     &kp LC(SLASH)  &kp END           &kp LSHFT             &kp LEFT_WIN
             >;
         };
 
