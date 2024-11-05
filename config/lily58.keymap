@@ -55,27 +55,6 @@
             layers = <5>;
         };
 
-        forcw_close {
-            bindings = <&kp LA(F4)>;
-            key-positions = <11 53>;
-            timeout-ms = <30000>;
-            layers = <5>;
-        };
-
-        win {
-            bindings = <&kp LEFT_WIN>;
-            key-positions = <52 0>;
-            timeout-ms = <30000>;
-            layers = <5>;
-        };
-
-        alt {
-            bindings = <&kp LEFT_ALT>;
-            key-positions = <52 12>;
-            timeout-ms = <30000>;
-            layers = <5>;
-        };
-
         move5to6 {
             bindings = <&to 6>;
             key-positions = <12 50>;
@@ -88,55 +67,6 @@
             key-positions = <12 50>;
             timeout-ms = <30000>;
             layers = <6>;
-        };
-
-        rbracket {
-            bindings = <&kp RIGHT_BRACKET>;
-            key-positions = <50 57 32>;
-            timeout-ms = <30000>;
-            layers = <0 3>;
-        };
-
-        lbracket {
-            bindings = <&kp LEFT_BRACKET>;
-            key-positions = <50 57 20>;
-            timeout-ms = <30000>;
-            layers = <0 3>;
-        };
-
-        petik1 {
-            bindings = <&kp SQT>;
-            key-positions = <50 57 33>;
-            timeout-ms = <30000>;
-            layers = <0 3>;
-        };
-
-        copy {
-            bindings = <&kp LC(C)>;
-            key-positions = <57 1 52>;
-            timeout-ms = <30000>;
-            layers = <0 3>;
-        };
-
-        paste {
-            bindings = <&kp LC(V)>;
-            key-positions = <57 2 52>;
-            timeout-ms = <30000>;
-            layers = <0 3>;
-        };
-
-        sel_all {
-            bindings = <&kp LC(A)>;
-            key-positions = <57 3 52>;
-            timeout-ms = <30000>;
-            layers = <0 3>;
-        };
-
-        delete {
-            bindings = <&kp DEL>;
-            key-positions = <50 57 11>;
-            timeout-ms = <30000>;
-            layers = <0 3 7>;
         };
     };
 
@@ -276,11 +206,21 @@
 
         layer_7 {
             bindings = <
-&kp GRAVE       &kp LC(C)       &kp LC(V)     &kp LC(A)       &kp LA(F4)  &trans                       &trans  &trans  &trans  &kp LG(LS(A))  &kp LG(LS(S))  &kp DEL
-&kp LG(LS(Q))   &kp HOME        &kp UP_ARROW  &kp END         &trans      &trans                       &trans  &trans  &trans  &kp LC(LS(F))  &none          &kp LS(GRAVE)
-&kp LEFT_SHIFT  &kp LEFT_ARROW  &kp DOWN      &kp RIGHT       &replace    &trans                       &trans  &trans  &trans  &kp LC(SLASH)  &trans         &kp ENTER
-&kp LEFT_SHIFT  &trans          &trans        &kp LA(LS(F4))  &trans      &trans     &trans    &trans  &trans  &trans  &trans  &trans         &trans         &trans
-                                              &kp LEFT_SHIFT  &kp SPACE   &kp SPACE  &to 0     &trans  &trans  &trans  &trans
+&kp TILDE       &kp LC(C)       &kp LC(V)     &kp LC(A)       &kp LA(F4)  &trans                       &trans        &trans  &trans     &kp LG(LS(A))  &kp LG(LS(S))         &kp DEL
+&kp LG(LS(Q))   &kp HOME        &kp UP_ARROW  &kp END         &trans      &trans                       &trans        &trans  &trans     &kp LC(LS(F))  &kp NON_US_BACKSLASH  &kp EQUAL
+&kp LEFT_SHIFT  &kp LEFT_ARROW  &kp DOWN      &kp RIGHT       &replace    &trans                       &trans        &trans  &trans     &kp LC(SLASH)  &kp PLUS              &kp ENTER
+&mkp LCLK       &trans          &trans        &kp LA(LS(F4))  &trans      &trans     &trans    &trans  &trans        &trans  &kp GRAVE  &trans         &trans                &trans
+                                              &mkp LCLK       &kp SPACE   &kp SPACE  &to 0     &trans  &kp LEFT_ALT  &trans  &trans
+            >;
+        };
+
+        layer_8 {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans
             >;
         };
     };
