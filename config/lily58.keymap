@@ -13,34 +13,6 @@
     combos {
         compatible = "zmk,combos";
 
-        backtick {
-            bindings = <&kp GRAVE>;
-            key-positions = <50 0>;
-            timeout-ms = <30000>;
-            layers = <0>;
-        };
-
-        strip_bye {
-            bindings = <&kp LS(GRAVE)>;
-            key-positions = <50 0 57>;
-            timeout-ms = <30000>;
-            layers = <0 3>;
-        };
-
-        plus {
-            bindings = <&kp LS(EQUAL)>;
-            key-positions = <50 57 23>;
-            timeout-ms = <30000>;
-            layers = <0 3>;
-        };
-
-        reverse_backslash {
-            bindings = <&kp NON_US_BACKSLASH>;
-            key-positions = <50 57 22>;
-            timeout-ms = <30000>;
-            layers = <0 3>;
-        };
-
         game_layer {
             bindings = <&to 5>;
             key-positions = <50 57 12>;
