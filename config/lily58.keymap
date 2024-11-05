@@ -236,7 +236,7 @@
 &kp LC(LS(Z))  &kp LS(LC(LEFT_ARROW))  &kp UP_ARROW      &kp LS(LC(RIGHT_ARROW))  &kp LS(LC(UP_ARROW))  &trans                                  &trans            &kp LC(LS(UP_ARROW))  &kp LS(LEFT_BRACKET)   &kp LS(NUMBER_4)  &kp LS(NON_US_BACKSLASH)  &kp LS(MINUS)
 &kp LC(Y)      &kp LEFT_ARROW          &kp DOWN          &kp RIGHT                &kp LC(LS(R))         &trans                                  &trans            &kp LC(LS(DOWN))      &kp LS(RIGHT_BRACKET)  &kp LS(SQT)       &kp LS(SEMICOLON)         &kp LS(ENTER)
 &mkp LCLK      &kp LC(Z)               &kp LC(X)         &kp LC(C)                &kp LC(V)             &kp LC(LS(Z))  &trans    &trans         &trans            &trans                &kp LS(COMMA)          &kp LS(PERIOD)    &kp SLASH                 &trans
-                                                         &mo 7                    &kp LSHFT             &kp SPACE      &to 5     &kp LC(SLASH)  &kp END           &kp LSHFT             &kp LEFT_WIN
+                                                         &mo 7                    &kp SPACE             &kp LC(Z)      &to 5     &kp LC(SLASH)  &kp END           &kp LSHFT             &kp LEFT_WIN
             >;
         };
 
@@ -276,11 +276,11 @@
 
         layer_7 {
             bindings = <
-&kp LC(Z)       &kp LC(C)       &kp LC(V)     &kp LC(A)       &trans     &trans                       &trans  &trans  &trans  &trans  &trans  &none
-&trans          &trans          &kp UP_ARROW  &trans          &trans     &trans                       &trans  &trans  &trans  &trans  &trans  &trans
-&kp LEFT_SHIFT  &kp LEFT_ARROW  &kp DOWN      &kp RIGHT       &replace   &trans                       &trans  &trans  &trans  &trans  &trans  &trans
-&kp LEFT_SHIFT  &trans          &trans        &trans          &trans     &trans     &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                                              &kp LEFT_SHIFT  &kp SPACE  &kp SPACE  &to 0     &trans  &trans  &trans  &trans
+&kp GRAVE       &kp LC(C)       &kp LC(V)     &kp LC(A)       &kp LA(F4)  &trans                       &trans  &trans  &trans  &kp LG(LS(A))  &kp LG(LS(S))  &kp DEL
+&kp LG(LS(Q))   &kp HOME        &kp UP_ARROW  &kp END         &trans      &trans                       &trans  &trans  &trans  &trans         &kp LC(LS(F))  &kp LS(GRAVE)
+&kp LEFT_SHIFT  &kp LEFT_ARROW  &kp DOWN      &kp RIGHT       &replace    &trans                       &trans  &trans  &trans  &trans         &trans         &kp ENTER
+&kp LEFT_SHIFT  &trans          &trans        &kp LA(LS(F4))  &trans      &trans     &trans    &trans  &trans  &trans  &trans  &trans         &trans         &trans
+                                              &kp LEFT_SHIFT  &kp SPACE   &kp SPACE  &to 0     &trans  &trans  &trans  &trans
             >;
         };
     };
