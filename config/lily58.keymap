@@ -277,8 +277,8 @@
         layer_7 {
             bindings = <
 &kp GRAVE       &kp LC(C)       &kp LC(V)     &kp LC(A)       &kp LA(F4)  &trans                       &trans  &trans  &trans  &kp LG(LS(A))  &kp LG(LS(S))  &kp DEL
-&kp LG(LS(Q))   &kp HOME        &kp UP_ARROW  &kp END         &trans      &trans                       &trans  &trans  &trans  &trans         &kp LC(LS(F))  &kp LS(GRAVE)
-&kp LEFT_SHIFT  &kp LEFT_ARROW  &kp DOWN      &kp RIGHT       &replace    &trans                       &trans  &trans  &trans  &trans         &trans         &kp ENTER
+&kp LG(LS(Q))   &kp HOME        &kp UP_ARROW  &kp END         &trans      &trans                       &trans  &trans  &trans  &kp LC(LS(F))  &none          &kp LS(GRAVE)
+&kp LEFT_SHIFT  &kp LEFT_ARROW  &kp DOWN      &kp RIGHT       &replace    &trans                       &trans  &trans  &trans  &kp LC(SLASH)  &trans         &kp ENTER
 &kp LEFT_SHIFT  &trans          &trans        &kp LA(LS(F4))  &trans      &trans     &trans    &trans  &trans  &trans  &trans  &trans         &trans         &trans
                                               &kp LEFT_SHIFT  &kp SPACE   &kp SPACE  &to 0     &trans  &trans  &trans  &trans
             >;
