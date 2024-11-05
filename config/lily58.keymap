@@ -57,7 +57,7 @@
 
         forcw_close {
             bindings = <&kp LA(F4)>;
-            key-positions = <52 11>;
+            key-positions = <11 53>;
             timeout-ms = <30000>;
             layers = <5>;
         };
@@ -130,6 +130,13 @@
             key-positions = <57 3 52>;
             timeout-ms = <30000>;
             layers = <0 3>;
+        };
+
+        delete {
+            bindings = <&kp DEL>;
+            key-positions = <50 57 11>;
+            timeout-ms = <30000>;
+            layers = <0 3 7>;
         };
     };
 
@@ -225,11 +232,11 @@
 
         layer_3 {
             bindings = <
-&kp LC(ESCAPE)  &kp LS(NUMBER_1)        &kp LS(NUMBER_2)  &kp LS(NUMBER_3)         &kp LS(NUMBER_4)      &kp LS(N5)                              &kp LS(NUMBER_6)  &kp LS(N7)            &kp LS(N8)             &kp LS(N9)        &kp LS(N0)                &kp DEL
-&kp LC(LS(Z))   &kp LS(LC(LEFT_ARROW))  &kp UP_ARROW      &kp LS(LC(RIGHT_ARROW))  &kp LS(LC(UP_ARROW))  &trans                                  &trans            &kp LC(LS(UP_ARROW))  &kp LS(LEFT_BRACKET)   &kp LS(NUMBER_4)  &kp LS(NON_US_BACKSLASH)  &kp LS(MINUS)
-&kp LC(Y)       &kp LEFT_ARROW          &kp DOWN          &kp RIGHT                &kp LC(LS(R))         &trans                                  &trans            &kp LC(LS(DOWN))      &kp LS(RIGHT_BRACKET)  &kp LS(SQT)       &kp LS(SEMICOLON)         &kp LS(ENTER)
-&mkp LCLK       &kp LC(Z)               &kp LC(X)         &kp LC(C)                &kp LC(V)             &kp LC(LS(Z))  &trans    &trans         &trans            &trans                &kp LS(COMMA)          &kp LS(PERIOD)    &kp SLASH                 &trans
-                                                          &kp HOME                 &kp LSHFT             &kp SPACE      &to 5     &kp LC(SLASH)  &kp END           &kp LSHFT             &kp LEFT_WIN
+&kp ESCAPE     &kp LS(NUMBER_1)        &kp LS(NUMBER_2)  &kp LS(NUMBER_3)         &kp LS(NUMBER_4)      &kp LS(N5)                              &kp LS(NUMBER_6)  &kp LS(N7)            &kp LS(N8)             &kp LS(N9)        &kp LS(N0)                &kp BACKSPACE
+&kp LC(LS(Z))  &kp LS(LC(LEFT_ARROW))  &kp UP_ARROW      &kp LS(LC(RIGHT_ARROW))  &kp LS(LC(UP_ARROW))  &trans                                  &trans            &kp LC(LS(UP_ARROW))  &kp LS(LEFT_BRACKET)   &kp LS(NUMBER_4)  &kp LS(NON_US_BACKSLASH)  &kp LS(MINUS)
+&kp LC(Y)      &kp LEFT_ARROW          &kp DOWN          &kp RIGHT                &kp LC(LS(R))         &trans                                  &trans            &kp LC(LS(DOWN))      &kp LS(RIGHT_BRACKET)  &kp LS(SQT)       &kp LS(SEMICOLON)         &kp LS(ENTER)
+&mkp LCLK      &kp LC(Z)               &kp LC(X)         &kp LC(C)                &kp LC(V)             &kp LC(LS(Z))  &trans    &trans         &trans            &trans                &kp LS(COMMA)          &kp LS(PERIOD)    &kp SLASH                 &trans
+                                                         &mo 7                    &kp LSHFT             &kp SPACE      &to 5     &kp LC(SLASH)  &kp END           &kp LSHFT             &kp LEFT_WIN
             >;
         };
 
@@ -269,7 +276,7 @@
 
         layer_7 {
             bindings = <
-&kp LC(Z)       &kp LC(C)       &kp LC(V)     &kp LC(A)       &trans     &trans                       &trans  &trans  &trans  &trans  &trans  &trans
+&kp LC(Z)       &kp LC(C)       &kp LC(V)     &kp LC(A)       &trans     &trans                       &trans  &trans  &trans  &trans  &trans  &none
 &trans          &trans          &kp UP_ARROW  &trans          &trans     &trans                       &trans  &trans  &trans  &trans  &trans  &trans
 &kp LEFT_SHIFT  &kp LEFT_ARROW  &kp DOWN      &kp RIGHT       &replace   &trans                       &trans  &trans  &trans  &trans  &trans  &trans
 &kp LEFT_SHIFT  &trans          &trans        &trans          &trans     &trans     &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
