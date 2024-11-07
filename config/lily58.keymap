@@ -4,14 +4,12 @@
  * SPDX-License-Identifier: MIT
  */
 
+#include "mouse.dtsi"
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/mouse.h>
-#include "mouse.dtsi"
-
-
 
 / {
     combos {
@@ -93,6 +91,25 @@
             bindings = <&mkp LCLK &mkp LCLK &kp LC(C)>;
             label = "BLOCK_AND_COPY";
         };
+
+        sticky_shift_layer: sticky_shift_layer {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap>, <&none>;
+
+            label = "STICKY_SHIFT_LAYER";
+        };
+    };
+
+    behaviors {
+        layer_stickykey: layer_stickykey {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LAYER_STICKYKEY";
+            bindings = <&mo>, <&sk>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+        };
     };
 
     keymap {
@@ -107,11 +124,11 @@
             //                     | ALT  | GUI  | LOWER|  ENTER |  | SPACE | RAISE| BSPC  | GUI   |
 
             bindings = <
-&kp BACKSPACE  &kp N1  &kp N2  &kp N3          &kp N4       &kp N5                               &kp N6        &kp N7            &kp N8     &kp N9   &kp N0        &kp BACKSPACE
-&kp TAB        &kp Q   &kp W   &kp E           &kp R        &kp T                                &kp Y         &kp U             &kp I      &kp O    &kp P         &kp MINUS
-&kp LCTRL      &kp A   &kp S   &kp D           &kp F        &kp G                                &kp H         &kp J             &kp K      &kp L    &kp SEMI      &kp ENTER
-&mkp LCLK      &kp Z   &kp X   &kp C           &kp V        &kp B      &kp CAPS    &mo 4         &kp N         &kp M             &kp COMMA  &kp DOT  &kp QUESTION  &kp ENTER
-                               &sk LEFT_SHIFT  &lt 8 SPACE  &kp SPACE  &to 7       &kp LEFT_ALT  &kp LEFT_WIN  &lt 3 LEFT_SHIFT  &mo 3
+&kp BACKSPACE  &kp N1  &kp N2  &kp N3                         &kp N4       &kp N5                               &kp N6        &kp N7            &kp N8     &kp N9   &kp N0        &kp BACKSPACE
+&kp TAB        &kp Q   &kp W   &kp E                          &kp R        &kp T                                &kp Y         &kp U             &kp I      &kp O    &kp P         &kp MINUS
+&kp LCTRL      &kp A   &kp S   &kp D                          &kp F        &kp G                                &kp H         &kp J             &kp K      &kp L    &kp SEMI      &kp ENTER
+&mkp LCLK      &kp Z   &kp X   &kp C                          &kp V        &kp B      &kp CAPS    &mo 4         &kp N         &kp M             &kp COMMA  &kp DOT  &kp QUESTION  &kp ENTER
+                               &layer_stickykey 8 LEFT_SHIFT  &lt 8 SPACE  &kp SPACE  &to 7       &kp LEFT_ALT  &kp LEFT_WIN  &lt 3 LEFT_SHIFT  &mo 3
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -157,7 +174,7 @@
 
         symbol_layer {
             bindings = <
-&kp ESCAPE               &kp LS(NUMBER_1)        &kp LS(NUMBER_2)  &kp LS(NUMBER_3)         &kp LS(NUMBER_4)      &kp LS(N5)                                 &kp LS(NUMBER_6)  &kp LS(N7)            &kp LS(N8)             &kp LS(N9)        &kp LS(N0)                &kp BACKSPACE
+&kp ESCAPE               &kp LS(NUMBER_1)        &kp LS(NUMBER_2)  &kp LS(NUMBER_3)         &kp LS(NUMBER_4)      &kp LS(N5)                                 &kp LS(NUMBER_6)  &kp LS(N7)            &kp LS(N8)             &kp LS(N9)        &kp LS(N0)                &kp DELETE
 &mt LC(LS(Z)) LC(LS(Z))  &kp LS(LC(LEFT_ARROW))  &kp UP_ARROW      &kp LS(LC(RIGHT_ARROW))  &kp LS(LC(UP_ARROW))  &msc SCROLL_UP                             &trans            &kp LC(LS(UP_ARROW))  &kp LS(LEFT_BRACKET)   &kp LS(NUMBER_4)  &kp LS(NON_US_BACKSLASH)  &kp LS(MINUS)
 &mt LC(Y) LC(Y)          &kp LEFT_ARROW          &kp DOWN          &kp RIGHT                &kp LC(LS(R))         &msc SCROLL_DOWN                           &trans            &kp LC(LS(DOWN))      &kp LS(RIGHT_BRACKET)  &kp LS(SQT)       &kp LS(SEMICOLON)         &kp LS(ENTER)
 &mkp LCLK                &kp LC(Z)               &kp LC(X)         &kp LC(C)                &kp LC(V)             &kp LC(LS(Z))     &trans    &trans         &trans            &trans                &kp LS(COMMA)          &kp LS(PERIOD)    &kp SLASH                 &trans
