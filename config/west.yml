@@ -4,12 +4,8 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: zmk
       url-base: https://github.com/krikun98
-  projects:
-    - name: zmk
-      remote: zmkfirmware
-      revision: main
-      import: app/west.yml
-    - name: module_a
+  projects:   
+    - name: forkzmk
       remote: zmk
       revision: mouse-pr
   self:
