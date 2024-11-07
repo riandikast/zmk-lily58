@@ -1,7 +1,16 @@
 manifest:
+  remotes:
+    - name: zmkfirmware
+      url-base: https://github.com/zmkfirmware
+    - name: module_a_base
+      url-base: https://github.com/krikun98
   projects:
     - name: zmk
-      url: https://github.com/krikun98/zmk
+      remote: zmkfirmware
+      revision: main
+      import: app/west.yml
+    - name: module_a
+      remote: module_a_base
       revision: mouse-pr
   self:
     path: config
