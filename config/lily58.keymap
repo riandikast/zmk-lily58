@@ -11,8 +11,8 @@
 #include <dt-bindings/zmk/mouse.h>
 #include "mouse.dtsi"
 
-#define ZMK_MOUSE_DEFAULT_MOVE_VAL 1500  // 600
-#define ZMK_MOUSE_DEFAULT_SCRL_VAL 20    // 10
+#define ZMK_MOUSE_DEFAULT_MOVE_VAL 3500  // 600
+#define ZMK_MOUSE_DEFAULT_SCRL_VAL 40    // 10
 
 / {
     combos {
@@ -58,17 +58,7 @@
             layers = <0 3 2 4 5 6 7 8>;
         };
     };
-    behaviors {
-        mouse_scroll: mouse_scroll {
-            compatible = "zmk,behavior-mouse-scroll";
-            scroll_speed = <50>;
-        };
-
-        mouse_move: mouse_move {
-            compatible = "zmk,behavior-mouse-move";
-            move_speed = <3000>;
-        };
-    };
+ 
     macros {
         kurung: kurung {
             compatible = "zmk,behavior-macro";
