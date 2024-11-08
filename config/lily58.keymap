@@ -153,7 +153,7 @@
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <900>;
+            tapping-term-ms = <1000>;
             flavor = "tap-preferred";
         };
 
