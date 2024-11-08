@@ -119,7 +119,7 @@
             label = "FASTER_MOUSE";
             #binding-cells = <1>;
             time-to-max-speed-ms = <400>;
-            acceleration-exponent = <1>;
+            acceleration-exponent = <2>;
             delay-ms = <1>;
         };
 
@@ -128,7 +128,7 @@
             label = "FASTER_SCROLL";
             #binding-cells = <1>;
             time-to-max-speed-ms = <400>;
-            acceleration-exponent = <1>;
+            acceleration-exponent = <2>;
             delay-ms = <1>;
         };
 
