@@ -6,10 +6,12 @@ manifest:
       url-base: https://github.com/urob
     - name: cay
       url-base: https://github.com/caksoylar
+    - name: pete
+      url-base: https://github.com/petejohanson
   projects:
     - name: zmk
       remote: cay
-      revision: feat/mouse-keys-3.2
+      revision: experimental
       import: app/west.yml
   self:
     path: config
