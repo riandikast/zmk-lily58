@@ -4,7 +4,6 @@
  * SPDX-License-Identifier: MIT
  */
 
-
 #include "mouse.dtsi"
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
@@ -118,6 +117,7 @@
             #binding-cells = <1>;
             time-to-max-speed-ms = <400>;
             acceleration-exponent = <1>;
+            delay-ms = <1>;
         };
 
         faster_scroll: faster_scroll {
@@ -126,6 +126,7 @@
             #binding-cells = <1>;
             time-to-max-speed-ms = <400>;
             acceleration-exponent = <1>;
+            delay-ms = <1>;
         };
     };
 
