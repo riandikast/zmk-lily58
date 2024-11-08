@@ -10,8 +10,8 @@ manifest:
       url-base: https://github.com/petejohanson
   projects:
     - name: zmk
-      remote: cay
-      revision: experimental
+      remote: urob
+      revision: mouse-3.2
       import: app/west.yml
   self:
     path: config
