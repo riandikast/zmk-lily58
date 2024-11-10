@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: MIT
  */
 
+#define SPLIT_USB_DETECT
 #undef ZMK_MOUSE_DEFAULT_MOVE_VAL
 
 #define ZMK_MOUSE_DEFAULT_MOVE_VAL 7500  // 600
