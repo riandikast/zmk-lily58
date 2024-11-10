@@ -188,7 +188,7 @@
             bindings = <&to>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <300>;
+            tapping-term-ms = <240>;
         };
 
         to_mo: to_mo {
@@ -295,7 +295,7 @@
 &mt LC(LS(Z)) LC(LS(Z))  &kp LS(LC(LEFT_ARROW))  &kp UP_ARROW      &kp LS(LC(RIGHT_ARROW))  &kp LS(LC(UP_ARROW))  &msc SCROLL_UP                             &trans            &kp LC(LS(UP_ARROW))  &kp LS(LEFT_BRACKET)   &kp LS(NUMBER_4)  &kp LS(NON_US_BACKSLASH)  &kp LS(MINUS)
 &mt LC(Y) LC(Y)          &kp LEFT_ARROW          &kp DOWN          &kp RIGHT                &kp LC(LS(R))         &msc SCROLL_DOWN                           &trans            &kp LC(LS(DOWN))      &kp LS(RIGHT_BRACKET)  &kp LS(SQT)       &kp LS(SEMICOLON)         &kp LS(ENTER)
 &mkp LCLK                &kp LC(Z)               &kp LC(X)         &kp LC(C)                &kp LC(V)             &kp LC(LS(Z))     &trans    &trans         &trans            &trans                &kp LS(COMMA)          &kp LS(PERIOD)    &kp SLASH                 &trans
-                                                                   &mo 7                    &kp SPACE             &kp LC(Z)         &to 5     &kp LC(SLASH)  &kp END           &kp LSHFT             &kp LEFT_WIN
+                                                                   &mo 7                    &mo_tap 7 SPACE       &kp LC(Z)         &to 5     &kp LC(SLASH)  &kp END           &kp LSHFT             &kp LEFT_WIN
             >;
         };
 
