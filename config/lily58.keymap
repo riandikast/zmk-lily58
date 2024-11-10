@@ -241,11 +241,11 @@
             //                     | ALT  | GUI  | LOWER|  ENTER |  | SPACE | RAISE| BSPC  | GUI   |
 
             bindings = <
-&mo_tap 7 BACKSPACE  &kp N1  &kp N2  &kp N3            &kp N4                             &kp N5                                                  &kp N6                   &kp N7                    &kp N8          &kp N9   &kp N0        &kp BACKSPACE
-&kp TAB              &kp Q   &kp W   &kp E             &kp R                              &kp T                                                   &kp Y                    &kp U                     &kp I           &kp O    &kp P         &kp MINUS
-&kp LCTRL            &kp A   &kp S   &kp D             &kp F                              &kp G                                                   &kp H                    &kp J                     &kp K           &kp L    &kp SEMI      &short_layer_tap 11 ENTER
-&mkp LCLK            &kp Z   &kp X   &kp C             &kp V                              &kp B      &lt 4 N                &lt 4 B               &kp N                    &kp M                     &kp COMMA       &kp DOT  &kp QUESTION  &kp ENTER
-                                     &lt 8 LEFT_SHIFT  &custom_hold_tap LEFT_SHIFT SPACE  &kp SPACE  &to_tap CAPSLOCK 11    &mt LEFT_ALT LA(TAB)  &mt LEFT_SHIFT LEFT_WIN  &short_layer_tap 3 SPACE  &kp LEFT_SHIFT
+&mo_tap 7 BACKSPACE  &kp N1  &kp N2  &kp N3            &kp N4                             &kp N5                                                  &kp N6                               &kp N7                    &kp N8          &kp N9   &kp N0        &kp BACKSPACE
+&kp TAB              &kp Q   &kp W   &kp E             &kp R                              &kp T                                                   &kp Y                                &kp U                     &kp I           &kp O    &kp P         &kp MINUS
+&kp LCTRL            &kp A   &kp S   &kp D             &kp F                              &kp G                                                   &kp H                                &kp J                     &kp K           &kp L    &kp SEMI      &short_layer_tap 11 ENTER
+&mkp LCLK            &kp Z   &kp X   &kp C             &kp V                              &kp B      &lt 4 N                &lt 4 B               &kp N                                &kp M                     &kp COMMA       &kp DOT  &kp QUESTION  &kp ENTER
+                                     &lt 8 LEFT_SHIFT  &custom_hold_tap LEFT_SHIFT SPACE  &kp SPACE  &to_tap CAPSLOCK 11    &mt LEFT_ALT LA(TAB)  &custom_hold_tap LEFT_WIN BACKSPACE  &short_layer_tap 3 SPACE  &kp LEFT_SHIFT
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
