@@ -294,7 +294,7 @@
 &kp ESCAPE               &kp LS(NUMBER_1)        &kp LS(NUMBER_2)  &kp LS(NUMBER_3)         &kp LS(NUMBER_4)      &kp LS(N5)                                 &kp LS(NUMBER_6)  &kp LS(N7)            &kp LS(N8)             &kp LS(N9)        &kp LS(N0)                &kp DELETE
 &mt LC(LS(Z)) LC(LS(Z))  &kp LS(LC(LEFT_ARROW))  &kp UP_ARROW      &kp LS(LC(RIGHT_ARROW))  &kp LS(LC(UP_ARROW))  &msc SCROLL_UP                             &trans            &kp LC(LS(UP_ARROW))  &kp LS(LEFT_BRACKET)   &kp LS(NUMBER_4)  &kp LS(NON_US_BACKSLASH)  &kp LS(MINUS)
 &mt LC(Y) LC(Y)          &kp LEFT_ARROW          &kp DOWN          &kp RIGHT                &kp LC(LS(R))         &msc SCROLL_DOWN                           &trans            &kp LC(LS(DOWN))      &kp LS(RIGHT_BRACKET)  &kp LS(SQT)       &kp LS(SEMICOLON)         &kp LS(ENTER)
-&mkp LCLK                &kp LC(Z)               &kp LC(X)         &kp LC(C)                &kp LC(V)             &kp LC(LS(Z))     &trans    &trans         &trans            &kp SQT               &kp LS(COMMA)          &kp LS(PERIOD)    &kp SLASH                 &trans
+&mkp LCLK                &kp LC(Z)               &kp LC(X)         &kp LC(C)                &kp LC(V)             &kp LC(LS(Z))     &trans    &trans         &kp SQT           &kp SQT               &kp LS(COMMA)          &kp LS(PERIOD)    &kp SLASH                 &trans
                                                                    &mo 7                    &mo_tap 7 SPACE       &kp LC(Z)         &to 5     &kp LC(SLASH)  &kp END           &kp LSHFT             &kp LEFT_WIN
             >;
         };
