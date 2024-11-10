@@ -365,7 +365,7 @@
 &kp F7  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp ASTERISK  &kp F10                      &trans  &trans  &trans  &trans   &trans   &trans
 &kp F8  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp PLUS      &kp F11                      &trans  &trans  &trans  &trans   &trans   &trans
 &kp F9  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp MINUS     &kp F12    &trans    &trans  &trans  &trans  &trans  &trans   &trans   &trans
-                                    &kp NUMBER_0  &kp EQUAL     &kp SLASH  &trans    &trans  &trans  &trans  &trans
+                                    &kp NUMBER_0  &kp EQUAL     &kp SLASH  &to 0     &trans  &trans  &trans  &trans
             >;
         };
     };
