@@ -378,9 +378,9 @@
         numpad {
             bindings = <
 &kp F1   &kp F2        &kp F3        &kp F4        &kp F5        &kp F6                                &kp F7  &kp F8  &kp F9  &kp F10  &kp F11  &kp BACKSPACE
-&kp F7   &kp NUMBER_7  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp ASTERISK                          &trans  &trans  &trans  &trans   &trans   &kp F12
-&kp F9   &kp NUMBER_4  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp PLUS                              &trans  &trans  &trans  &trans   &trans   &kp ENTER
-&kp F11  &kp NUMBER_1  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp MINUS     &trans    &trans        &trans  &trans  &trans  &trans   &trans   &trans
+&kp F7   &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_9  &kp ASTERISK                          &trans  &trans  &trans  &trans   &trans   &kp F12
+&kp F9   &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp NUMBER_6  &kp PLUS                              &trans  &trans  &trans  &trans   &trans   &kp ENTER
+&kp F11  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_3  &kp MINUS     &trans    &trans        &trans  &trans  &trans  &trans   &trans   &trans
                                      &kp EQUAL     &kp SPACE     &kp NUMBER_0  &to 0     &kp CAPSLOCK  &trans  &mo 3   &trans
             >;
         };
