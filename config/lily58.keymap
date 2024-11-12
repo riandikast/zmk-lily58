@@ -263,6 +263,20 @@
             #binding-cells = <2>;
             tapping-term-ms = <240>;
         };
+
+        username_pc_kantor: username_pc_kantor {
+            compatible = "zmk,behavior-send-string";
+            label = "USERNAME_PC_KANTOR";
+            #binding-cells = <0>;
+            text = "Administrator";
+        };
+
+        pw_pc_kantor: pw_pc_kantor {
+            compatible = "zmk,behavior-send-string";
+            label = "PW_PC_KANTOR";
+            #binding-cells = <0>;
+            text = "g4p.P0nc0L@13740";
+        };
     };
 
     keymap {
@@ -381,7 +395,7 @@
 
         mouse_layerr {
             bindings = <
-&kp DELETE      &kp CAPS                 &kp LC(R)                &kp LC(LS(F))             &trans                      &kp NUMBER_6                    &kp N5  &trans  &trans  &trans  &trans  &trans
+&kp DELETE      &kp CAPS                 &username_pc_kantor      &pw_pc_kantor             &trans                      &kp NUMBER_6                    &kp N5  &trans  &trans  &trans  &trans  &trans
 &kp LA(TAB)     &mkp RCLK                &faster_mouse MOVE_UP    &mkp RCLK                 &faster_scroll SCROLL_UP    &kp Y                           &kp T   &trans  &trans  &trans  &trans  &trans
 &mkp LCLK       &faster_mouse MOVE_LEFT  &faster_mouse MOVE_DOWN  &faster_mouse MOVE_RIGHT  &kp LC(F)                   &kp H                           &kp G   &trans  &trans  &trans  &trans  &trans
 &sk LEFT_SHIFT  &msc SCROLL_LEFT         &msc SCROLL_RIGHT        &mkp LCLK                 &faster_scroll SCROLL_DOWN  &kp N         &trans    &trans  &kp B   &trans  &trans  &trans  &trans  &trans
