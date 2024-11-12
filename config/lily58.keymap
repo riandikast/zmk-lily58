@@ -131,6 +131,20 @@
 
             label = "HOLD_LEFT_CLICK";
         };
+
+        username_pc_kantor: username_pc_kantor {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(A) &kp D &kp M &kp I &kp N &kp I &kp S &kp T &kp R &kp A &kp T &kp O &kp R>;
+            label = "USERNAME_PC_KANTOR";
+        };
+
+        pw_pc_kantor: pw_pc_kantor {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none &kp G &kp N4 &kp P &kp DOT &kp LS(P) &kp N0 &kp N &kp C &kp N0 &kp LS(L) &kp AT &kp N1 &kp N3 &kp N7 &kp N4 &kp N0>;
+            label = "PW_PC_KANTOR";
+        };
     };
 
     behaviors {
@@ -270,20 +284,6 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <240>;
-        };
-
-        username_pc_kantor: username_pc_kantor {
-            compatible = "zmk,behavior-send-string";
-            label = "USERNAME_PC_KANTOR";
-            #binding-cells = <0>;
-            text = "Administrator";
-        };
-
-        pw_pc_kantor: pw_pc_kantor {
-            compatible = "zmk,behavior-send-string";
-            label = "PW_PC_KANTOR";
-            #binding-cells = <0>;
-            text = "g4p.P0nc0L@13740";
         };
     };
 
