@@ -200,9 +200,9 @@
             tapping-term-ms = <300>;
         };
 
-        to_tap: to_tap {
+        hodlTo_tapKp: hodlTo_tapKp {
             compatible = "zmk,behavior-hold-tap";
-            label = "TO_TAP";
+            label = "HODLTO_TAPKP";
             bindings = <&kp>, <&to>;
 
             #binding-cells = <2>;
@@ -254,6 +254,15 @@
             #binding-cells = <2>;
             tapping-term-ms = <240>;
         };
+
+        tapKp_holdTo: tapKp_holdTo {
+            compatible = "zmk,behavior-hold-tap";
+            label = "TAPKP_HOLDTO";
+            bindings = <&to>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <240>;
+        };
     };
 
     keymap {
@@ -268,11 +277,11 @@
             //                     | ALT  | GUI  | LOWER|  ENTER |  | SPACE | RAISE| BSPC  | GUI   |
 
             bindings = <
-&mo_tap 7 BACKSPACE  &kp N1  &kp N2  &kp N3            &kp N4                             &kp N5                                                 &kp N6                               &kp N7                 &kp N8          &kp N9   &kp N0        &kp BACKSPACE
-&kp TAB              &kp Q   &kp W   &kp E             &kp R                              &kp T                                                  &kp Y                                &kp U                  &kp I           &kp O    &kp P         &kp MINUS
-&kp LCTRL            &kp A   &kp S   &kp D             &kp F                              &kp G                                                  &kp H                                &kp J                  &kp K           &kp L    &kp SEMI      &short_layer_tap 11 ENTER
-&mkp LCLK            &kp Z   &kp X   &kp C             &kp V                              &kp B      &lt 4 N               &lt 4 B               &kp N                                &kp M                  &kp COMMA       &kp DOT  &kp QUESTION  &kp ENTER
-                                     &lt 8 LEFT_SHIFT  &custom_hold_tap LEFT_SHIFT SPACE  &kp SPACE  &to_tap CAPSLOCK 7    &mt LEFT_ALT LA(TAB)  &custom_hold_tap LEFT_WIN BACKSPACE  &mo_with_tapdance 3 0  &kp LEFT_SHIFT
+&tapKp_holdTo 11 BACKSPACE  &kp N1  &kp N2  &kp N3            &kp N4                             &kp N5                                                       &kp N6                               &kp N7                 &kp N8          &kp N9   &kp N0        &kp BACKSPACE
+&kp TAB                     &kp Q   &kp W   &kp E             &kp R                              &kp T                                                        &kp Y                                &kp U                  &kp I           &kp O    &kp P         &kp MINUS
+&kp LCTRL                   &kp A   &kp S   &kp D             &kp F                              &kp G                                                        &kp H                                &kp J                  &kp K           &kp L    &kp SEMI      &short_layer_tap 11 ENTER
+&mkp LCLK                   &kp Z   &kp X   &kp C             &kp V                              &kp B      &lt 4 N                     &lt 4 B               &kp N                                &kp M                  &kp COMMA       &kp DOT  &kp QUESTION  &kp ENTER
+                                            &lt 8 LEFT_SHIFT  &custom_hold_tap LEFT_SHIFT SPACE  &kp SPACE  &hodlTo_tapKp CAPSLOCK 7    &mt LEFT_ALT LA(TAB)  &custom_hold_tap LEFT_WIN BACKSPACE  &mo_with_tapdance 3 0  &kp LEFT_SHIFT
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
