@@ -299,10 +299,10 @@
             //                     | ALT  | GUI  | LOWER|  ENTER |  | SPACE | RAISE| BSPC  | GUI   |
 
             bindings = <
-&tapKp_holdTo 11 BACKSPACE  &kp N1  &kp N2  &kp N3            &kp N4                             &kp N5                                                       &kp N6                               &kp N7                 &kp N8          &kp N9   &kp N0        &kp BACKSPACE
-&kp TAB                     &kp Q   &kp W   &kp E             &kp R                              &kp T                                                        &kp Y                                &kp U                  &kp I           &kp O    &kp P         &kp MINUS
-&kp LCTRL                   &kp A   &kp S   &kp D             &kp F                              &kp G                                                        &kp H                                &kp J                  &kp K           &kp L    &kp SEMI      &short_layer_tap 11 ENTER
-&mkp LCLK                   &kp Z   &kp X   &kp C             &kp V                              &kp B      &lt 4 N                     &lt 4 B               &kp N                                &kp M                  &kp COMMA       &kp DOT  &kp QUESTION  &kp ENTER
+&tapKp_holdTo 11 BACKSPACE  &kp N1  &kp N2  &kp N3            &kp N4                             &kp N5                                                       &kp N6                               &kp N7                 &kp N8          &kp N9   &kp N0     &kp BACKSPACE
+&kp TAB                     &kp Q   &kp W   &kp E             &kp R                              &kp T                                                        &kp Y                                &kp U                  &kp I           &kp O    &kp P      &kp MINUS
+&kp LCTRL                   &kp A   &kp S   &kp D             &kp F                              &kp G                                                        &kp H                                &kp J                  &kp K           &kp L    &kp SEMI   &short_layer_tap 11 ENTER
+&mkp LCLK                   &kp Z   &kp X   &kp C             &kp V                              &kp B      &lt 4 N                     &lt 4 B               &kp N                                &kp M                  &kp COMMA       &kp DOT  &kp SLASH  &kp ENTER
                                             &lt 8 LEFT_SHIFT  &custom_hold_tap LEFT_SHIFT SPACE  &kp SPACE  &hodlTo_tapKp CAPSLOCK 7    &mt LEFT_ALT LA(TAB)  &custom_hold_tap LEFT_WIN BACKSPACE  &mo_with_tapdance 3 0  &kp LEFT_SHIFT
             >;
 
@@ -352,7 +352,7 @@
 &kp ESCAPE               &kp LS(NUMBER_1)  &kp LS(NUMBER_2)  &kp LS(NUMBER_3)  &kp LS(NUMBER_4)  &kp LS(N5)                                 &kp LS(NUMBER_6)  &kp LS(N7)            &kp LS(N8)             &kp LS(N9)        &kp LS(N0)                &kp DELETE
 &mt LC(LS(Z)) LC(LS(Z))  &kp NUMBER_7      &kp NUMBER_8      &kp NUMBER_9      &kp MINUS         &msc SCROLL_UP                             &trans            &kp LC(LS(UP_ARROW))  &kp LS(LEFT_BRACKET)   &kp LS(NUMBER_4)  &kp LS(NON_US_BACKSLASH)  &kp LS(MINUS)
 &kp NUMBER_0             &kp NUMBER_4      &kp NUMBER_5      &kp NUMBER_6      &kp PLUS          &msc SCROLL_DOWN                           &trans            &kp LC(LS(DOWN))      &kp LS(RIGHT_BRACKET)  &kp LS(SQT)       &kp LS(SEMICOLON)         &kp LS(ENTER)
-&mkp LCLK                &kp NUMBER_1      &kp NUMBER_2      &kp NUMBER_3      &kp EQUAL         &kp LC(LS(Z))     &trans    &trans         &kp SQT           &kp SQT               &kp LS(COMMA)          &kp LS(PERIOD)    &kp SLASH                 &trans
+&mkp LCLK                &kp NUMBER_1      &kp NUMBER_2      &kp NUMBER_3      &kp EQUAL         &kp LC(LS(Z))     &trans    &trans         &kp SQT           &kp SQT               &kp LS(COMMA)          &kp LS(PERIOD)    &kp QUESTION              &trans
                                                              &mo 7             &mo_tap 7 SPACE   &kp LC(NUMBER_0)  &to 5     &kp LC(SLASH)  &kp END           &kp LSHFT             &kp LEFT_WIN
             >;
         };
