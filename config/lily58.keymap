@@ -123,6 +123,14 @@
 
             label = "SPAM_F";
         };
+
+        hold_left_click: hold_left_click {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press>, <&mkp MB1>;
+
+            label = "HOLD_LEFT_CLICK";
+        };
     };
 
     behaviors {
@@ -361,11 +369,11 @@
 
         game_layer {
             bindings = <
-&kp M      &kp N1  &kp N2  &kp N3                          &kp N4     &kp N5                                                &kp N6        &kp N7     &kp N8     &kp N9   &kp N0    &kp BACKSPACE
-&kp TAB    &kp Q   &kp W   &kp E                           &kp R      &kp T                                                 &kp Y         &kp U      &kp I      &kp O    &kp P     &kp MINUS
-&kp LCTRL  &kp A   &kp S   &kp D                           &kp F      &kp G                                                 &kp H         &kp J      &kp K      &kp L    &kp SEMI  &kp ENTER
-&mkp LCLK  &kp Z   &kp X   &kp C                           &kp V      &kp B         &kp LEFT_WIN    &kp LG(LC(LEFT_ARROW))  &kp N         &kp M      &kp COMMA  &kp DOT  &kp FSLH  &kp ENTER
-                           &stickyLayer_tap 10 LEFT_SHIFT  &kp SPACE  &kp LEFT_ALT  &to_to 6 0      &kp LG(LS(Q))           &kp LEFT_WIN  &kp RSHFT  &to 0
+&kp M      &kp N1  &kp N2                         &kp N3                          &kp N4     &kp N5                                                                   &kp N6        &kp N7     &kp N8     &kp N9   &kp N0    &kp BACKSPACE
+&kp TAB    &kp Q   &kp W                          &kp E                           &kp R      &kp T                                                                    &kp Y         &kp U      &kp I      &kp O    &kp P     &kp MINUS
+&kp LCTRL  &kp A   &kp S                          &kp D                           &kp F      &kp G                                                                    &kp H         &kp J      &kp K      &kp L    &kp SEMI  &kp ENTER
+&mkp LCLK  &kp Z   &custom_hold_tap LEFT_SHIFT X  &kp C                           &kp V      &kp B                            &kp LEFT_WIN    &kp LG(LC(LEFT_ARROW))  &kp N         &kp M      &kp COMMA  &kp DOT  &kp FSLH  &kp ENTER
+                                                  &stickyLayer_tap 10 LEFT_SHIFT  &kp SPACE  &custom_hold_tap LEFT_ALT SPACE  &to_to 6 0      &kp LG(LS(Q))           &kp LEFT_WIN  &kp RSHFT  &to 0
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -418,7 +426,7 @@
         additional_game_layer {
             bindings = <
 &kp ESCAPE     &kp LA(NUMBER_1)  &kp LA(NUMBER_2)  &kp LA(NUMBER_3)  &kp LA(NUMBER_4)  &trans                                  &trans  &trans  &trans  &trans  &trans  &trans
-&kp LG(LS(Q))  &kp LEFT_WIN      &kt W             &kp LA(TAB)       &trans            &trans                                  &trans  &trans  &trans  &trans  &trans  &trans
+&kp LG(LS(Q))  &hold_left_click  &kt W             &kp LA(TAB)       &trans            &trans                                  &trans  &trans  &trans  &trans  &trans  &trans
 &kp T          &kt A             &kt S             &kt D             &spam_f           &trans                                  &trans  &trans  &trans  &trans  &trans  &trans
 &trans         &trans            &kt X             &kt LEFT_SHIFT    &trans            &trans         &trans           &trans  &trans  &trans  &trans  &trans  &trans  &trans
                                                    &to 5             &trans            &kp LA(ENTER)  &kp LG(LS(Q))    &trans  &trans  &trans  &trans
