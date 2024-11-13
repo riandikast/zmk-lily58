@@ -261,7 +261,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "RSHIFT_TAP_DANCE";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_SHIFT>, <&to 7>;
+            bindings = <&to 7>, <&to 4>, <&to 8>, <&to 5>;
 
             tapping-term-ms = <399>;
         };
