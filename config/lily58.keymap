@@ -226,7 +226,7 @@
             bindings = <&mo>, <&to>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <300>;
+            tapping-term-ms = <235>;
         };
 
         hodlTo_tapKp: hodlTo_tapKp {
@@ -292,6 +292,51 @@
             #binding-cells = <2>;
             tapping-term-ms = <240>;
         };
+
+        tapTo_holdBootloader: tapTo_holdBootloader {
+            compatible = "zmk,behavior-hold-tap";
+            label = "TAPTO_HOLDBOOTLOADER";
+            bindings = <&bootloader>, <&to>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <240>;
+        };
+
+        tapKp_Bootloader: tapKp_Bootloader {
+            compatible = "zmk,behavior-hold-tap";
+            label = "TAPKP_BOOTLOADER";
+            bindings = <&bootloader>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <240>;
+        };
+
+        tapKp_holdSysReset: tapKp_holdSysReset {
+            compatible = "zmk,behavior-hold-tap";
+            label = "TAPKP_HOLDSYSRESET";
+            bindings = <&sys_reset>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <240>;
+        };
+
+        leftShiftTapDance: leftShiftTapDance {
+            compatible = "zmk,behavior-tap-dance";
+            label = "LEFTSHIFTTAPDANCE";
+            #binding-cells = <0>;
+            bindings = <&to 8>, <&to 3>;
+
+            tapping-term-ms = <400>;
+        };
+
+        mo_leftShiftTapDance: mo_leftShiftTapDance {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MO_LEFTSHIFTTAPDANCE";
+            bindings = <&mo>, <&leftShiftTapDance>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <240>;
+        };
     };
 
     keymap {
@@ -306,11 +351,11 @@
             //                     | ALT  | GUI  | LOWER|  ENTER |  | SPACE | RAISE| BSPC  | GUI   |
 
             bindings = <
-&tapKp_holdTo 3 BACKSPACE  &kp N1  &kp N2  &kp N3            &kp N4                             &kp N5                                                       &kp N6                               &kp N7                 &kp N8          &kp N9   &kp N0     &kp BACKSPACE
-&kp TAB                    &kp Q   &kp W   &kp E             &kp R                              &kp T                                                        &kp Y                                &kp U                  &kp I           &kp O    &kp P      &kp MINUS
-&kp LCTRL                  &kp A   &kp S   &kp D             &kp F                              &kp G                                                        &kp H                                &kp J                  &kp K           &kp L    &kp SEMI   &short_layer_tap 7 ENTER
-&mkp LCLK                  &kp Z   &kp X   &kp C             &kp V                              &kp B      &lt 4 N                     &lt 4 B               &kp N                                &kp M                  &kp COMMA       &kp DOT  &kp SLASH  &kp ENTER
-                                           &lt 8 LEFT_SHIFT  &custom_hold_tap LEFT_SHIFT SPACE  &kp SPACE  &hodlTo_tapKp CAPSLOCK 7    &mt LEFT_ALT LA(TAB)  &custom_hold_tap LEFT_WIN BACKSPACE  &mo_with_tapdance 3 0  &kp LEFT_SHIFT
+&kp BACKSPACE  &kp N1  &kp N2  &kp N3                     &kp N4                             &kp N5                                                              &kp N6                               &kp N7                 &kp N8          &kp N9   &kp N0     &kp BACKSPACE
+&kp TAB        &kp Q   &kp W   &kp E                      &kp R                              &kp T                                                               &kp Y                                &kp U                  &kp I           &kp O    &kp P      &kp MINUS
+&kp LCTRL      &kp A   &kp S   &kp D                      &kp F                              &kp G                                                               &kp H                                &kp J                  &kp K           &kp L    &kp SEMI   &short_layer_tap 7 ENTER
+&mkp LCLK      &kp Z   &kp X   &kp C                      &kp V                              &kp B      &lt 4 N                            &lt 4 B               &kp N                                &kp M                  &kp COMMA       &kp DOT  &kp SLASH  &kp ENTER
+                               &mo_leftShiftTapDance 7 0  &custom_hold_tap LEFT_SHIFT SPACE  &kp SPACE  &custom_hold_tap CAPSLOCK ENTER    &mt LEFT_ALT LA(TAB)  &custom_hold_tap LEFT_WIN BACKSPACE  &mo_with_tapdance 3 0  &kp LEFT_SHIFT
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -360,17 +405,17 @@
 &mt LC(LS(Z)) LC(LS(Z))  &kp NUMBER_7      &kp NUMBER_8      &kp NUMBER_9      &kp MINUS         &msc SCROLL_UP                                  &trans            &kp LC(LS(UP_ARROW))  &kp LS(LEFT_BRACKET)   &kp LS(NUMBER_4)  &kp LS(NON_US_BACKSLASH)  &kp LS(MINUS)
 &kp NUMBER_0             &kp NUMBER_4      &kp NUMBER_5      &kp NUMBER_6      &kp PLUS          &msc SCROLL_DOWN                                &trans            &kp LC(LS(DOWN))      &kp LS(RIGHT_BRACKET)  &kp LS(SQT)       &kp LS(SEMICOLON)         &kp LS(ENTER)
 &mkp LCLK                &kp NUMBER_1      &kp NUMBER_2      &kp NUMBER_3      &kp EQUAL         &kp LC(LS(Z))          &trans    &trans         &kp SQT           &kp SQT               &kp LS(COMMA)          &kp LS(PERIOD)    &kp QUESTION              &trans
-                                                             &mo 7             &mo_tap 7 SPACE   &tapKp_holdTo 0 SPACE  &to 5     &kp LC(SLASH)  &kp END           &kp LSHFT             &kp LEFT_WIN
+                                                             &mo 7             &mo_tap 7 SPACE   &tapKp_holdTo 0 SPACE  &to 0     &kp LC(SLASH)  &kp END           &kp LSHFT             &kp LEFT_WIN
             >;
         };
 
         connection_layer {
             bindings = <
-&kp GRAVE     &kp F1        &kp F2        &kp F3        &kp F4        &kp F5                                 &kp F6        &kp F7  &kp F8  &kp F9  &kp F10  &kp F11
-&bt BT_CLR    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                           &trans        &trans  &trans  &trans  &trans   &kp F12
-&trans        &trans        &trans        &trans        &trans        &kp LG(LS(Q))                          &trans        &trans  &trans  &trans  &trans   &trans
-&kp LEFT_WIN  &kp LEFT_WIN  &trans        &trans        &trans        &trans         &trans    &trans        &trans        &trans  &trans  &trans  &trans   &trans
-                                          &kp LSHFT     &kp LSHFT     &kp SPACE      &to 0     &kp LEFT_ALT  &kp LEFT_WIN  &trans  &trans
+&kp GRAVE     &kp F1        &kp F2        &kp F3        &kp F4        &kp F5                                                                                  &kp F6                          &kp F7  &kp F8  &kp F9  &kp F10  &kp F11
+&bt BT_CLR    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                                                                            &trans                          &trans  &trans  &trans  &trans   &kp F12
+&trans        &trans        &trans        &trans        &trans        &kp LG(LS(Q))                                                                           &trans                          &trans  &trans  &trans  &trans   &trans
+&kp LEFT_WIN  &kp LEFT_WIN  &trans        &trans        &trans        &trans                       &trans                       &trans                        &trans                          &trans  &trans  &trans  &trans   &trans
+                                          &kp LSHFT     &kp LSHFT     &tapKp_holdSysReset 0 SPACE  &tapTo_holdBootloader 0 0    &tapKp_Bootloader 0 LEFT_ALT  &tapKp_holdSysReset 0 LEFT_WIN  &trans  &trans
             >;
         };
 
@@ -403,8 +448,8 @@
 &kp TILDE       &kp LC(C)               &kp LC(V)     &kp LC(A)          &kp LA(F4)       &trans                   &trans        &trans  &trans     &kp LG(LS(A))  &kp LG(LS(S))         &kp DEL
 &kp LG(LS(Q))   &kp LC(LS(LEFT_ARROW))  &kp UP_ARROW  &kp LC(LS(RIGHT))  &trans           &trans                   &trans        &trans  &trans     &kp LC(LS(F))  &kp NON_US_BACKSLASH  &kp EQUAL
 &kp LEFT_SHIFT  &kp LEFT_ARROW          &kp DOWN      &kp RIGHT          &block_and_copy  &trans                   &trans        &trans  &trans     &kp SQT        &kp PLUS              &kp ENTER
-&mkp LCLK       &kp HOME                &trans        &kp END            &replace         &trans  &to 5    &trans  &trans        &trans  &kp GRAVE  &trans         &trans                &trans
-                                                      &sk LEFT_SHIFT     &kp SPACE        &mo 9   &to 0    &trans  &kp LEFT_ALT  &to 0   &trans
+&mkp LCLK       &kp HOME                &to 5         &kp END            &replace         &trans  &to 5    &trans  &trans        &trans  &kp GRAVE  &trans         &trans                &trans
+                                                      &to 0              &kp SPACE        &mo 9   &to 0    &trans  &kp LEFT_ALT  &to 0   &trans
             >;
         };
 
@@ -414,7 +459,7 @@
 &kp LA(TAB)     &mkp RCLK                &faster_mouse MOVE_UP    &mkp RCLK                 &faster_scroll SCROLL_UP    &kp Y                           &kp T   &trans  &trans  &trans  &trans  &trans
 &mkp LCLK       &faster_mouse MOVE_LEFT  &faster_mouse MOVE_DOWN  &faster_mouse MOVE_RIGHT  &kp LC(F)                   &kp H                           &kp G   &trans  &trans  &trans  &trans  &trans
 &sk LEFT_SHIFT  &msc SCROLL_LEFT         &msc SCROLL_RIGHT        &mkp LCLK                 &faster_scroll SCROLL_DOWN  &kp N         &trans    &trans  &kp B   &trans  &trans  &trans  &trans  &trans
-                                                                  &none                     &trans                      &trans        &to 5     &trans  &trans  &trans  &trans
+                                                                  &to 0                     &trans                      &trans        &to 5     &trans  &trans  &trans  &trans
             >;
         };
 
