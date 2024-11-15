@@ -152,6 +152,46 @@
             bindings = <&none &kp LS(D) &kp N1 &kp LS(K) &kp N4 &kp DOT &kp N2 &kp N0 &kp N2 &kp N4>;
             label = "PASS_WINDOWS_KANTOR";
         };
+
+        hold_scroll_up: hold_scroll_up {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press>, <&msc SCROLL_UP>;
+
+            label = "HOLD_SCROLL_UP";
+        };
+
+        release_left_click: release_left_click {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_release>, <&mkp MB1>;
+
+            label = "RELEASE_LEFT_CLICK";
+        };
+
+        release_scroll_up: release_scroll_up {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_release>, <&msc SCROLL_UP>;
+
+            label = "RELEASE_SCROLL_UP";
+        };
+
+        hold_scroll_down: hold_scroll_down {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press>, <&msc SCROLL_DOWN>;
+
+            label = "HOLD_SCROLL_DOWN";
+        };
+
+        relase_scroll_down: relase_scroll_down {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_release>, <&msc SCROLL_DOWN>;
+
+            label = "RELASE_SCROLL_DOWN";
+        };
     };
 
     behaviors {
@@ -337,6 +377,31 @@
             #binding-cells = <2>;
             tapping-term-ms = <240>;
         };
+
+        hold_left_click_tap_dance: hold_left_click_tap_dance {
+            compatible = "zmk,behavior-tap-dance";
+            label = "HOLD_LEFT_CLICK_TAP_DANCE";
+            #binding-cells = <0>;
+            bindings = <&hold_left_click>, <&release_left_click>;
+
+            tapping-term-ms = <400>;
+        };
+
+        scroll_up_tap_dance: scroll_up_tap_dance {
+            compatible = "zmk,behavior-tap-dance";
+            label = "SCROLL_UP_TAP_DANCE";
+            #binding-cells = <0>;
+            tapping-term-ms = <400>;
+            bindings = <&hold_scroll_up>, <&release_scroll_up>;
+        };
+
+        scroll_down_tap_dance: scroll_down_tap_dance {
+            compatible = "zmk,behavior-tap-dance";
+            label = "SCROLL_DOWN_TAP_DANCE";
+            #binding-cells = <0>;
+            tapping-term-ms = <400>;
+            bindings = <&hold_scroll_down>, <&relase_scroll_down>;
+        };
     };
 
     keymap {
@@ -456,11 +521,11 @@
 
         mouse_layerr {
             bindings = <
-&kp DELETE      &kp CAPS                 &username_pc_kantor      &pw_pc_kantor             &pass_windows_kantor  &kp NUMBER_6                    &kp N5  &trans  &trans  &trans  &trans  &trans
-&kp LA(TAB)     &mkp RCLK                &faster_mouse MOVE_UP    &mkp RCLK                 &msc SCROLL_HOR 20    &kp Y                           &kp T   &trans  &trans  &trans  &trans  &trans
-&mkp LCLK       &faster_mouse MOVE_LEFT  &faster_mouse MOVE_DOWN  &faster_mouse MOVE_RIGHT  &kp LC(F)             &kp H                           &kp G   &trans  &trans  &trans  &trans  &trans
-&sk LEFT_SHIFT  &msc SCROLL_LEFT         &msc SCROLL_RIGHT        &mkp LCLK                 &msc SCROLL_HOR -20   &kp N         &trans    &trans  &kp B   &trans  &trans  &trans  &trans  &trans
-                                                                  &to 0                     &trans                &trans        &to 0     &trans  &trans  &trans  &trans
+&kp DELETE      &kp CAPS                 &username_pc_kantor      &pw_pc_kantor             &pass_windows_kantor    &kp NUMBER_6                    &kp N5  &trans  &trans  &trans  &trans  &trans
+&kp LA(TAB)     &mkp RCLK                &faster_mouse MOVE_UP    &mkp RCLK                 &scroll_up_tap_dance    &kp Y                           &kp T   &trans  &trans  &trans  &trans  &trans
+&mkp LCLK       &faster_mouse MOVE_LEFT  &faster_mouse MOVE_DOWN  &faster_mouse MOVE_RIGHT  &kp LC(F)               &kp H                           &kp G   &trans  &trans  &trans  &trans  &trans
+&sk LEFT_SHIFT  &msc SCROLL_LEFT         &msc SCROLL_RIGHT        &mkp LCLK                 &scroll_down_tap_dance  &kp N         &trans    &trans  &kp B   &trans  &trans  &trans  &trans  &trans
+                                                                  &to 0                     &trans                  &trans        &to 0     &trans  &trans  &trans  &trans
             >;
         };
 
@@ -478,11 +543,11 @@
 
         additional_game_layer {
             bindings = <
-&kp ESCAPE     &kp LA(NUMBER_1)  &kp LA(NUMBER_2)  &kp LA(NUMBER_3)  &kp LA(NUMBER_4)  &trans                                  &trans  &trans  &trans  &trans  &trans  &trans
-&kp LG(LS(Q))  &hold_left_click  &kt W             &kp LA(TAB)       &trans            &trans                                  &trans  &trans  &trans  &trans  &trans  &trans
-&kp T          &kt A             &kt S             &kt D             &spam_f           &trans                                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans         &trans            &kt X             &kt LEFT_SHIFT    &trans            &trans         &trans           &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                                                   &to 5             &trans            &kp LA(ENTER)  &kp LG(LS(Q))    &trans  &trans  &trans  &trans
+&kp ESCAPE     &kp LA(NUMBER_1)            &kp LA(NUMBER_2)  &kp LA(NUMBER_3)  &kp LA(NUMBER_4)  &trans                                  &trans  &trans  &trans  &trans  &trans  &trans
+&kp LG(LS(Q))  &hold_left_click_tap_dance  &kt W             &kp LA(TAB)       &trans            &trans                                  &trans  &trans  &trans  &trans  &trans  &trans
+&kp T          &kt A                       &kt S             &kt D             &spam_f           &trans                                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans         &trans                      &kt X             &kt LEFT_SHIFT    &trans            &trans         &trans           &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                                                             &to 5             &trans            &kp LA(ENTER)  &kp LG(LS(Q))    &trans  &trans  &trans  &trans
             >;
         };
 
