@@ -543,11 +543,11 @@
 
         additional_game_layer {
             bindings = <
-&kp ESCAPE     &kp LA(NUMBER_1)            &kp LA(NUMBER_2)  &kp LA(NUMBER_3)  &kp LA(NUMBER_4)  &trans                                  &trans  &trans  &trans  &trans  &trans  &trans
-&kp LG(LS(Q))  &hold_left_click_tap_dance  &kt W             &kp LA(TAB)       &trans            &trans                                  &trans  &trans  &trans  &trans  &trans  &trans
-&kp T          &kt A                       &kt S             &kt D             &spam_f           &trans                                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans         &trans                      &kt X             &kt LEFT_SHIFT    &trans            &trans         &trans           &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                                                             &to 5             &trans            &kp LA(ENTER)  &kp LG(LS(Q))    &trans  &trans  &trans  &trans
+&kp ESCAPE     &kp LA(NUMBER_1)            &kp LA(NUMBER_2)  &kp LA(NUMBER_3)     &kp LA(NUMBER_4)  &trans                                  &trans  &trans  &trans  &trans  &trans  &trans
+&kp LG(LS(Q))  &hold_left_click_tap_dance  &kt W             &release_left_click  &trans            &trans                                  &trans  &trans  &trans  &trans  &trans  &trans
+&kp T          &kt A                       &kt S             &kt D                &spam_f           &trans                                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans         &trans                      &kt X             &kt LEFT_SHIFT       &trans            &trans         &trans           &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                                                             &to 5                &trans            &kp LA(ENTER)  &kp LG(LS(Q))    &trans  &trans  &trans  &trans
             >;
         };
 
