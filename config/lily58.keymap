@@ -342,6 +342,7 @@
     keymap {
         compatible = "zmk,keymap";
         default_layer = <&connection_layer>;
+
         default_layer: default_layer {
             // ------------------------------------------------------------------------------------------------------------
             // |  ESC  |  1  |  2  |  3   |  4   |  5   |                   |  6   |  7    |  8    |  9   |   0   |   `   |
@@ -401,15 +402,15 @@
 
         symbol_layer {
             bindings = <
-&kp ESCAPE               &kp LS(NUMBER_1)  &kp LS(NUMBER_2)  &kp LS(NUMBER_3)  &kp LS(NUMBER_4)  &kp LS(N5)                                      &kp LS(NUMBER_6)  &kp LS(N7)            &kp LS(N8)             &kp LS(N9)        &kp LS(N0)                &kp BACKSPACE
-&mt LC(LS(Z)) LC(LS(Z))  &kp NUMBER_7      &kp NUMBER_8      &kp NUMBER_9      &kp MINUS         &msc SCROLL_UP                                  &trans            &kp LC(LS(UP_ARROW))  &kp LS(LEFT_BRACKET)   &kp LS(NUMBER_4)  &kp LS(NON_US_BACKSLASH)  &kp LS(MINUS)
-&kp NUMBER_0             &kp NUMBER_4      &kp NUMBER_5      &kp NUMBER_6      &kp PLUS          &msc SCROLL_DOWN                                &trans            &kp LC(LS(DOWN))      &kp LS(RIGHT_BRACKET)  &kp LS(SQT)       &kp LS(SEMICOLON)         &kp LS(ENTER)
-&mkp LCLK                &kp NUMBER_1      &kp NUMBER_2      &kp NUMBER_3      &kp EQUAL         &kp LC(LS(Z))          &trans    &trans         &kp SQT           &kp SQT               &kp LS(COMMA)          &kp LS(PERIOD)    &kp QUESTION              &trans
-                                                             &mo 7             &mo_tap 7 SPACE   &tapKp_holdTo 0 SPACE  &to 0     &kp LC(SLASH)  &kp END           &kp LSHFT             &kp LEFT_WIN
+&kp ESCAPE               &kp LS(NUMBER_1)  &kp LS(NUMBER_2)  &kp LS(NUMBER_3)  &kp LS(NUMBER_4)  &kp LS(N5)                                     &kp LS(NUMBER_6)  &kp LS(N7)            &kp LS(N8)             &kp LS(N9)        &kp LS(N0)                &kp BACKSPACE
+&mt LC(LS(Z)) LC(LS(Z))  &kp NUMBER_7      &kp NUMBER_8      &kp NUMBER_9      &kp MINUS         &msc SCROLL_UP                                 &trans            &kp LC(LS(UP_ARROW))  &kp LS(LEFT_BRACKET)   &kp LS(NUMBER_4)  &kp LS(NON_US_BACKSLASH)  &kp LS(MINUS)
+&kp NUMBER_0             &kp NUMBER_4      &kp NUMBER_5      &kp NUMBER_6      &kp PLUS          &msc SCROLL_DOWN                               &trans            &kp LC(LS(DOWN))      &kp LS(RIGHT_BRACKET)  &kp LS(SQT)       &kp LS(SEMICOLON)         &kp LS(ENTER)
+&mkp LCLK                &kp NUMBER_1      &kp NUMBER_2      &kp NUMBER_3      &kp EQUAL         &kp LC(LS(Z))          &to 5    &trans         &kp SQT           &kp SQT               &kp LS(COMMA)          &kp LS(PERIOD)    &kp QUESTION              &trans
+                                                             &mo 7             &mo_tap 7 SPACE   &tapKp_holdTo 0 SPACE  &to 0    &kp LC(SLASH)  &kp END           &kp LSHFT             &kp LEFT_WIN
             >;
         };
 
-        connection_layer: connection_layer  {
+        connection_layer: connection_layer {
             bindings = <
 &kp GRAVE     &kp F1        &kp F2        &kp F3        &kp F4        &kp F5                                                                                  &kp F6                          &kp F7  &kp F8  &kp F9  &kp F10  &kp F11
 &bt BT_CLR    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                                                                            &trans                          &trans  &trans  &trans  &trans   &kp F12
@@ -455,11 +456,11 @@
 
         mouse_layerr {
             bindings = <
-&kp DELETE      &kp CAPS                 &username_pc_kantor      &pw_pc_kantor             &pass_windows_kantor        &kp NUMBER_6                    &kp N5  &trans  &trans  &trans  &trans  &trans
-&kp LA(TAB)     &mkp RCLK                &faster_mouse MOVE_UP    &mkp RCLK                 &faster_scroll SCROLL_UP    &kp Y                           &kp T   &trans  &trans  &trans  &trans  &trans
-&mkp LCLK       &faster_mouse MOVE_LEFT  &faster_mouse MOVE_DOWN  &faster_mouse MOVE_RIGHT  &kp LC(F)                   &kp H                           &kp G   &trans  &trans  &trans  &trans  &trans
-&sk LEFT_SHIFT  &msc SCROLL_LEFT         &msc SCROLL_RIGHT        &mkp LCLK                 &faster_scroll SCROLL_DOWN  &kp N         &trans    &trans  &kp B   &trans  &trans  &trans  &trans  &trans
-                                                                  &to 0                     &trans                      &trans        &to 5     &trans  &trans  &trans  &trans
+&kp DELETE      &kp CAPS                 &username_pc_kantor      &pw_pc_kantor             &pass_windows_kantor  &kp NUMBER_6                    &kp N5  &trans  &trans  &trans  &trans  &trans
+&kp LA(TAB)     &mkp RCLK                &faster_mouse MOVE_UP    &mkp RCLK                 &msc SCROLL_HOR 20    &kp Y                           &kp T   &trans  &trans  &trans  &trans  &trans
+&mkp LCLK       &faster_mouse MOVE_LEFT  &faster_mouse MOVE_DOWN  &faster_mouse MOVE_RIGHT  &kp LC(F)             &kp H                           &kp G   &trans  &trans  &trans  &trans  &trans
+&sk LEFT_SHIFT  &msc SCROLL_LEFT         &msc SCROLL_RIGHT        &mkp LCLK                 &msc SCROLL_HOR -20   &kp N         &trans    &trans  &kp B   &trans  &trans  &trans  &trans  &trans
+                                                                  &to 0                     &trans                &trans        &to 0     &trans  &trans  &trans  &trans
             >;
         };
 
