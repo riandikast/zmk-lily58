@@ -402,6 +402,14 @@
             tapping-term-ms = <400>;
             bindings = <&hold_scroll_down>, <&relase_scroll_down>;
         };
+
+        caps_enter_tapdance: caps_enter_tapdance {
+            compatible = "zmk,behavior-tap-dance";
+            label = "CAPS_ENTER_TAPDANCE";
+            #binding-cells = <0>;
+            tapping-term-ms = <400>;
+            bindings = <&kp ENTER>, <&kp CAPS>;
+        };
     };
 
     keymap {
@@ -417,11 +425,11 @@
             //                     | ALT  | GUI  | LOWER|  ENTER |  | SPACE | RAISE| BSPC  | GUI   |
 
             bindings = <
-&kp BACKSPACE  &kp N1  &kp N2  &kp N3                     &kp N4                             &kp N5                                                              &kp N6                               &kp N7                 &kp N8          &kp N9   &kp N0     &kp BACKSPACE
-&kp TAB        &kp Q   &kp W   &kp E                      &kp R                              &kp T                                                               &kp Y                                &kp U                  &kp I           &kp O    &kp P      &kp MINUS
-&kp LCTRL      &kp A   &kp S   &kp D                      &kp F                              &kp G                                                               &kp H                                &kp J                  &kp K           &kp L    &kp SEMI   &short_layer_tap 7 ENTER
-&mkp LCLK      &kp Z   &kp X   &kp C                      &kp V                              &kp B      &lt 4 N                            &lt 4 B               &kp N                                &kp M                  &kp COMMA       &kp DOT  &kp SLASH  &kp ENTER
-                               &mo_leftShiftTapDance 7 0  &custom_hold_tap LEFT_SHIFT SPACE  &kp SPACE  &custom_hold_tap CAPSLOCK ENTER    &mt LEFT_ALT LA(TAB)  &custom_hold_tap LEFT_WIN BACKSPACE  &mo_with_tapdance 3 0  &kp LEFT_SHIFT
+&kp BACKSPACE  &kp N1  &kp N2  &kp N3                     &kp N4                             &kp N5                                                              &kp N6                               &kp N7                 &kp N8                             &kp N9   &kp N0     &kp BACKSPACE
+&kp TAB        &kp Q   &kp W   &kp E                      &kp R                              &kp T                                                               &kp Y                                &kp U                  &kp I                              &kp O    &kp P      &kp MINUS
+&kp LCTRL      &kp A   &kp S   &kp D                      &kp F                              &kp G                                                               &kp H                                &kp J                  &kp K                              &kp L    &kp SEMI   &short_layer_tap 7 ENTER
+&mkp LCLK      &kp Z   &kp X   &kp C                      &kp V                              &kp B      &lt 4 N                            &lt 4 B               &kp N                                &kp M                  &kp COMMA                          &kp DOT  &kp SLASH  &kp ENTER
+                               &mo_leftShiftTapDance 7 0  &custom_hold_tap LEFT_SHIFT SPACE  &kp SPACE  &custom_hold_tap CAPSLOCK ENTER    &mt LEFT_ALT LA(TAB)  &custom_hold_tap LEFT_WIN BACKSPACE  &mo_with_tapdance 3 0  &custom_hold_tap LEFT_SHIFT SPACE
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -471,7 +479,7 @@
 &mt LC(LS(Z)) LC(LS(Z))  &kp NUMBER_7      &kp NUMBER_8      &kp NUMBER_9      &kp MINUS         &msc SCROLL_UP                                 &trans            &kp LC(LS(UP_ARROW))  &kp LS(LEFT_BRACKET)   &kp LS(NUMBER_4)  &kp LS(NON_US_BACKSLASH)  &kp LS(MINUS)
 &kp NUMBER_0             &kp NUMBER_4      &kp NUMBER_5      &kp NUMBER_6      &kp PLUS          &msc SCROLL_DOWN                               &trans            &kp LC(LS(DOWN))      &kp LS(RIGHT_BRACKET)  &kp LS(SQT)       &kp LS(SEMICOLON)         &kp LS(ENTER)
 &mkp LCLK                &kp NUMBER_1      &kp NUMBER_2      &kp NUMBER_3      &kp EQUAL         &kp LC(LS(Z))          &to 5    &trans         &kp SQT           &kp SQT               &kp LS(COMMA)          &kp LS(PERIOD)    &kp QUESTION              &trans
-                                                             &mo 7             &mo_tap 7 SPACE   &tapKp_holdTo 0 SPACE  &to 0    &kp LC(SLASH)  &kp END           &kp LSHFT             &kp LEFT_WIN
+                                                             &mo 7             &mo_tap 7 SPACE   &tapKp_holdTo 0 SPACE  &to 0    &kp LC(SLASH)  &kp END           &kp LSHFT             &kp LEFT_SHIFT
             >;
         };
 
@@ -487,11 +495,11 @@
 
         game_layer {
             bindings = <
-&kp M      &kp N1  &kp N2                         &kp N3                          &kp N4     &kp N5                                                                   &kp N6        &kp N7     &kp N8     &kp N9   &kp N0    &kp BACKSPACE
-&kp TAB    &kp Q   &kp W                          &kp E                           &kp R      &kp T                                                                    &kp Y         &kp U      &kp I      &kp O    &kp P     &kp MINUS
-&kp LCTRL  &kp A   &kp S                          &kp D                           &kp F      &kp G                                                                    &kp H         &kp J      &kp K      &kp L    &kp SEMI  &kp ENTER
-&mkp LCLK  &kp Z   &custom_hold_tap LEFT_SHIFT X  &kp C                           &kp V      &kp B                            &kp LEFT_WIN    &kp LG(LC(LEFT_ARROW))  &kp N         &kp M      &kp COMMA  &kp DOT  &kp FSLH  &kp ENTER
-                                                  &stickyLayer_tap 10 LEFT_SHIFT  &kp SPACE  &custom_hold_tap LEFT_ALT SPACE  &to_to 6 0      &kp LG(LS(Q))           &kp LEFT_WIN  &kp RSHFT  &to 0
+&kp M      &kp N1  &kp N2                         &kp N3                          &kp N4     &kp N5                                                                   &kp N6        &kp N7                 &kp N8                             &kp N9   &kp N0    &kp BACKSPACE
+&kp TAB    &kp Q   &kp W                          &kp E                           &kp R      &kp T                                                                    &kp Y         &kp U                  &kp I                              &kp O    &kp P     &kp MINUS
+&kp LCTRL  &kp A   &kp S                          &kp D                           &kp F      &kp G                                                                    &kp H         &kp J                  &kp K                              &kp L    &kp SEMI  &kp ENTER
+&mkp LCLK  &kp Z   &custom_hold_tap LEFT_SHIFT X  &kp C                           &kp V      &kp B                            &kp LEFT_WIN    &kp LG(LC(LEFT_ARROW))  &kp N         &kp M                  &kp COMMA                          &kp DOT  &kp FSLH  &kp ENTER
+                                                  &stickyLayer_tap 10 LEFT_SHIFT  &kp SPACE  &custom_hold_tap LEFT_ALT SPACE  &to_to 6 0      &kp LG(LS(Q))           &kp LEFT_WIN  &mo_with_tapdance 3 0  &custom_hold_tap LEFT_SHIFT SPACE
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -511,18 +519,18 @@
 
         copy_paste_layer {
             bindings = <
-&kp TILDE       &kp LC(C)               &kp LC(V)     &kp LC(A)          &kp LA(F4)       &trans                   &trans        &trans  &trans     &kp LG(LS(A))  &kp LG(LS(S))         &kp DEL
-&kp LG(LS(Q))   &kp LC(LS(LEFT_ARROW))  &kp UP_ARROW  &kp LC(LS(RIGHT))  &trans           &trans                   &trans        &trans  &trans     &kp LC(LS(F))  &kp NON_US_BACKSLASH  &kp EQUAL
-&kp LEFT_SHIFT  &kp LEFT_ARROW          &kp DOWN      &kp RIGHT          &block_and_copy  &trans                   &trans        &trans  &trans     &kp SQT        &kp PLUS              &kp ENTER
-&mkp LCLK       &kp HOME                &to 5         &kp END            &replace         &trans  &to 5    &trans  &trans        &trans  &kp GRAVE  &trans         &trans                &trans
-                                                      &to 0              &kp SPACE        &mo 9   &to 0    &trans  &kp LEFT_ALT  &to 0   &trans
+&kp TILDE       &kp LC(C)               &kp LC(V)     &kp LC(A)          &kp LA(F4)       &trans                   &trans        &trans  &trans          &kp LG(LS(A))  &kp LG(LS(S))         &kp DEL
+&kp LG(LS(Q))   &kp LC(LS(LEFT_ARROW))  &kp UP_ARROW  &kp LC(LS(RIGHT))  &trans           &trans                   &trans        &trans  &trans          &kp LC(LS(F))  &kp NON_US_BACKSLASH  &kp EQUAL
+&kp LEFT_SHIFT  &kp LEFT_ARROW          &kp DOWN      &kp RIGHT          &block_and_copy  &trans                   &trans        &trans  &trans          &kp SQT        &kp PLUS              &kp ENTER
+&mkp LCLK       &kp HOME                &to 5         &kp END            &replace         &trans  &to 5    &trans  &trans        &trans  &kp GRAVE       &trans         &trans                &trans
+                                                      &to 0              &kp SPACE        &mo 9   &to 0    &trans  &kp LEFT_ALT  &to 0   &kp LEFT_SHIFT
             >;
         };
 
         mouse_layerr {
             bindings = <
-&kp DELETE      &kp CAPS                 &username_pc_kantor      &pw_pc_kantor             &pass_windows_kantor  &kp NUMBER_6                           &kp N5  &trans  &trans  &trans  &trans  &trans
-&kp LA(TAB)     &mkp RCLK                &faster_mouse MOVE_UP    &mkp RCLK                 &hold_scroll_up       &release_scroll_up                     &kp T   &trans  &trans  &trans  &trans  &trans
+&kp DELETE      &msc SCROLL_UP           &username_pc_kantor      &pw_pc_kantor             &pass_windows_kantor  &kp NUMBER_6                           &kp N5  &trans  &trans  &trans  &trans  &trans
+&kp LA(TAB)     &msc SCROLL_DOWN         &faster_mouse MOVE_UP    &mkp RCLK                 &hold_scroll_up       &release_scroll_up                     &kp T   &trans  &trans  &trans  &trans  &trans
 &mkp LCLK       &faster_mouse MOVE_LEFT  &faster_mouse MOVE_DOWN  &faster_mouse MOVE_RIGHT  &kp LC(F)             &kp H                                  &kp G   &trans  &trans  &trans  &trans  &trans
 &sk LEFT_SHIFT  &msc SCROLL_LEFT         &msc SCROLL_RIGHT        &mkp LCLK                 &hold_scroll_down     &relase_scroll_down  &trans    &trans  &kp B   &trans  &trans  &trans  &trans  &trans
                                                                   &to 0                     &trans                &trans               &to 0     &trans  &trans  &trans  &trans
@@ -553,11 +561,11 @@
 
         numpad_or_shortcut_layer {
             bindings = <
-&kp F1   &kp F2        &kp F3        &kp F4        &kp F5     &kp F6                                &kp F7  &kp F8  &kp F9  &kp F10  &kp F11  &kp BACKSPACE
-&kp F7   &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp LC(R)  &kp ASTERISK                          &trans  &trans  &trans  &trans   &trans   &kp F12
-&kp F9   &kp LC(A)     &kp NUMBER_5  &kp NUMBER_6  &kp LC(F)  &kp PLUS                              &trans  &trans  &trans  &trans   &trans   &kp ENTER
-&kp F11  &kp NUMBER_1  &kp NUMBER_2  &kp LC(C)     &kp LC(V)  &kp MINUS     &trans    &trans        &trans  &trans  &trans  &trans   &trans   &trans
-                                     &kp EQUAL     &kp SPACE  &kp NUMBER_0  &to 0     &kp CAPSLOCK  &trans  &mo 3   &trans
+&kp F1   &kp F2        &kp F3        &kp F4        &kp F5     &kp F6                                &kp F7  &kp F8  &kp F9          &kp F10  &kp F11  &kp BACKSPACE
+&kp F7   &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp LC(R)  &kp ASTERISK                          &trans  &trans  &trans          &trans   &trans   &kp F12
+&kp F9   &kp LC(A)     &kp NUMBER_5  &kp NUMBER_6  &kp LC(F)  &kp PLUS                              &trans  &trans  &trans          &trans   &trans   &kp ENTER
+&kp F11  &kp NUMBER_1  &kp NUMBER_2  &kp LC(C)     &kp LC(V)  &kp MINUS     &trans    &trans        &trans  &trans  &trans          &trans   &trans   &trans
+                                     &kp EQUAL     &kp SPACE  &kp NUMBER_0  &to 0     &kp CAPSLOCK  &trans  &mo 3   &kp LEFT_SHIFT
             >;
         };
     };
