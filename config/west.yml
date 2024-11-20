@@ -13,8 +13,5 @@ manifest:
       remote: urob
       revision: mouse-3.2
       import: app/west.yml
-    - name: module
-      remote: pete
-      revision: power/domains-and-device-runtime
   self:
     path: config
