@@ -10,8 +10,8 @@ manifest:
       url-base: https://github.com/petejohanson
   projects:
     - name: zmk
-      remote: urob
-      revision: zen-tweaks
+      remote: cay
+      revision: feat/mouse-keys-3.2
       import: app/west.yml
   self:
     path: config
