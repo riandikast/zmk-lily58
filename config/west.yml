@@ -10,8 +10,11 @@ manifest:
       url-base: https://github.com/petejohanson
   projects:
     - name: zmk
+      remote: urob
+      revision: mouse-3.2
+      import: app/west.yml
+    - name: module
       remote: pete
       revision: power/domains-and-device-runtime
-      import: app/west.yml
   self:
     path: config
