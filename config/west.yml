@@ -9,9 +9,9 @@ manifest:
     - name: pete
       url-base: https://github.com/petejohanson
   projects:
-    - name: zmk
-      remote: urob
-      revision: mouse-3.2
+    - name: mainbranch
+      remote: zmkfirmware
+      revision: main
       import: app/west.yml
     - name: blank-slate-zmk-module
       remote: pete
