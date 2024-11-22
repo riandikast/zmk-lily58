@@ -8,11 +8,11 @@
 
 #undef ZMK_MOUSE_DEFAULT_MOVE_VAL
 
-#define ZMK_MOUSE_DEFAULT_MOVE_VAL 7500  // 600
+#define ZMK_MOUSE_DEFAULT_MOVE_VAL 1500  // 600
 
 #undef ZMK_MOUSE_DEFAULT_SCRL_VAL
 
-#define ZMK_MOUSE_DEFAULT_SCRL_VAL 70    // 10
+#define ZMK_MOUSE_DEFAULT_SCRL_VAL 30    // 10
 
 #include "mouse.dtsi"
 #include <behaviors.dtsi>
@@ -23,6 +23,27 @@
 #include <dt-bindings/zmk/mouse.h>
 
 / {
+    keys {
+        compatible = "gpio-keys";
+        soft_off_gpio_key: soft_off_gpio_key {
+            gpios = <&gpio0 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
+        };
+    };
+    wakeup_scan: wakeup_scan {
+        compatible = "zmk,kscan-gpio-direct";
+        input-keys = <&soft_off_gpio_key>;
+        wakeup-source;
+    };
+    side_band_behavior_triggers: side_band_behavior_triggers {
+        compatible = "zmk,kscan-sideband-behaviors";
+        kscan = <&wakeup_scan>;
+        auto-enable;
+        wakeup-source;
+    };
+    soft_off_wakers {
+        compatible = "zmk,soft-off-wakeup-sources";
+        wakeup-sources = <&wakeup_scan>;
+    };
     combos {
         compatible = "zmk,combos";
 
@@ -378,9 +399,9 @@
     };
 
     keymap {
-        compatible = "zmk,keymap";
-        default_layer = <&connection_layer>;
-
+        compatible = "zmk,keymap,soft-off-wakeup-sources";
+    
+        wakeup-sources = <&wakeup_scan>;
         default_layer: default_layer {
             // ------------------------------------------------------------------------------------------------------------
             // |  ESC  |  1  |  2  |  3   |  4   |  5   |                   |  6   |  7    |  8    |  9   |   0   |   `   |
@@ -394,7 +415,7 @@
 &kp TAB        &kp Q   &kp W   &kp E                      &kp R                              &kp T                                                               &kp Y                                &kp U                  &kp I                              &kp O    &kp P      &kp MINUS
 &kp LCTRL      &kp A   &kp S   &kp D                      &kp F                              &kp G                                                               &kp H                                &kp J                  &kp K                              &kp L    &kp SEMI   &short_layer_tap 7 ENTER
 &mkp LCLK      &kp Z   &kp X   &kp C                      &kp V                              &kp B      &lt 4 N                            &lt 4 B               &kp N                                &kp M                  &kp COMMA                          &kp DOT  &kp SLASH  &kp ENTER
-                               &layer_hold_tap_dance 3 0  &custom_hold_tap LEFT_SHIFT SPACE  &kp SPACE  &custom_hold_tap CAPSLOCK ENTER    &mt LEFT_ALT LA(TAB)  &custom_hold_tap LEFT_WIN BACKSPACE  &holdMo_tapKp 3 SPACE  &custom_hold_tap LEFT_SHIFT SPACE
+                               &layer_hold_tap_dance 3 0  &custom_hold_tap LEFT_SHIFT SPACE  &kp SPACE  &custom_hold_tap CAPSLOCK ENTER    &mt LEFT_ALT LA(TAB)  &custom_hold_tap LEFT_WIN BACKSPACE  &holdMo_tapKp 3 SPACE  &soft_off_gpio_key
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
