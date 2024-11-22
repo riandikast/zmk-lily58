@@ -139,6 +139,22 @@
             bindings = <&none &kp G &kp A &kp P &kp P &kp R &kp I &kp N &kp T &kp AT &kp N2 &kp N0 &kp N2 &kp N1>;
             label = "GAP_PORT";
         };
+
+        hold_scroll_up: hold_scroll_up {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press>, <&msc SCROLL_UP>;
+
+            label = "HOLD_SCROLL_UP";
+        };
+
+        hold_scroll_down: hold_scroll_down {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press>, <&msc SCROLL_DOWN>;
+
+            label = "HOLD_SCROLL_DOWN";
+        };
     };
 
     behaviors {
@@ -478,11 +494,11 @@
 
         mouse_layerr {
             bindings = <
-&kp DELETE      &trans  &username_pc_kantor  &pw_pc_kantor  &pass_windows_kantor  &gap_port                    &kp N5  &trans  &trans  &trans  &trans  &trans
-&kp LA(TAB)     &trans  &mmv MOVE_UP         &mkp RCLK      &trans                &trans                       &kp T   &trans  &trans  &trans  &trans  &trans
-&mkp LCLK       &none   &none                &none          &kp LC(F)             &kp H                        &kp G   &trans  &trans  &trans  &trans  &trans
-&sk LEFT_SHIFT  &trans  &trans               &mkp LCLK      &trans                &trans     &trans    &trans  &kp B   &trans  &trans  &trans  &trans  &trans
-                                             &to 0          &trans                &trans     &to 0     &trans  &trans  &trans  &trans
+&kp DELETE      &hold_scroll_up    &username_pc_kantor  &pw_pc_kantor    &pass_windows_kantor  &gap_port                    &kp N5  &trans  &trans  &trans  &trans  &trans
+&kp LA(TAB)     &hold_scroll_down  &mmv MOVE_UP         &mkp RCLK        &msc SCROLL_UP        &trans                       &kp T   &trans  &trans  &trans  &trans  &trans
+&kp LEFT_SHIFT  &mmv MOVE_LEFT     &mmv MOVE_DOWN       &mmv MOVE_RIGHT  &kp LC(F)             &kp H                        &kp G   &trans  &trans  &trans  &trans  &trans
+&mkp LCLK       &trans             &trans               &mkp LCLK        &msc SCROLL_DOWN      &trans     &trans    &trans  &kp B   &trans  &trans  &trans  &trans  &trans
+                                                        &to 0            &trans                &trans     &to 0     &trans  &trans  &trans  &trans
             >;
         };
 
