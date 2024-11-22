@@ -9,7 +9,7 @@ manifest:
     - name: pete
       url-base: https://github.com/petejohanson
   projects:
-    - name: mainbranch
+    - name: zmk
       remote: zmkfirmware
       revision: main
       import: app/west.yml
