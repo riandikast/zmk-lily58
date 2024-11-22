@@ -434,8 +434,8 @@
         symbol_layer {
             bindings = <
 &kp ESCAPE               &kp LS(NUMBER_1)  &kp LS(NUMBER_2)  &kp LS(NUMBER_3)  &kp LS(NUMBER_4)  &kp LS(N5)                                     &kp LS(NUMBER_6)  &kp LS(N7)            &kp LS(N8)        &kp LS(N9)         &kp LS(N0)    &kp BACKSPACE
-&mt LC(LS(Z)) LC(LS(Z))  &kp NUMBER_7      &kp NUMBER_8      &kp NUMBER_9      &kp MINUS         &msc SCROLL_UP                                 &trans            &kp LC(LS(UP_ARROW))  &kp LEFT_BRACE    &kp GRAVE          &kp PIPE      &kp UNDERSCORE
-&kp NUMBER_0             &kp NUMBER_4      &kp NUMBER_5      &kp NUMBER_6      &kp PLUS          &msc SCROLL_DOWN                               &kp TILDE         &kp LC(LS(DOWN))      &kp RIGHT_BRACE   &kp DOUBLE_QUOTES  &kp COLON     &kp LS(ENTER)
+&mt LC(LS(Z)) LC(LS(Z))  &kp NUMBER_7      &kp NUMBER_8      &kp NUMBER_9      &kp MINUS         &trans                                         &trans            &kp LC(LS(UP_ARROW))  &kp LEFT_BRACE    &kp GRAVE          &kp PIPE      &kp UNDERSCORE
+&kp NUMBER_0             &kp NUMBER_4      &kp NUMBER_5      &kp NUMBER_6      &kp PLUS          &trans                                         &kp TILDE         &kp LC(LS(DOWN))      &kp RIGHT_BRACE   &kp DOUBLE_QUOTES  &kp COLON     &kp LS(ENTER)
 &mkp LCLK                &kp NUMBER_1      &kp NUMBER_2      &kp NUMBER_3      &kp EQUAL         &kp LC(LS(Z))          &to 5    &trans         &kp SQT           &kp SQT               &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp QUESTION  &trans
                                                              &mo 7             &mo_tap 7 SPACE   &tapKp_holdTo 0 SPACE  &to 0    &kp LC(SLASH)  &kp END           &kp LSHFT             &kp LEFT_SHIFT
             >;
