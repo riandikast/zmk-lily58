@@ -34,12 +34,7 @@
         input-keys = <&soft_off_gpio_key>;
         wakeup-source;
     };
-    side_band_behavior_triggers: side_band_behavior_triggers {
-        compatible = "zmk,kscan-sideband-behaviors";
-        kscan = <&wakeup_scan>;
-        auto-enable;
-        wakeup-source;
-    };
+
     soft_off_wakers {
         compatible = "zmk,soft-off-wakeup-sources";
         wakeup-sources = <&wakeup_scan>;
