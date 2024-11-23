@@ -399,7 +399,7 @@
     };
 
     keymap {
-        compatible = "zmk,keymap,soft-off-wakeup-sources";
+        compatible = "zmk,keymap";
     
         wakeup-sources = <&wakeup_scan>;
         default_layer: default_layer {
