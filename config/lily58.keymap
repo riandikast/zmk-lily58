@@ -23,24 +23,7 @@
 #include <dt-bindings/zmk/mouse.h>
 
 / {
-   
-    combos {
-        compatible = "zmk,combos";
-
-        game_layer {
-            bindings = <&to 5>;
-            key-positions = <50 57 12>;
-            timeout-ms = <30000>;
-            layers = <0 3>;
-        };
-
-        normal_layer {
-            bindings = <&to 0>;
-            key-positions = <50 57 12>;
-            timeout-ms = <30000>;
-            layers = <5>;
-        };
-    };
+    combos { compatible = "zmk,combos"; };
 
     macros {
         kurung: kurung {
@@ -376,12 +359,190 @@
             #binding-cells = <2>;
             tapping-term-ms = <240>;
         };
+
+        wTapDance: wTapDance {
+            compatible = "zmk,behavior-tap-dance";
+            label = "WTAPDANCE";
+            #binding-cells = <0>;
+            bindings = <&kp W>, <&kp W>, <&kt W>;
+
+            tapping-term-ms = <300>;
+        };
+
+        sTapDance: sTapDance {
+            compatible = "zmk,behavior-tap-dance";
+            label = "STAPDANCE";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&kp S>, <&kp S>, <&kt S>;
+        };
+
+        aTapDance: aTapDance {
+            compatible = "zmk,behavior-tap-dance";
+            label = "ATAPDANCE";
+            #binding-cells = <0>;
+            bindings = <&kp A>, <&kp A>, <&kt A>;
+
+            tapping-term-ms = <300>;
+        };
+
+        dTapDance: dTapDance {
+            compatible = "zmk,behavior-tap-dance";
+            label = "DTAPDANCE";
+            #binding-cells = <0>;
+            bindings = <&kp D>, <&kp D>, <&kt D>;
+
+            tapping-term-ms = <300>;
+        };
+
+        wHoldTapDance: wHoldTapDance {
+            compatible = "zmk,behavior-hold-tap";
+            label = "WHOLDTAPDANCE";
+            bindings = <&kp>, <&wTapDance>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <240>;
+        };
+
+        sHoldTapDance: sHoldTapDance {
+            compatible = "zmk,behavior-hold-tap";
+            label = "SHOLDTAPDANCE";
+            bindings = <&kp>, <&sTapDance>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <240>;
+        };
+
+        aHoldTapDance: aHoldTapDance {
+            compatible = "zmk,behavior-hold-tap";
+            label = "AHOLDTAPDANCE";
+            bindings = <&kp>, <&aTapDance>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <240>;
+        };
+
+        dHoldTapDance: dHoldTapDance {
+            compatible = "zmk,behavior-hold-tap";
+            label = "DHOLDTAPDANCE";
+            bindings = <&kp>, <&dTapDance>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <240>;
+        };
+
+        TapDance1: TapDance1 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAPDANCE1";
+            #binding-cells = <0>;
+            bindings = <&kp NUMBER_1>, <&kp NUMBER_6>;
+
+            tapping-term-ms = <300>;
+        };
+
+        TapDance2: TapDance2 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAPDANCE2";
+            #binding-cells = <0>;
+            bindings = <&kp NUMBER_2>, <&kp N7>;
+
+            tapping-term-ms = <300>;
+        };
+
+        TapDance3: TapDance3 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAPDANCE3";
+            #binding-cells = <0>;
+            bindings = <&kp NUMBER_3>, <&kp N8>;
+
+            tapping-term-ms = <300>;
+        };
+
+        TapDance4: TapDance4 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAPDANCE4";
+            #binding-cells = <0>;
+            bindings = <&kp NUMBER_4>, <&kp N9>;
+
+            tapping-term-ms = <300>;
+        };
+
+        TapDance5: TapDance5 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAPDANCE5";
+            #binding-cells = <0>;
+            bindings = <&kp N5>, <&kp N0>;
+
+            tapping-term-ms = <300>;
+        };
+
+        holdTapDance1: holdTapDance1 {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOLDTAPDANCE1";
+            bindings = <&kp>, <&TapDance1>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <240>;
+        };
+
+        holdTapDance2: holdTapDance2 {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOLDTAPDANCE2";
+            bindings = <&kp>, <&TapDance2>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <239>;
+        };
+
+        holdTapDance3: holdTapDance3 {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOLDTAPDANCE3";
+            bindings = <&kp>, <&TapDance3>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <240>;
+        };
+
+        holdTapDance4: holdTapDance4 {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOLDTAPDANCE4";
+            bindings = <&kp>, <&TapDance4>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <240>;
+        };
+
+        holdTapDance5: holdTapDance5 {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOLDTAPDANCE5";
+            bindings = <&kp>, <&TapDance5>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <240>;
+        };
+
+        fTapDance: fTapDance {
+            compatible = "zmk,behavior-tap-dance";
+            label = "FTAPDANCE";
+            #binding-cells = <0>;
+            bindings = <&kp F>, <&kp F>, <&kt F>;
+
+            tapping-term-ms = <300>;
+        };
+
+        fHoldTapDance: fHoldTapDance {
+            compatible = "zmk,behavior-hold-tap";
+            label = "FHOLDTAPDANCE";
+            bindings = <&spam_f>, <&fTapDance>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <240>;
+        };
     };
 
     keymap {
         compatible = "zmk,keymap";
-    
-      
+
         default_layer: default_layer {
             // ------------------------------------------------------------------------------------------------------------
             // |  ESC  |  1  |  2  |  3   |  4   |  5   |                   |  6   |  7    |  8    |  9   |   0   |   `   |
@@ -391,10 +552,10 @@
             //                     | ALT  | GUI  | LOWER|  ENTER |  | SPACE | RAISE| BSPC  | GUI   |
 
             bindings = <
-&kp BACKSPACE  &kp N1  &kp N2  &kp N3                     &kp N4                             &kp N5                                                              &kp N6                               &kp N7                 &kp N8                             &kp N9   &kp N0     &kp BACKSPACE
-&kp TAB        &kp Q   &kp W   &kp E                      &kp R                              &kp T                                                               &kp Y                                &kp U                  &kp I                              &kp O    &kp P      &kp MINUS
-&kp LCTRL      &kp A   &kp S   &kp D                      &kp F                              &kp G                                                               &kp H                                &kp J                  &kp K                              &kp L    &kp SEMI   &short_layer_tap 7 ENTER
-&mkp LCLK      &kp Z   &kp X   &kp C                      &kp V                              &kp B      &lt 4 N                            &lt 4 B               &kp N                                &kp M                  &kp COMMA                          &kp DOT  &kp SLASH  &kp ENTER
+&kp BACKSPACE  &kp N1  &kp N2  &kp N3                     &kp N4                             &kp N5                                                              &kp N6                               &kp N7                 &kp N8                 &kp N9   &kp N0     &kp BACKSPACE
+&kp TAB        &kp Q   &kp W   &kp E                      &kp R                              &kp T                                                               &kp Y                                &kp U                  &kp I                  &kp O    &kp P      &kp MINUS
+&kp LCTRL      &kp A   &kp S   &kp D                      &kp F                              &kp G                                                               &kp H                                &kp J                  &kp K                  &kp L    &kp SEMI   &short_layer_tap 7 ENTER
+&mkp LCLK      &kp Z   &kp X   &kp C                      &kp V                              &kp B      &lt 4 N                            &lt 4 B               &kp N                                &kp M                  &kp COMMA              &kp DOT  &kp SLASH  &kp ENTER
                                &layer_hold_tap_dance 3 0  &custom_hold_tap LEFT_SHIFT SPACE  &kp SPACE  &custom_hold_tap CAPSLOCK ENTER    &mt LEFT_ALT LA(TAB)  &custom_hold_tap LEFT_WIN BACKSPACE  &holdMo_tapKp 3 SPACE  &holdMo_tapKp 3 SPACE
             >;
 
@@ -461,11 +622,11 @@
 
         game_layer {
             bindings = <
-&kp M      &kp N1  &kp N2  &kp N3                          &kp N4     &kp N5                                                              &kp N6        &kp N7                 &kp N8                             &kp N9   &kp N0    &kp BACKSPACE
-&kp TAB    &kp Q   &kp W   &kp E                           &kp R      &kp T                                                               &kp Y         &kp U                  &kp I                              &kp O    &kp P     &kp MINUS
-&kp LCTRL  &kp A   &kp S   &kp D                           &kp F      &kp G                                                               &kp H         &kp J                  &kp K                              &kp L    &kp SEMI  &kp ENTER
-&mkp LCLK  &kp Z   &kp X   &kp C                           &kp V      &kp B         &kp LEFT_WIN                  &kp LG(LC(LEFT_ARROW))  &kp N         &kp M                  &kp COMMA                          &kp DOT  &kp FSLH  &kp ENTER
-                           &stickyLayer_tap 10 LEFT_SHIFT  &kp SPACE  &kp LEFT_ALT  &tapTo_HoldKp LEFT_SHIFT 0    &kp LG(LS(Q))           &kp LEFT_WIN  &mo_with_tapdance 3 0  &custom_hold_tap LEFT_SHIFT SPACE
+&kp M                     &holdTapDance1 N1 0  &holdTapDance2 N2 0  &holdTapDance3 N3 0             &holdTapDance4 N4 0  &holdTapDance5 N5 0                                                                 &kp N6        &kp N7                 &kp N8                             &kp N9   &kp N0    &kp BACKSPACE
+&custom_hold_tap TAB TAB  &kp Q                &wHoldTapDance W 0   &kp E                           &kp R                &kp T                                                                               &kp Y         &kp U                  &kp I                              &kp O    &kp P     &kp MINUS
+&kp LCTRL                 &aHoldTapDance A 0   &sHoldTapDance S 0   &dHoldTapDance D 0              &fHoldTapDance 0 0   &kp G                                                                               &kp H         &kp J                  &kp K                              &kp L    &kp SEMI  &kp ENTER
+&mkp LCLK                 &kp Z                &kp X                &kp C                           &kp V                &kp B                &custom_hold_tap LS(LG(Q)) LEFT_WIN    &kp LG(LC(LEFT_ARROW))  &kp N         &kp M                  &kp COMMA                          &kp DOT  &kp FSLH  &kp ENTER
+                                                                    &stickyLayer_tap 10 LEFT_SHIFT  &kp SPACE            &kp LEFT_ALT         &tapTo_HoldKp LEFT_SHIFT 0             &kp LG(LS(Q))           &kp LEFT_WIN  &mo_with_tapdance 3 0  &custom_hold_tap LEFT_SHIFT SPACE
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -517,11 +678,11 @@
 
         additional_game_layer {
             bindings = <
-&kp ESCAPE     &kp LA(NUMBER_1)  &kp LA(NUMBER_2)  &kp LA(NUMBER_3)  &kp LA(NUMBER_4)  &trans                                  &trans  &trans  &trans  &trans  &trans  &trans
-&kp LG(LS(Q))  &none             &kt W             &trans            &trans            &trans                                  &trans  &trans  &trans  &trans  &trans  &trans
-&kp T          &kt A             &kt S             &kt D             &spam_f           &trans                                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans         &to 6             &kt X             &kt LEFT_SHIFT    &trans            &trans         &trans           &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                                                   &to 5             &trans            &kp LA(ENTER)  &kp LG(LS(Q))    &trans  &trans  &trans  &trans
+&kp ESCAPE  &kp LA(NUMBER_1)  &kp LA(NUMBER_2)  &kp LA(NUMBER_3)  &kp LA(NUMBER_4)  &trans                                  &trans  &trans  &trans  &trans  &trans  &trans
+&to 6       &kp Y             &kp U             &kp I             &kp O             &kp P                                   &trans  &trans  &trans  &trans  &trans  &trans
+&kp LCTRL   &kp H             &kp J             &kp K             &kp L             &kp SEMICOLON                           &trans  &trans  &trans  &trans  &trans  &trans
+&trans      &kp N             &kp M             &kp COMMA         &kp PERIOD        &kp SLASH      &trans           &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                                                &to 5             &trans            &kp LA(ENTER)  &kp LG(LS(Q))    &trans  &trans  &trans  &trans
             >;
         };
 
