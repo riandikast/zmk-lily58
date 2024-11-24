@@ -681,7 +681,7 @@
 &kp ESCAPE  &kp LA(NUMBER_1)  &kp LA(NUMBER_2)  &kp LA(NUMBER_3)  &kp LA(NUMBER_4)  &trans                                  &trans  &trans  &trans  &trans  &trans  &trans
 &to 6       &kp Y             &kp U             &kp I             &kp O             &kp P                                   &trans  &trans  &trans  &trans  &trans  &trans
 &kp LCTRL   &kp H             &kp J             &kp K             &kp L             &kp SEMICOLON                           &trans  &trans  &trans  &trans  &trans  &trans
-&trans      &kp N             &kp M             &kp COMMA         &kp PERIOD        &kp SLASH      &trans           &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&kp LA(F4)  &kp N             &kp M             &kp COMMA         &kp PERIOD        &kp SLASH      &trans           &trans  &trans  &trans  &trans  &trans  &trans  &trans
                                                 &to 5             &trans            &kp LA(ENTER)  &kp LG(LS(Q))    &trans  &trans  &trans  &trans
             >;
         };
