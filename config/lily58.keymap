@@ -14,6 +14,9 @@
 
 #define ZMK_MOUSE_DEFAULT_SCRL_VAL 1 // 10
 
+#define MOVE_UP 1
+#define MOVE_DOWN -1
+
 #include "mouse.dtsi"
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
