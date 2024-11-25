@@ -14,7 +14,6 @@
 
 #define ZMK_MOUSE_DEFAULT_SCRL_VAL 1 // 10
 
-
 #include "mouse.dtsi"
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
@@ -128,7 +127,7 @@
         hold_scroll_up: hold_scroll_up {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press>, <&custom_mouse_scroll MOVE_UP>;
+            bindings = <&macro_press>, <&msc MOVE_UP>;
 
             label = "HOLD_SCROLL_UP";
         };
@@ -136,7 +135,7 @@
         hold_scroll_down: hold_scroll_down {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press>, <&custom_mouse_scroll MOVE_DOWN>;
+            bindings = <&macro_press>, <&msc MOVE_DOWN>;
 
             label = "HOLD_SCROLL_DOWN";
         };
