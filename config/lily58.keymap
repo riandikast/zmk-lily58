@@ -14,7 +14,6 @@
 
 #define ZMK_MOUSE_DEFAULT_SCRL_VAL 1 // 10
 
-
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/ext_power.h>
@@ -127,7 +126,7 @@
         hold_scroll_up: hold_scroll_up {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press>, <&custom_msc MOVE_UP>;
+            bindings = <&macro_press>, <&none>;
 
             label = "HOLD_SCROLL_UP";
         };
@@ -135,7 +134,7 @@
         hold_scroll_down: hold_scroll_down {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press>, <&custom_msc MOVE_DOWN>;
+            bindings = <&macro_press>, <&none>;
 
             label = "HOLD_SCROLL_DOWN";
         };
@@ -557,13 +556,14 @@
             tapping-term-ms = <250>;
         };
 
-        custom_msc: custom_msc {
-            compatible = "zmk,behavior-mouse-scroll";
-            label = "CUSTOM_MSC";
-            #binding-cells = <1>;
-            delay-ms = <0>;
-            time-to-max-speed-ms = <500>;
-            acceleration-exponent = <0>;
+        holdTapMsc: holdTapMsc {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOLDTAPMSC";
+            bindings = <&msc>, <&msc>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <240>;
+            quick-tap-ms = <30>;
         };
     };
 
@@ -683,11 +683,11 @@
 
         mouse_layerr {
             bindings = <
-&kp DELETE      &hold_scroll_down       &username_pc_kantor    &pw_pc_kantor    &pass_windows_kantor   &gap_port                    &kp N5  &trans  &trans  &trans  &trans  &trans
-&kp LA(TAB)     &hold_scroll_up         &mmv MOVE_UP           &mkp RCLK        &custom_msc MOVE_DOWN  &trans                       &kp T   &trans  &trans  &trans  &trans  &trans
-&kp LEFT_SHIFT  &mmv MOVE_LEFT          &mmv MOVE_DOWN         &mmv MOVE_RIGHT  &kp LC(F)              &kp H                        &kp G   &trans  &trans  &trans  &trans  &trans
-&mkp LCLK       &custom_msc MOVE_RIGHT  &custom_msc MOVE_LEFT  &mkp LCLK        &custom_msc MOVE_UP    &trans     &trans    &trans  &kp B   &trans  &trans  &trans  &trans  &trans
-                                                               &to 0            &trans                 &trans     &to 0     &trans  &trans  &trans  &trans
+&kp DELETE      &hold_scroll_down                  &username_pc_kantor              &pw_pc_kantor    &pass_windows_kantor             &gap_port                    &kp N5  &trans  &trans  &trans  &trans  &trans
+&kp LA(TAB)     &hold_scroll_up                    &mmv MOVE_UP                     &mkp RCLK        &holdTapMsc MOVE_DOWN MOVE_DOWN  &trans                       &kp T   &trans  &trans  &trans  &trans  &trans
+&kp LEFT_SHIFT  &mmv MOVE_LEFT                     &mmv MOVE_DOWN                   &mmv MOVE_RIGHT  &kp LC(F)                        &kp H                        &kp G   &trans  &trans  &trans  &trans  &trans
+&mkp LCLK       &holdTapMsc MOVE_RIGHT MOVE_RIGHT  &holdTapMsc MOVE_LEFT MOVE_LEFT  &mkp LCLK        &holdTapMsc MOVE_UP MOVE_UP      &trans     &trans    &trans  &kp B   &trans  &trans  &trans  &trans  &trans
+                                                                                    &to 0            &trans                           &trans     &to 0     &trans  &trans  &trans  &trans
             >;
         };
 
