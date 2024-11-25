@@ -556,6 +556,15 @@
 
             tapping-term-ms = <250>;
         };
+
+        msc: msc {
+            compatible = "zmk,behavior-mouse-scroll";
+            label = "MSC";
+            #binding-cells = <1>;
+            delay-ms = <0>;
+            time-to-max-speed-ms = <500>;
+            acceleration-exponent = <0>;
+        };
     };
 
     keymap {
