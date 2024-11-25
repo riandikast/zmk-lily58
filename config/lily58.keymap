@@ -556,22 +556,6 @@
 
             tapping-term-ms = <250>;
         };
-
-        custom_mouse_scroll: custom_mouse_scroll {
-            compatible = "zmk,behavior-mouse-scroll";
-            label = "CUSTOM_MOUSE_SCROLL";
-            #binding-cells = <1>;
-            time-to-max-speed-ms = <300>;
-            acceleration-exponent = <0>;
-        };
-
-        custom_mouse_move: custom_mouse_move {
-            compatible = "zmk,behavior-mouse-move";
-            label = "CUSTOM_MOUSE_MOVE";
-            #binding-cells = <1>;
-            time-to-max-speed-ms = <500>;
-            acceleration-exponent = <1>;
-        };
     };
 
     keymap {
@@ -690,11 +674,11 @@
 
         mouse_layerr {
             bindings = <
-&kp DELETE      &hold_scroll_down             &username_pc_kantor           &pw_pc_kantor                  &pass_windows_kantor            &gap_port                    &kp N5  &trans  &trans  &trans  &trans  &trans
-&kp LA(TAB)     &hold_scroll_up               &custom_mouse_move MOVE_UP    &mkp RCLK                      &custom_mouse_scroll MOVE_DOWN  &trans                       &kp T   &trans  &trans  &trans  &trans  &trans
-&kp LEFT_SHIFT  &custom_mouse_move MOVE_LEFT  &custom_mouse_move MOVE_DOWN  &custom_mouse_move MOVE_RIGHT  &kp LC(F)                       &kp H                        &kp G   &trans  &trans  &trans  &trans  &trans
-&mkp LCLK       &msc MOVE_LEFT                &msc MOVE_RIGHT               &mkp LCLK                      &custom_mouse_scroll MOVE_UP    &trans     &trans    &trans  &kp B   &trans  &trans  &trans  &trans  &trans
-                                                                            &to 0                          &trans                          &trans     &to 0     &trans  &trans  &trans  &trans
+&kp DELETE      &hold_scroll_down  &username_pc_kantor  &pw_pc_kantor    &pass_windows_kantor  &gap_port                    &kp N5  &trans  &trans  &trans  &trans  &trans
+&kp LA(TAB)     &hold_scroll_up    &mmv MOVE_UP         &mkp RCLK        &msc MOVE_DOWN        &trans                       &kp T   &trans  &trans  &trans  &trans  &trans
+&kp LEFT_SHIFT  &mmv MOVE_LEFT     &mmv MOVE_DOWN       &mmv MOVE_RIGHT  &kp LC(F)             &kp H                        &kp G   &trans  &trans  &trans  &trans  &trans
+&mkp LCLK       &msc MOVE_LEFT     &msc MOVE_RIGHT      &mkp LCLK        &msc MOVE_UP          &trans     &trans    &trans  &kp B   &trans  &trans  &trans  &trans  &trans
+                                                        &to 0            &trans                &trans     &to 0     &trans  &trans  &trans  &trans
             >;
         };
 
