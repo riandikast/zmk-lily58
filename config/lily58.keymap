@@ -12,7 +12,7 @@
 
 #undef ZMK_MOUSE_DEFAULT_SCRL_VAL
 
-#define ZMK_MOUSE_DEFAULT_SCRL_VAL 25 // 10
+#define ZMK_MOUSE_DEFAULT_SCRL_VAL 4 // 10
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
@@ -562,8 +562,8 @@
             bindings = <&msc>, <&msc>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <30>;
-            quick-tap-ms = <10>;
+            tapping-term-ms = <35>;
+            quick-tap-ms = <20>;
         };
     };
 
