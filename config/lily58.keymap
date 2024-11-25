@@ -562,7 +562,7 @@
             bindings = <&msc>, <&msc>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <240>;
+            tapping-term-ms = <40>;
             quick-tap-ms = <30>;
         };
     };
