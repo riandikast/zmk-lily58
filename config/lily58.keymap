@@ -8,11 +8,11 @@
 
 #undef ZMK_MOUSE_DEFAULT_MOVE_VAL
 
-#define ZMK_MOUSE_DEFAULT_MOVE_VAL 900  // 600
+#define ZMK_MOUSE_DEFAULT_MOVE_VAL 1100  // 600
 
 #undef ZMK_MOUSE_DEFAULT_SCRL_VAL
 
-#define ZMK_MOUSE_DEFAULT_SCRL_VAL 20  // 10
+#define ZMK_MOUSE_DEFAULT_SCRL_VAL 12 // 10
 
 #include "mouse.dtsi"
 #include <behaviors.dtsi>
