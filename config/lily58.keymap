@@ -675,9 +675,9 @@
         mouse_layerr {
             bindings = <
 &kp DELETE      &hold_scroll_down  &username_pc_kantor  &pw_pc_kantor    &pass_windows_kantor  &gap_port                    &kp N5  &trans  &trans  &trans  &trans  &trans
-&kp LA(TAB)     &hold_scroll_up    &mmv MOVE_UP         &mkp RCLK        &msc SCROLL_UP        &trans                       &kp T   &trans  &trans  &trans  &trans  &trans
+&kp LA(TAB)     &hold_scroll_up    &mmv MOVE_UP         &mkp RCLK        &msc MOVE_DOWN        &trans                       &kp T   &trans  &trans  &trans  &trans  &trans
 &kp LEFT_SHIFT  &mmv MOVE_LEFT     &mmv MOVE_DOWN       &mmv MOVE_RIGHT  &kp LC(F)             &kp H                        &kp G   &trans  &trans  &trans  &trans  &trans
-&mkp LCLK       &msc MOVE_LEFT     &msc MOVE_RIGHT      &mkp LCLK        &msc SCROLL_DOWN      &trans     &trans    &trans  &kp B   &trans  &trans  &trans  &trans  &trans
+&mkp LCLK       &msc MOVE_LEFT     &msc MOVE_RIGHT      &mkp LCLK        &msc MOVE_UP          &trans     &trans    &trans  &kp B   &trans  &trans  &trans  &trans  &trans
                                                         &to 0            &trans                &trans     &to 0     &trans  &trans  &trans  &trans
             >;
         };
