@@ -16,6 +16,18 @@
 
 #define ZMK_MOUSE_DEFAULT_SCRL_VAL 1 // 10
 
+&mmv {
+    acceleration-exponent = <1>;      // 1
+    time-to-max-speed-ms = <500>;     // 300
+    delay-ms = <0>;                   // 0
+};
+
+&msc {
+    acceleration-exponent = <0>;      // 0
+    time-to-max-speed-ms = <300>;      // 300
+    delay-ms = <0>;                   // 0
+};
+
 #include "mouse.dtsi"
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
@@ -715,16 +727,6 @@
                                      &kp EQUAL     &kp SPACE  &kp NUMBER_0  &to 0     &kp CAPSLOCK  &trans  &mo 3   &kp LEFT_SHIFT
             >;
         };
-&mmv {
-    acceleration-exponent = <1>;      // 1
-    time-to-max-speed-ms = <500>;     // 300
-    delay-ms = <0>;                   // 0
-};
 
-&msc {
-    acceleration-exponent = <0>;      // 0
-    time-to-max-speed-ms = <300>;      // 300
-    delay-ms = <0>;                   // 0
-};
     };
 };
