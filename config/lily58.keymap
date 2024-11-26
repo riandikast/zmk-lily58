@@ -669,7 +669,7 @@
         RBackspaceMorph: RBackspaceMorph {
             compatible = "zmk,behavior-mod-morph";
             label = "RBACKSPACEMORPH";
-            bindings = <&kp BACKSPACE>, <&kp LC(PLUS)>;
+            bindings = <&kp BACKSPACE>, <&kp LC(EQUAL)>;
 
             #binding-cells = <0>;
             mods = <(MOD_LCTL)>;
@@ -749,6 +749,13 @@
             tapping-term-ms = <240>;
             flavor = "tap-preferred";
         };
+
+        PetikTapDance: PetikTapDance {
+            compatible = "zmk,behavior-tap-dance";
+            label = "PETIKTAPDANCE";
+            #binding-cells = <0>;
+            bindings = <&kp SEMICOLON>, <&kp DOUBLE_QUOTES>, <&kp SQT>;
+        };
     };
 
     keymap {
@@ -763,10 +770,10 @@
             //                     | ALT  | GUI  | LOWER|  ENTER |  | SPACE | RAISE| BSPC  | GUI   |
 
             bindings = <
-&LBackspaceMorph      &kp N1           &kp N2          &kp N3                     &kp N4                             &kp N5                                                             &kp N6                            &kp N7                 &kp N8                        &kp N9   &kp N0                        &RBackspaceMorphFinal
-&kp TAB               &QasLBlockMorph  &WasArrowMorph  &EasRBlockMorph            &kp R                              &kp T                                                              &kp Y                             &kp U                  &kp I                         &kp O    &kp P                         &MinusHoldTap MINUS 0
-&kp LCTRL             &AasArrowMorph   &SasArrowMorph  &DasArrowMorph             &kp F                              &kp G                                                              &kp H                             &kp J                  &kp K                         &kp L    &kp SEMI                      &short_layer_tap 7 ENTER
-&leftClickCommentOut  &kp Z            &XasEndMorph    &CasEndMorph               &kp V                              &kp B            &lt 4 N                         &lt 4 B           &kp N                             &kp M                  &kp COMMA                     &kp DOT  &QuestionMarkHoldTap SLASH 0  &kp ENTER
+&LBackspaceMorph      &kp N1           &kp N2          &kp N3                     &kp N4                             &kp N5                                                             &kp N6                            &kp N7                 &kp N8                        &kp N9          &kp N0                        &RBackspaceMorphFinal
+&kp TAB               &QasLBlockMorph  &WasArrowMorph  &EasRBlockMorph            &kp R                              &kp T                                                              &kp Y                             &kp U                  &kp I                         &kp O           &kp P                         &MinusHoldTap MINUS 0
+&kp LCTRL             &AasArrowMorph   &SasArrowMorph  &DasArrowMorph             &kp F                              &kp G                                                              &kp H                             &kp J                  &kp K                         &kp L           &PetikTapDance                &short_layer_tap 7 ENTER
+&leftClickCommentOut  &kp Z            &XasEndMorph    &CasEndMorph               &kp V                              &kp B            &lt 4 N                         &lt 4 B           &kp N                             &kp M                  &CommaTapDance                &TitikTapDance  &QuestionMarkHoldTap SLASH 0  &kp ENTER
                                                        &layer_hold_tap_dance 3 0  &custom_hold_tap LEFT_SHIFT SPACE  &WinShiftQMorph  &holdCapsTapDance LEFT_ALT 0    &mt RALT RA(TAB)  &custom_hold_tap RIGHT_WIN RSHFT  &holdMo_tapKp 3 SPACE  &custom_hold_tap RCTRL SPACE
             >;
 
