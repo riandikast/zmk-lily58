@@ -554,7 +554,7 @@
             #binding-cells = <0>;
             bindings = <&kp ENTER>, <&kp CLCK>;
 
-            tapping-term-ms = <250>;
+            tapping-term-ms = <280>;
         };
 
         holdTapMsc: holdTapMsc {
@@ -679,9 +679,9 @@
             compatible = "zmk,behavior-tap-dance";
             label = "GRAVETAPDANCE";
             #binding-cells = <0>;
-            bindings = <&tapKp_Bootloader 0 GRAVE>, <&kp TILDE>;
+            bindings = <&kp GRAVE>, <&kp GRAVE>;
 
-            tapping-term-ms = <240>;
+            tapping-term-ms = <300>;
         };
 
         LBackspaceMorph: LBackspaceMorph {
@@ -707,6 +707,8 @@
             label = "COMMATAPDANCE";
             #binding-cells = <0>;
             bindings = <&kp COMMA>, <&kp LEFT_BRACKET>, <&kp LEFT_BRACE>;
+
+            tapping-term-ms = <300>;
         };
 
         TitikTapDance: TitikTapDance {
@@ -714,6 +716,8 @@
             label = "TITIKTAPDANCE";
             #binding-cells = <0>;
             bindings = <&kp PERIOD>, <&kp RIGHT_BRACKET>, <&kp RIGHT_BRACE>;
+
+            tapping-term-ms = <300>;
         };
 
         QuestionMarkTapDance: QuestionMarkTapDance {
@@ -721,6 +725,8 @@
             label = "QUESTIONMARKTAPDANCE";
             #binding-cells = <0>;
             bindings = <&kp SLASH>, <&kp QUESTION>;
+
+            tapping-term-ms = <300>;
         };
 
         QuestionMarkHoldTap: QuestionMarkHoldTap {
@@ -738,6 +744,8 @@
             label = "MINUSTAPDANCE";
             #binding-cells = <0>;
             bindings = <&kp MINUS>, <&kp PIPE>, <&kp NON_US_BACKSLASH>;
+
+            tapping-term-ms = <300>;
         };
 
         MinusHoldTap: MinusHoldTap {
@@ -755,6 +763,8 @@
             label = "PETIKTAPDANCE";
             #binding-cells = <0>;
             bindings = <&kp SEMICOLON>, <&kp DOUBLE_QUOTES>, <&kp SQT>;
+
+            tapping-term-ms = <300>;
         };
     };
 
