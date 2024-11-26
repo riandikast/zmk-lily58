@@ -574,6 +574,96 @@
             #binding-cells = <2>;
             tapping-term-ms = <240>;
         };
+
+        leftClickCommentOut: leftClickCommentOut {
+            compatible = "zmk,behavior-mod-morph";
+            label = "LEFTCLICKCOMMENTOUT";
+            bindings = <&mkp LCLK>, <&kp LC(SLASH)>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL)>;
+        };
+
+        DasArrowMorph: DasArrowMorph {
+            compatible = "zmk,behavior-mod-morph";
+            label = "DASARROWMORPH";
+            bindings = <&kp D>, <&kp RIGHT>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LGUI)>;
+        };
+
+        AasArrowMorph: AasArrowMorph {
+            compatible = "zmk,behavior-mod-morph";
+            label = "AASARROWMORPH";
+            bindings = <&kp A>, <&kp LEFT_ARROW>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LGUI)>;
+        };
+
+        SasArrowMorph: SasArrowMorph {
+            compatible = "zmk,behavior-mod-morph";
+            label = "SASARROWMORPH";
+            bindings = <&kp S>, <&kp DOWN_ARROW>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LGUI)>;
+        };
+
+        WasArrowMorph: WasArrowMorph {
+            compatible = "zmk,behavior-mod-morph";
+            label = "WASARROWMORPH";
+            bindings = <&kp W>, <&kp UP_ARROW>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LGUI)>;
+        };
+
+        EasRBlockMorph: EasRBlockMorph {
+            compatible = "zmk,behavior-mod-morph";
+            label = "EASRBLOCKMORPH";
+            bindings = <&kp E>, <&kp LC(LS(RIGHT_ARROW))>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LGUI)>;
+        };
+
+        QasLBlockMorph: QasLBlockMorph {
+            compatible = "zmk,behavior-mod-morph";
+            label = "QASLBLOCKMORPH";
+            bindings = <&kp Q>, <&kp LC(LS(LEFT_ARROW))>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LGUI)>;
+        };
+
+        CasEndMorph: CasEndMorph {
+            compatible = "zmk,behavior-mod-morph";
+            label = "CASENDMORPH";
+            bindings = <&kp C>, <&kp END>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LGUI)>;
+        };
+
+        XasEndMorph: XasEndMorph {
+            compatible = "zmk,behavior-mod-morph";
+            label = "XASENDMORPH";
+            bindings = <&kp X>, <&kp HOME>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LGUI)>;
+        };
+
+        WinShiftQMorph: WinShiftQMorph {
+            compatible = "zmk,behavior-mod-morph";
+            label = "WINSHIFTQMORPH";
+            bindings = <&custom_hold_tap LEFT_WIN SPACE>, <&kp LG(LS(Q))>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL)>;
+        };
     };
 
     keymap {
@@ -588,11 +678,11 @@
             //                     | ALT  | GUI  | LOWER|  ENTER |  | SPACE | RAISE| BSPC  | GUI   |
 
             bindings = <
-&kp BACKSPACE  &kp N1  &kp N2  &kp N3                     &kp N4                             &kp N5                                                                                 &kp N6                                &kp N7                 &kp N8                        &kp N9   &kp N0     &kp BACKSPACE
-&kp TAB        &kp Q   &kp W   &kp E                      &kp R                              &kp T                                                                                  &kp Y                                 &kp U                  &kp I                         &kp O    &kp P      &kp MINUS
-&kp LCTRL      &kp A   &kp S   &kp D                      &kp F                              &kp G                                                                                  &kp H                                 &kp J                  &kp K                         &kp L    &kp SEMI   &short_layer_tap 7 ENTER
-&mkp LCLK      &kp Z   &kp X   &kp C                      &kp V                              &kp B                            &lt 4 N                         &lt 4 B               &kp N                                 &kp M                  &kp COMMA                     &kp DOT  &kp SLASH  &kp ENTER
-                               &layer_hold_tap_dance 3 0  &custom_hold_tap LEFT_SHIFT SPACE  &custom_hold_tap LEFT_WIN SPACE  &holdCapsTapDance LEFT_ALT 0    &mt LEFT_ALT LA(TAB)  &custom_hold_tap LEFT_WIN LEFT_SHIFT  &holdMo_tapKp 3 SPACE  &custom_hold_tap LCTRL SPACE
+&kp BACKSPACE         &kp N1           &kp N2          &kp N3                     &kp N4                             &kp N5                                                             &kp N6                            &kp N7                 &kp N8                        &kp N9   &kp N0     &kp BACKSPACE
+&kp TAB               &QasLBlockMorph  &WasArrowMorph  &EasRBlockMorph            &kp R                              &kp T                                                              &kp Y                             &kp U                  &kp I                         &kp O    &kp P      &kp MINUS
+&kp LCTRL             &AasArrowMorph   &SasArrowMorph  &DasArrowMorph             &kp F                              &kp G                                                              &kp H                             &kp J                  &kp K                         &kp L    &kp SEMI   &short_layer_tap 7 ENTER
+&leftClickCommentOut  &kp Z            &XasEndMorph    &CasEndMorph               &kp V                              &kp B            &lt 4 N                         &lt 4 B           &kp N                             &kp M                  &kp COMMA                     &kp DOT  &kp SLASH  &kp ENTER
+                                                       &layer_hold_tap_dance 3 0  &custom_hold_tap LEFT_SHIFT SPACE  &WinShiftQMorph  &holdCapsTapDance LEFT_ALT 0    &mt RALT RA(TAB)  &custom_hold_tap RIGHT_WIN RSHFT  &holdMo_tapKp 3 SPACE  &custom_hold_tap RCTRL SPACE
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -685,7 +775,7 @@
 &kp ESCAPE      &kp LC(C)               &kp LC(V)     &kp LC(A)          &kp LA(F4)       &trans                   &trans        &trans  &trans          &kp LG(LS(A))  &kp LG(LS(S))         &kp DEL
 &kp LG(LS(Q))   &kp LC(LS(LEFT_ARROW))  &kp UP_ARROW  &kp LC(LS(RIGHT))  &trans           &trans                   &trans        &trans  &trans          &kp LC(LS(F))  &kp NON_US_BACKSLASH  &kp EQUAL
 &kp LEFT_SHIFT  &kp LEFT_ARROW          &kp DOWN      &kp RIGHT          &block_and_copy  &trans                   &trans        &trans  &trans          &kp SQT        &kp PLUS              &kp ENTER
-&mkp LCLK       &kp HOME                &to 5         &kp END            &replace         &trans  &to 5    &trans  &trans        &trans  &kp GRAVE       &trans         &trans                &trans
+&mkp LCLK       &kp HOME                &kp HOME      &kp END            &replace         &trans  &to 5    &trans  &trans        &trans  &kp GRAVE       &trans         &trans                &trans
                                                       &to 0              &kp SPACE        &mo 9   &to 0    &trans  &kp LEFT_ALT  &to 0   &kp LEFT_SHIFT
             >;
         };
