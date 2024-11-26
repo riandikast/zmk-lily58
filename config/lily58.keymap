@@ -213,6 +213,7 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <240>;
+            flavor = "tap-preferred";
         };
 
         to_to: to_to {
