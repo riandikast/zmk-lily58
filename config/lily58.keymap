@@ -988,7 +988,7 @@
 &kp ESCAPE     &kp LC(C)               &kp LC(V)     &kp LC(A)                         &kp LA(F4)    &trans                            &trans        &trans  &trans          &kp LG(LS(A))  &kp LG(LS(S))         &kp DEL
 &kp LG(LS(Q))  &kp LC(LS(LEFT_ARROW))  &kp UP_ARROW  &kp LC(LS(RIGHT))                 &kp LC(R)     &trans                            &trans        &trans  &trans          &kp LC(LS(F))  &kp NON_US_BACKSLASH  &kp EQUAL
 &batch_left    &kp LEFT_ARROW          &kp DOWN      &kp RIGHT                         &batch_right  &block_and_copy                   &trans        &trans  &trans          &kp SQT        &kp PLUS              &kp ENTER
-&mkp LCLK      &kp HOME                &kp LC(C)     &kp LC(V)                         &replace      &trans           &to 5    &trans  &trans        &trans  &kp GRAVE       &trans         &trans                &trans
+&mkp LCLK      &kp HOME                &kp END       &kp C                             &kp V         &replace         &to 5    &trans  &trans        &trans  &kp GRAVE       &trans         &trans                &trans
                                                      &custom_hold_tap LC(Y) LC(LS(Z))  &kp LC(Z)     &kp SPACE        &to 0    &trans  &kp LEFT_ALT  &to 0   &kp LEFT_SHIFT
             >;
         };
