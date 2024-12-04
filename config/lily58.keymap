@@ -160,6 +160,20 @@
             bindings = <&kp RIGHT_ARROW &kp RIGHT_ARROW &kp RIGHT_ARROW &kp RIGHT_ARROW &kp RIGHT_ARROW>;
             label = "BATCH_RIGHT";
         };
+
+        batch_right_select: batch_right_select {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LS(RIGHT_ARROW)) &kp LC(LS(RIGHT_ARROW)) &kp LC(LS(RIGHT_ARROW)) &kp LC(LS(RIGHT_ARROW))>;
+            label = "BATCH_RIGHT_SELECT";
+        };
+
+        batch_left_select: batch_left_select {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&tapKp_holdSysReset 0 LC(LS(LEFT_ARROW)) &kp LS(LC(LEFT_ARROW)) &kp LC(LS(LEFT_ARROW)) &kp LC(LS(LEFT_ARROW))>;
+            label = "BATCH_LEFT_SELECT";
+        };
     };
 
     behaviors {
@@ -985,11 +999,11 @@
 
         copy_paste_layer {
             bindings = <
-&kp ESCAPE     &kp LC(C)               &kp LC(V)     &kp LC(A)                         &kp LA(F4)    &trans                            &trans        &trans  &trans          &kp LG(LS(A))  &kp LG(LS(S))         &kp DEL
-&kp LG(LS(Q))  &kp LC(LS(LEFT_ARROW))  &kp UP_ARROW  &kp LC(LS(RIGHT))                 &kp LC(R)     &trans                            &trans        &trans  &trans          &kp LC(LS(F))  &kp NON_US_BACKSLASH  &kp EQUAL
-&batch_left    &kp LEFT_ARROW          &kp DOWN      &kp RIGHT                         &batch_right  &block_and_copy                   &trans        &trans  &trans          &kp SQT        &kp PLUS              &kp ENTER
-&mkp LCLK      &kp HOME                &kp END       &kp LC(C)                         &kp LC(V)     &replace         &to 5    &trans  &trans        &trans  &kp GRAVE       &trans         &trans                &trans
-                                                     &custom_hold_tap LC(Y) LC(LS(Z))  &kp LC(Z)     &kp SPACE        &to 0    &trans  &kp LEFT_ALT  &to 0   &kp LEFT_SHIFT
+&kp ESCAPE          &kp LC(C)               &kp LC(V)     &kp LC(A)                         &trans                             &trans                             &trans        &trans  &trans          &kp LG(LS(A))  &kp LG(LS(S))         &kp DEL
+&batch_left_select  &kp LC(LS(LEFT_ARROW))  &kp UP_ARROW  &kp LC(LS(RIGHT))                 &batch_right_select                &trans                             &trans        &trans  &trans          &kp LC(LS(F))  &kp NON_US_BACKSLASH  &kp EQUAL
+&batch_left         &kp LEFT_ARROW          &kp DOWN      &kp RIGHT                         &batch_right                       &block_and_copy                    &trans        &trans  &trans          &kp SQT        &kp PLUS              &kp ENTER
+&mkp LCLK           &kp HOME                &kp END       &kp LC(C)                         &kp LC(V)                          &replace          &to 5    &trans  &trans        &trans  &kp GRAVE       &trans         &trans                &trans
+                                                          &custom_hold_tap LC(Y) LC(LS(Z))  &custom_hold_tap LEFT_SHIFT LC(Z)  &mo_tap 12 SPACE  &to 0    &trans  &kp LEFT_ALT  &to 0   &kp LEFT_SHIFT
             >;
         };
 
@@ -1020,7 +1034,7 @@
 &kp ESCAPE  &kp LA(NUMBER_1)  &kp LA(NUMBER_2)  &kp LA(NUMBER_3)  &kp LA(NUMBER_4)  &trans                                  &trans  &trans  &trans  &trans  &trans  &trans
 &to 6       &kp Y             &kp U             &kp I             &kp O             &kp P                                   &trans  &trans  &trans  &trans  &trans  &trans
 &kp LCTRL   &kp H             &kp J             &kp K             &kp L             &kp SEMICOLON                           &trans  &trans  &trans  &trans  &trans  &trans
-&kp LA(F4)  &kp N             &kp M             &kp COMMA         &kp PERIOD        &kp SLASH      &trans           &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&kp LA(F4)  &kp N             &kp M             &kp COMMA         &kp PERIOD        &kp SLASH      &kp LA(F4)       &trans  &trans  &trans  &trans  &trans  &trans  &trans
                                                 &to 5             &trans            &kp LA(ENTER)  &kp LG(LS(Q))    &trans  &trans  &trans  &trans
             >;
         };
@@ -1032,6 +1046,16 @@
 &kp F9   &kp LC(A)     &kp NUMBER_5  &kp NUMBER_6  &kp LC(F)  &kp PLUS                              &trans  &trans  &trans          &trans   &trans   &kp ENTER
 &kp F11  &kp NUMBER_1  &kp NUMBER_2  &kp LC(C)     &kp LC(V)  &kp MINUS     &trans    &trans        &trans  &trans  &trans          &trans   &trans   &trans
                                      &kp EQUAL     &kp SPACE  &kp NUMBER_0  &to 0     &kp CAPSLOCK  &trans  &mo 3   &kp LEFT_SHIFT
+            >;
+        };
+
+        additional_symbol_layer {
+            bindings = <
+&kp ESCAPE          &kp LC(C)               &kp LC(V)     &kp LC(A)                         &trans               &trans                            &trans        &trans  &trans          &kp LG(LS(A))  &kp LG(LS(S))         &kp DEL
+&batch_left_select  &kp LC(LS(LEFT_ARROW))  &kp UP_ARROW  &kp LC(LS(RIGHT))                 &batch_right_select  &trans                            &trans        &trans  &trans          &kp LC(LS(F))  &kp NON_US_BACKSLASH  &kp EQUAL
+&batch_left         &kp LEFT_ARROW          &kp DOWN      &kp RIGHT                         &batch_right         &block_and_copy                   &trans        &trans  &trans          &kp SQT        &kp PLUS              &kp ENTER
+&mkp LCLK           &kp HOME                &kp END       &kp LC(C)                         &kp LC(V)            &replace         &to 5    &trans  &trans        &trans  &kp GRAVE       &trans         &trans                &trans
+                                                          &custom_hold_tap LC(Y) LC(LS(Z))  &kp LC(Z)            &mo_tap 7 SPACE  &to 0    &trans  &kp LEFT_ALT  &to 0   &kp LEFT_SHIFT
             >;
         };
     };
