@@ -1008,7 +1008,7 @@
 
         copy_paste_layer {
             bindings = <
-&kp ESCAPE          &kp LC(C)               &kp LC(V)     &kp LC(A)                         &trans                             &trans                             &trans        &trans  &trans          &kp LG(LS(A))  &kp LG(LS(S))         &kp DEL
+&kp ESCAPE          &kp LA(LS(F))           &kp LC(V)     &kp LC(A)                         &trans                             &trans                             &trans        &trans  &trans          &kp LG(LS(A))  &kp LG(LS(S))         &kp DEL
 &batch_left_select  &kp LC(LS(LEFT_ARROW))  &kp UP_ARROW  &kp LC(LS(RIGHT))                 &batch_right_select                &trans                             &trans        &trans  &trans          &kp LC(LS(F))  &kp NON_US_BACKSLASH  &kp EQUAL
 &batch_left         &kp LEFT_ARROW          &kp DOWN      &kp RIGHT                         &batch_right                       &block_and_copy                    &trans        &trans  &trans          &kp SQT        &kp PLUS              &kp ENTER
 &mkp LCLK           &kp HOME                &kp END       &kp LC(C)                         &kp LC(V)                          &replace          &to 5    &trans  &trans        &trans  &kp GRAVE       &trans         &trans                &trans
