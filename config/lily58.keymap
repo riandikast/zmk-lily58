@@ -197,7 +197,7 @@
         MidMouseRelease: MidMouseRelease {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press>, <&mkp MCLK>;
+            bindings = <&macro_release>, <&mkp MCLK>;
 
             label = "MIDMOUSERELEASE";
         };
@@ -615,14 +615,14 @@
             bindings = <&kp>, <&fTapDance>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <150>;
+            tapping-term-ms = <199>;
         };
 
         mTapDance: mTapDance {
             compatible = "zmk,behavior-tap-dance";
             label = "MTAPDANCE";
             #binding-cells = <0>;
-            bindings = <&kp ESC>, <&kp M>;
+            bindings = <&MiddleClickShift>, <&kp M>;
 
             tapping-term-ms = <310>;
         };
@@ -1044,6 +1044,15 @@
             label = "TESTMIDDLECLICK";
             #binding-cells = <1>;
         };
+
+        MiddleClickShift: MiddleClickShift {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MIDDLECLICKSHIFT";
+            bindings = <&kp ESC>, <&MidClickTapDance>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT)>;
+        };
     };
 
     keymap {
@@ -1110,7 +1119,7 @@
             bindings = <
 &EscDeleteTapDance  &kp LS(NUMBER_1)  &kp LS(NUMBER_2)  &kp LS(NUMBER_3)  &kp LS(NUMBER_4)  &kp LS(N5)                                     &kp LS(NUMBER_6)  &kp LS(N7)            &kp LS(N8)       &kp LS(N9)         &kp LS(N0)    &kp BACKSPACE
 &kp LS(LG(Q))       &kp NUMBER_7      &kp NUMBER_8      &kp NUMBER_9      &kp MINUS         &trans                                         &trans            &kp LC(LS(UP_ARROW))  &kp LEFT_BRACE   &kp GRAVE          &kp PIPE      &kp EQUAL
-&kp NUMBER_0        &kp NUMBER_4      &kp NUMBER_5      &kp NUMBER_6      &kp PLUS          &TestMiddleClick MB3                           &kp TILDE         &kp LC(LS(DOWN))      &kp RIGHT_BRACE  &kp DOUBLE_QUOTES  &kp COLON     &kp LS(ENTER)
+&kp NUMBER_0        &kp NUMBER_4      &kp NUMBER_5      &kp NUMBER_6      &kp PLUS          &MidClickTapDance                              &kp TILDE         &kp LC(LS(DOWN))      &kp RIGHT_BRACE  &kp DOUBLE_QUOTES  &kp COLON     &kp LS(ENTER)
 &mkp LCLK           &kp NUMBER_1      &kp NUMBER_2      &kp NUMBER_3      &kp EQUAL         &to 3                  &to 5    &trans         &kp SQT           &kp SQT               &kp LEFT_BRACE   &kp RIGHT_BRACE    &kp QUESTION  &trans
                                                         &mo 7             &mo_tap 7 SPACE   &tapKp_holdTo 0 SPACE  &to 0    &kp LC(SLASH)  &kp END           &kp LSHFT             &kp LEFT_SHIFT
             >;
@@ -1163,10 +1172,10 @@
         mouse_layerr {
             bindings = <
 &kp DELETE      &hold_scroll_down  &username_pc_kantor  &pw_pc_kantor    &pass_windows_kantor  &gap_port                            &kp N5  &trans  &trans  &trans  &trans  &trans
-&kp LA(TAB)     &hold_scroll_up    &mmv MOVE_UP         &mkp RCLK        &msc SCRL_DOWN        &hold_scroll_down                    &kp T   &trans  &trans  &trans  &trans  &trans
+&kp LA(TAB)     &hold_scroll_up    &mmv MOVE_UP         &mkp RCLK        &msc SCRL_UP          &hold_scroll_up                      &kp T   &trans  &trans  &trans  &trans  &trans
 &kp LEFT_SHIFT  &mmv MOVE_LEFT     &mmv MOVE_DOWN       &mmv MOVE_RIGHT  &kp LC(F)             &kp H                                &kp G   &trans  &trans  &trans  &trans  &trans
-&mkp LCLK       &msc SCRL_RIGHT    &msc SCRL_LEFT       &mkp LCLK        &msc SCRL_UP          &hold_scroll_up    &trans    &trans  &kp B   &trans  &trans  &trans  &trans  &trans
-                                                        &to 0            &Right_Scroll         &Left_Scroll       &to 0     &trans  &trans  &trans  &trans
+&mkp LCLK       &msc SCRL_LEFT     &msc SCRL_RIGHT      &mkp LCLK        &msc SCRL_DOWN        &hold_scroll_down  &trans    &trans  &kp B   &trans  &trans  &trans  &trans  &trans
+                                                        &to 0            &Left_Scroll          &Right_Scroll      &to 0     &trans  &trans  &trans  &trans
             >;
         };
 
