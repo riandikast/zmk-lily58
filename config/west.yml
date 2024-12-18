@@ -11,7 +11,7 @@ manifest:
   projects:
     - name: zmk
       remote: cay
-      revision: docs/pointing-tweaks
+      revision: docs/more-hw-integration
       import: app/west.yml
     - name: blank-slate-zmk-module
       remote: pete
