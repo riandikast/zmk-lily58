@@ -5,11 +5,11 @@
  */
 
 #define SPLIT_USB_DETECT
-#define ZMK_MOUSE_DEFAULT_MOVE_VAL 2500  // 600
 
-#undef ZMK_MOUSE_DEFAULT_SCRL_VAL
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 1900  // default: 600
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 20    // default: 10
 
-#define ZMK_MOUSE_DEFAULT_SCRL_VAL 12 // 10
+
 
 #include <dt-bindings/zmk/mouse.h>
 #include <behaviors.dtsi>
