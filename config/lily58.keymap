@@ -140,7 +140,7 @@
         hold_scroll_up: hold_scroll_up {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press>, <&msc SCRL_UP>;
+            bindings = <&macro_press>, <&msc MOVE_UP>;
 
             label = "HOLD_SCROLL_UP";
         };
@@ -148,7 +148,7 @@
         hold_scroll_down: hold_scroll_down {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press>, <&msc SCRL_DOWN>;
+            bindings = <&macro_press>, <&msc MOVE_DOWN>;
 
             label = "HOLD_SCROLL_DOWN";
         };
@@ -208,7 +208,7 @@
         Left_Scroll: Left_Scroll {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press>, <&msc SCRL_LEFT>;
+            bindings = <&macro_press>, <&msc MOVE_LEFT>;
 
             label = "LEFT_SCROLL";
         };
@@ -216,7 +216,7 @@
         Right_Scroll: Right_Scroll {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press>, <&msc SCRL_RIGHT>;
+            bindings = <&macro_press>, <&msc MOVE_RIGHT>;
 
             label = "RIGHT_SCROLL";
         };
@@ -979,7 +979,7 @@
             label = "SCROLLUPTAPDANCE";
             #binding-cells = <0>;
             tapping-term-ms = <250>;
-            bindings = <&msc SCRL_UP>, <&hold_scroll_up>;
+            bindings = <&msc MOVE_UP>, <&hold_scroll_up>;
         };
 
         ScrollUpHoldTap: ScrollUpHoldTap {
@@ -996,7 +996,7 @@
             label = "SCROLLDOWNTAPDANCE";
             #binding-cells = <0>;
             tapping-term-ms = <250>;
-            bindings = <&msc SCRL_DOWN>, <&hold_scroll_down>;
+            bindings = <&msc MOVE_DOWN>, <&hold_scroll_down>;
         };
 
         ScrollDownHoldTap: ScrollDownHoldTap {
@@ -1013,7 +1013,7 @@
             label = "SCROLLLEFTTAPDANCE";
             #binding-cells = <0>;
             tapping-term-ms = <250>;
-            bindings = <&msc SCRL_LEFT>, <&Left_Scroll>;
+            bindings = <&msc MOVE_LEFT>, <&Left_Scroll>;
         };
 
         ScrollLeftHoldtTap: ScrollLeftHoldtTap {
@@ -1030,7 +1030,7 @@
             label = "SCROLLRIGHTTAPDANCE";
             #binding-cells = <0>;
             tapping-term-ms = <250>;
-            bindings = <&msc SCRL_RIGHT>, <&Right_Scroll>;
+            bindings = <&msc MOVE_RIGHT>, <&Right_Scroll>;
         };
 
         ScrollRightHoldTap: ScrollRightHoldTap {
