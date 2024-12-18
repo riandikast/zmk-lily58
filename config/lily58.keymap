@@ -14,12 +14,15 @@
 
 #define ZMK_MOUSE_DEFAULT_SCRL_VAL 12 // 10
 
+#include <dt-bindings/zmk/mouse.h>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/mouse.h>
+#include <dt-bindings/zmk/pointing.h>
+#include <dt-bindings/zmk/pointing.h>
+#include <dt-bindings/zmk/pointing.h>
 
 / {
     combos { compatible = "zmk,combos"; };
@@ -73,23 +76,37 @@
             #binding-cells = <0>;
             bindings =
                 <&kp F>,
-                <&macro_wait_time 150>,
+                <&macro_wait_time 300>,
                 <&kp F>,
-                <&macro_wait_time 150>,
+                <&macro_wait_time 300>,
                 <&kp F>,
-                <&macro_wait_time 150>,
+                <&macro_wait_time 300>,
                 <&kp F>,
-                <&macro_wait_time 150>,
+                <&macro_wait_time 300>,
                 <&kp F>,
-                <&macro_wait_time 150>,
+                <&macro_wait_time 300>,
                 <&kp F>,
-                <&macro_wait_time 150>,
+                <&macro_wait_time 300>,
                 <&kp F>,
-                <&macro_wait_time 150>,
+                <&macro_wait_time 300>,
                 <&kp F>,
-                <&macro_wait_time 150>,
+                <&macro_wait_time 300>,
                 <&kp F>,
-                <&macro_wait_time 50>,
+                <&macro_wait_time 300>,
+                <&kp F>,
+                <&macro_wait_time 300>,
+                <&kp F>,
+                <&macro_wait_time 300>,
+                <&kp F>,
+                <&macro_wait_time 300>,
+                <&kp F>,
+                <&macro_wait_time 300>,
+                <&kp F>,
+                <&macro_wait_time 300>,
+                <&kp F>,
+                <&macro_wait_time 300>,
+                <&kp F>,
+                <&macro_wait_time 300>,
                 <&kp F>;
 
             label = "SPAM_F";
@@ -402,14 +419,14 @@
             #binding-cells = <0>;
             bindings = <&kp W>, <&kp W>, <&kt W>;
 
-            tapping-term-ms = <250>;
+            tapping-term-ms = <280>;
         };
 
         sTapDance: sTapDance {
             compatible = "zmk,behavior-tap-dance";
             label = "STAPDANCE";
             #binding-cells = <0>;
-            tapping-term-ms = <250>;
+            tapping-term-ms = <280>;
             bindings = <&kp S>, <&kp S>, <&kt S>;
         };
 
@@ -419,7 +436,7 @@
             #binding-cells = <0>;
             bindings = <&kp A>, <&kp A>, <&kt A>;
 
-            tapping-term-ms = <250>;
+            tapping-term-ms = <280>;
         };
 
         dTapDance: dTapDance {
@@ -428,7 +445,7 @@
             #binding-cells = <0>;
             bindings = <&kp D>, <&kp D>, <&kt D>;
 
-            tapping-term-ms = <250>;
+            tapping-term-ms = <280>;
         };
 
         wHoldTapDance: wHoldTapDance {
@@ -579,9 +596,9 @@
             compatible = "zmk,behavior-tap-dance";
             label = "MTAPDANCE";
             #binding-cells = <0>;
-            bindings = <&kp M>, <&kp ESCAPE>;
+            bindings = <&kp ESC>, <&kp M>;
 
-            tapping-term-ms = <300>;
+            tapping-term-ms = <310>;
         };
 
         capsTapDance: capsTapDance {
@@ -900,6 +917,24 @@
 
             tapping-term-ms = <250>;
         };
+
+        DoubleShiftTapDance: DoubleShiftTapDance {
+            compatible = "zmk,behavior-tap-dance";
+            label = "DOUBLESHIFTTAPDANCE";
+            #binding-cells = <0>;
+            bindings = <&kp LSHFT>, <&kt LSHFT>;
+
+            tapping-term-ms = <250>;
+        };
+
+        DoubleShiftHoldTap: DoubleShiftHoldTap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "DOUBLESHIFTHOLDTAP";
+            bindings = <&kp>, <&DoubleShiftTapDance>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <250>;
+        };
     };
 
     keymap {
@@ -984,11 +1019,11 @@
 
         game_layer {
             bindings = <
-&mTapDance                &kp NUMBER_1        &kp N2              &kp N3              &kp N4              &kp N5                                                                       &kp N6        &kp N7                 &kp N8                             &kp N9   &kp N0    &kp BACKSPACE
-&custom_hold_tap TAB TAB  &kp Q               &wHoldTapDance W 0  &kp E               &kp R               &kp T                                                                        &kp Y         &kp U                  &kp I                              &kp O    &kp P     &kp MINUS
-&kp LCTRL                 &aHoldTapDance A 0  &sHoldTapDance S 0  &dHoldTapDance D 0  &fHoldTapDance F 0  &kp G                                                                        &kp H         &kp J                  &kp K                              &kp L    &kp SEMI  &kp ENTER
-&mkp LCLK                 &kp Z               &kp X               &kp C               &kp V               &kp B         &custom_hold_tap LS(LG(Q)) LEFT_WIN    &kp LG(LC(LEFT_ARROW))  &kp N         &kp M                  &kp COMMA                          &kp DOT  &kp FSLH  &kp ENTER
-                                                                  &kp LEFT_SHIFT      &kp SPACE           &kp LEFT_ALT  &to_mo 10 0                            &kp LG(LS(Q))           &kp LEFT_WIN  &mo_with_tapdance 3 0  &custom_hold_tap LEFT_SHIFT SPACE
+&mTapDance                &kp NUMBER_1        &kp N2              &kp N3                            &kp N4              &kp N5                                                                       &kp N6        &kp N7                 &kp N8                             &kp N9   &kp N0    &kp BACKSPACE
+&custom_hold_tap TAB TAB  &kp Q               &wHoldTapDance W 0  &kp E                             &kp R               &kp T                                                                        &kp Y         &kp U                  &kp I                              &kp O    &kp P     &kp MINUS
+&kp LCTRL                 &aHoldTapDance A 0  &sHoldTapDance S 0  &dHoldTapDance D 0                &fHoldTapDance F 0  &kp G                                                                        &kp H         &kp J                  &kp K                              &kp L    &kp SEMI  &kp ENTER
+&mkp LCLK                 &kp Z               &kp X               &kp C                             &kp V               &kp B         &custom_hold_tap LS(LG(Q)) LEFT_WIN    &kp LG(LC(LEFT_ARROW))  &kp N         &kp M                  &kp COMMA                          &kp DOT  &kp FSLH  &kp ENTER
+                                                                  &DoubleShiftHoldTap LEFT_SHIFT 0  &kp SPACE           &kp LEFT_ALT  &to_mo 10 0                            &kp LG(LS(Q))           &kp LEFT_WIN  &mo_with_tapdance 3 0  &custom_hold_tap LEFT_SHIFT SPACE
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -1040,11 +1075,11 @@
 
         additional_game_layer {
             bindings = <
-&kp ESCAPE  &kp LA(NUMBER_1)  &kp LA(NUMBER_2)  &kp LA(NUMBER_3)  &kp LA(NUMBER_4)  &trans                                  &trans  &trans  &trans  &trans  &trans  &trans
-&to 6       &kp Y             &kp U             &kp I             &kp O             &kp P                                   &trans  &trans  &trans  &trans  &trans  &trans
-&kp LCTRL   &kp H             &kp J             &kp K             &kp L             &kp SEMICOLON                           &trans  &trans  &trans  &trans  &trans  &trans
-&kp LA(F4)  &kp N             &kp M             &kp COMMA         &kp PERIOD        &kp SLASH      &kp LA(F4)       &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                                                &to 5             &trans            &kp LA(ENTER)  &kp LG(LS(Q))    &trans  &trans  &trans  &trans
+&kp ESCAPE     &kp NUMBER_6  &kp N7  &kp N8     &kp N9      &kp N0                                  &trans  &trans  &trans  &trans  &trans  &trans
+&kp LS(LG(Q))  &kp Y         &kp U   &kp I      &kp O       &kp P                                   &trans  &trans  &trans  &trans  &trans  &trans
+&kp LCTRL      &kp H         &kp J   &kp K      &kp L       &kp SEMICOLON                           &trans  &trans  &trans  &trans  &trans  &trans
+&kp LA(F4)     &kp N         &kp M   &kp COMMA  &kp PERIOD  &kp SLASH      &kp ENTER        &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                                     &to 5      &trans      &kp LA(ENTER)  &kp LG(LS(Q))    &trans  &trans  &trans  &trans
             >;
         };
 
