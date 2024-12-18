@@ -5,11 +5,10 @@
  */
 
 #define SPLIT_USB_DETECT
-
-
 #define ZMK_MOUSE_DEFAULT_MOVE_VAL 2500  // 600
 
 #undef ZMK_MOUSE_DEFAULT_SCRL_VAL
+
 #define ZMK_MOUSE_DEFAULT_SCRL_VAL 12 // 10
 
 #include <dt-bindings/zmk/mouse.h>
@@ -19,7 +18,8 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
-
+#include <dt-bindings/zmk/pointing.h>
+#include <dt-bindings/zmk/pointing.h>
 
 / {
     combos { compatible = "zmk,combos"; };
@@ -140,7 +140,7 @@
         hold_scroll_up: hold_scroll_up {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press>, <&none>;
+            bindings = <&macro_press>, <&msc SCRL_UP>;
 
             label = "HOLD_SCROLL_UP";
         };
@@ -148,7 +148,7 @@
         hold_scroll_down: hold_scroll_down {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press>, <&none>;
+            bindings = <&macro_press>, <&msc SCRL_DOWN>;
 
             label = "HOLD_SCROLL_DOWN";
         };
@@ -187,6 +187,38 @@
             #binding-cells = <0>;
             bindings = <&tapKp_holdSysReset 0 LC(LS(LEFT_ARROW)) &kp LS(LC(LEFT_ARROW)) &kp LC(LS(LEFT_ARROW)) &kp LC(LS(LEFT_ARROW))>;
             label = "BATCH_LEFT_SELECT";
+        };
+
+        MidMouseHold: MidMouseHold {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press>, <&mkp MCLK>;
+
+            label = "MIDMOUSEHOLD";
+        };
+
+        MidMouseRelease: MidMouseRelease {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press>, <&mkp MCLK>;
+
+            label = "MIDMOUSERELEASE";
+        };
+
+        Left_Scroll: Left_Scroll {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press>, <&msc SCRL_LEFT>;
+
+            label = "LEFT_SCROLL";
+        };
+
+        Right_Scroll: Right_Scroll {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press>, <&msc SCRL_RIGHT>;
+
+            label = "RIGHT_SCROLL";
         };
     };
 
@@ -932,6 +964,83 @@
             #binding-cells = <2>;
             tapping-term-ms = <250>;
         };
+
+        MidClickTapDance: MidClickTapDance {
+            compatible = "zmk,behavior-tap-dance";
+            label = "MIDCLICKTAPDANCE";
+            #binding-cells = <0>;
+            bindings = <&MidMouseHold>, <&MidMouseRelease>;
+
+            tapping-term-ms = <250>;
+        };
+
+        ScrollUpTapDance: ScrollUpTapDance {
+            compatible = "zmk,behavior-tap-dance";
+            label = "SCROLLUPTAPDANCE";
+            #binding-cells = <0>;
+            tapping-term-ms = <250>;
+            bindings = <&msc SCRL_UP>, <&hold_scroll_up>;
+        };
+
+        ScrollUpHoldTap: ScrollUpHoldTap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "SCROLLUPHOLDTAP";
+            bindings = <&msc>, <&ScrollUpTapDance>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <250>;
+        };
+
+        ScrollDownTapDance: ScrollDownTapDance {
+            compatible = "zmk,behavior-tap-dance";
+            label = "SCROLLDOWNTAPDANCE";
+            #binding-cells = <0>;
+            tapping-term-ms = <250>;
+            bindings = <&msc SCRL_DOWN>, <&hold_scroll_down>;
+        };
+
+        ScrollDownHoldTap: ScrollDownHoldTap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "SCROLLDOWNHOLDTAP";
+            bindings = <&msc>, <&ScrollDownTapDance>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <250>;
+        };
+
+        ScrollLeftTapDance: ScrollLeftTapDance {
+            compatible = "zmk,behavior-tap-dance";
+            label = "SCROLLLEFTTAPDANCE";
+            #binding-cells = <0>;
+            tapping-term-ms = <250>;
+            bindings = <&msc SCRL_LEFT>, <&Left_Scroll>;
+        };
+
+        ScrollLeftHoldtTap: ScrollLeftHoldtTap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "SCROLLLEFTHOLDTTAP";
+            bindings = <&msc>, <&ScrollLeftTapDance>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <250>;
+        };
+
+        ScrollRightTapDance: ScrollRightTapDance {
+            compatible = "zmk,behavior-tap-dance";
+            label = "SCROLLRIGHTTAPDANCE";
+            #binding-cells = <0>;
+            tapping-term-ms = <250>;
+            bindings = <&msc SCRL_RIGHT>, <&Right_Scroll>;
+        };
+
+        ScrollRightHoldTap: ScrollRightHoldTap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "SCROLLRIGHTHOLDTAP";
+            bindings = <&msc>, <&ScrollRightTapDance>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <250>;
+        };
     };
 
     keymap {
@@ -1050,11 +1159,11 @@
 
         mouse_layerr {
             bindings = <
-&kp DELETE      &hold_scroll_down  &username_pc_kantor  &pw_pc_kantor    &pass_windows_kantor  &gap_port                    &kp N5  &trans  &trans  &trans  &trans  &trans
-&kp LA(TAB)     &hold_scroll_up    &mmv MOVE_UP         &mkp RCLK        &msc MOVE_DOWN        &trans                       &kp T   &trans  &trans  &trans  &trans  &trans
-&kp LEFT_SHIFT  &mmv MOVE_LEFT     &mmv MOVE_DOWN       &mmv MOVE_RIGHT  &kp LC(F)             &kp H                        &kp G   &trans  &trans  &trans  &trans  &trans
-&mkp LCLK       &msc MOVE_RIGHT    &msc MOVE_LEFT       &mkp LCLK        &msc MOVE_UP          &trans     &trans    &trans  &kp B   &trans  &trans  &trans  &trans  &trans
-                                                        &to 0            &trans                &trans     &to 0     &trans  &trans  &trans  &trans
+&kp DELETE      &hold_scroll_down                 &username_pc_kantor              &pw_pc_kantor    &pass_windows_kantor             &gap_port                    &kp N5  &trans  &trans  &trans  &trans  &trans
+&kp LA(TAB)     &hold_scroll_up                   &mmv MOVE_UP                     &mkp RCLK        &ScrollLeftHoldtTap MOVE_DOWN 0  &trans                       &kp T   &trans  &trans  &trans  &trans  &trans
+&kp LEFT_SHIFT  &mmv MOVE_LEFT                    &mmv MOVE_DOWN                   &mmv MOVE_RIGHT  &kp LC(F)                        &kp H                        &kp G   &trans  &trans  &trans  &trans  &trans
+&mkp LCLK       &ScrollRightHoldTap MOVE_RIGHT 0  &ScrollLeftHoldtTap MOVE_LEFT 0  &mkp LCLK        &ScrollUpHoldTap MOVE_UP 0       &trans     &trans    &trans  &kp B   &trans  &trans  &trans  &trans  &trans
+                                                                                   &to 0            &trans                           &trans     &to 0     &trans  &trans  &trans  &trans
             >;
         };
 
@@ -1072,11 +1181,11 @@
 
         additional_game_layer {
             bindings = <
-&kp ESCAPE     &kp NUMBER_6  &kp N7  &kp N8     &kp N9      &kp N0                                  &trans  &trans  &trans  &trans  &trans  &trans
-&kp LS(LG(Q))  &kp Y         &kp U   &kp I      &kp O       &kp P                                   &trans  &trans  &trans  &trans  &trans  &trans
-&kp LCTRL      &kp H         &kp J   &kp K      &kp L       &kp SEMICOLON                           &trans  &trans  &trans  &trans  &trans  &trans
-&kp LA(F4)     &kp N         &kp M   &kp COMMA  &kp PERIOD  &kp SLASH      &kp ENTER        &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                                     &to 5      &trans      &kp LA(ENTER)  &kp LG(LS(Q))    &trans  &trans  &trans  &trans
+&MidClickTapDance  &kp NUMBER_6  &kp N7  &kp N8     &kp N9      &kp N0                                  &trans  &trans  &trans  &trans  &trans  &trans
+&kp LS(LG(Q))      &kp Y         &kp U   &kp I      &kp O       &kp P                                   &trans  &trans  &trans  &trans  &trans  &trans
+&kp LCTRL          &kp H         &kp J   &kp K      &kp L       &kp SEMICOLON                           &trans  &trans  &trans  &trans  &trans  &trans
+&kp LA(F4)         &kp N         &kp M   &kp COMMA  &kp PERIOD  &kp SLASH      &kp ENTER        &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                                         &to 5      &trans      &kp LA(ENTER)  &kp LG(LS(Q))    &trans  &trans  &trans  &trans
             >;
         };
 
