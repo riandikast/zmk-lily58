@@ -11,7 +11,6 @@
 #include <dt-bindings/zmk/mouse.h>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
@@ -622,7 +621,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "MTAPDANCE";
             #binding-cells = <0>;
-            bindings = <&MiddleClickShift>, <&kp M>;
+            bindings = <&kp ESCAPE>, <&kp M>, <&mkp MB3>;
 
             tapping-term-ms = <310>;
         };
@@ -1130,7 +1129,7 @@
 &kp GRAVE   &kp F1        &kp F2        &kp F3        &kp F4        &kp F5                                                                                  &kp F6                          &kp F7  &kp F8     &kp F9  &kp F10  &kp F11
 &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                                                                            &trans                          &trans  &trans     &trans  &trans   &kp F12
 &trans      &trans        &trans        &trans        &trans        &kp LG(LS(Q))                                                                           &trans                          &trans  &trans     &trans  &trans   &trans
-&trans      &kp LEFT_WIN  &trans        &trans        &trans        &ext_power EP_TOG            &trans                       &trans                        &ext_power EP_TOG               &trans  &trans     &trans  &trans   &trans
+&trans      &kp LEFT_WIN  &trans        &trans        &trans        &studio_unlock               &trans                       &trans                        &studio_unlock                  &trans  &trans     &trans  &trans   &trans
                                         &soft_off     &kp LSHFT     &tapKp_holdSysReset 0 SPACE  &tapTo_holdBootloader 0 0    &tapKp_Bootloader 0 LEFT_ALT  &tapKp_holdSysReset 0 LEFT_WIN  &trans  &soft_off
             >;
         };
