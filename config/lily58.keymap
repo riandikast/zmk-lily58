@@ -397,7 +397,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "LAYER_TAP_DANCE";
             #binding-cells = <0>;
-            bindings = <&to 8>, <&to 7>, <&to 5>;
+            bindings = <&kp SPACE>, <&to 8>, <&to 7>, <&to 5>;
 
             tapping-term-ms = <350>;
         };
@@ -757,7 +757,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "GRAVETAPDANCE";
             #binding-cells = <0>;
-            bindings = <&kp GRAVE>, <&kp GRAVE>;
+            bindings = <&kp LS(GRAVE)>, <&kp GRAVE>;
 
             tapping-term-ms = <300>;
         };
@@ -765,7 +765,7 @@
         LBackspaceMorph: LBackspaceMorph {
             compatible = "zmk,behavior-mod-morph";
             label = "LBACKSPACEMORPH";
-            bindings = <&kp BACKSPACE>, <&GraveTapDance>;
+            bindings = <&kp ESCAPE>, <&GraveTapDance>;
 
             #binding-cells = <0>;
             mods = <(MOD_RCTL|MOD_LCTL)>;
@@ -901,7 +901,7 @@
         semicolon_morph: semicolon_morph {
             compatible = "zmk,behavior-mod-morph";
             label = "SEMICOLON_MORPH";
-            bindings = <&kp SEMICOLON>, <&kp SQT>;
+            bindings = <&kp SEMICOLON>, <&TapDancePetik>;
 
             #binding-cells = <0>;
             mods = <(MOD_LCTL|MOD_RCTL)>;
@@ -928,7 +928,7 @@
         minus_morph: minus_morph {
             compatible = "zmk,behavior-mod-morph";
             label = "MINUS_MORPH";
-            bindings = <&kp MINUS>, <&kp NON_US_BACKSLASH>;
+            bindings = <&kp MINUS>, <&kp EQUAL>;
 
             #binding-cells = <0>;
             mods = <(MOD_LCTL|MOD_RCTL)>;
@@ -1052,6 +1052,69 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT)>;
         };
+
+        TapDanceLeftKurung: TapDanceLeftKurung {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAPDANCELEFTKURUNG";
+            #binding-cells = <0>;
+            bindings = <&kp N9>, <&kp LEFT_BRACKET>;
+
+            tapping-term-ms = <300>;
+        };
+
+        HoldTapLeftKurung: HoldTapLeftKurung {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOLDTAPLEFTKURUNG";
+            bindings = <&kp>, <&TapDanceLeftKurung>;
+
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <300>;
+        };
+
+        TapDanceRightKurung: TapDanceRightKurung {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAPDANCERIGHTKURUNG";
+            #binding-cells = <0>;
+            bindings = <&kp N0>, <&kp LEFT_BRACKET>;
+
+            tapping-term-ms = <300>;
+        };
+
+        HoldTapRightKurung: HoldTapRightKurung {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOLDTAPRIGHTKURUNG";
+            bindings = <&kp>, <&TapDanceRightKurung>;
+
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <300>;
+        };
+
+        TapDancePetik: TapDancePetik {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAPDANCEPETIK";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&kp SQT>, <&kp LS(SQT)>;
+        };
+
+        AtauGarisTapDance: AtauGarisTapDance {
+            compatible = "zmk,behavior-tap-dance";
+            label = "ATAUGARISTAPDANCE";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&kp LS(NON_US_BACKSLASH)>, <&kp SLASH>;
+        };
+
+        QuestionMorph: QuestionMorph {
+            compatible = "zmk,behavior-mod-morph";
+            label = "QUESTIONMORPH";
+            bindings = <&QuestionMarkTapDance>, <&AtauGarisTapDance>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL|MOD_RCTL)>;
+        };
     };
 
     keymap {
@@ -1066,10 +1129,10 @@
             //                     | ALT  | GUI  | LOWER|  ENTER |  | SPACE | RAISE| BSPC  | GUI   |
 
             bindings = <
-&LBackspaceMorph      &kp N1  &kp N2  &kp N3                     &kp N4                             &kp N5                                                       &kp N6                                &kp N7                 &kp N8                        &kp N9        &kp N0                 &RBackspaceMorphFinal
-&kp TAB               &kp Q   &kp W   &kp E                      &kp R                              &kp T                                                        &kp Y                                 &kp U                  &kp I                         &kp O         &kp P                  &minus_morph
-&kp LCTRL             &kp A   &kp S   &kp D                      &kp F                              &kp G                                                        &kp H                                 &kp J                  &kp K                         &kp L         &semicolon_morph       &short_layer_tap 7 ENTER
-&leftClickCommentOut  &kp Z   &kp X   &kp C                      &kp V                              &kp B      &lt 4 N                         &lt 4 B           &kp N                                 &kp M                  &comma_morph                  &titik_morph  &QuestionMarkTapDance  &kp ENTER
+&LBackspaceMorph      &kp N1  &kp N2  &kp N3                     &kp N4                             &kp N5                                                       &kp N6                                &kp N7                 &kp N8                        &HoldTapLeftKurung N9 0  &HoldTapRightKurung N0 0  &RBackspaceMorphFinal
+&kp TAB               &kp Q   &kp W   &kp E                      &kp R                              &kp T                                                        &kp Y                                 &kp U                  &kp I                         &kp O                    &kp P                     &minus_morph
+&kp LCTRL             &kp A   &kp S   &kp D                      &kp F                              &kp G                                                        &kp H                                 &kp J                  &kp K                         &kp L                    &semicolon_morph          &short_layer_tap 7 ENTER
+&leftClickCommentOut  &kp Z   &kp X   &kp C                      &kp V                              &kp B      &lt 4 N                         &lt 4 B           &kp N                                 &kp M                  &comma_morph                  &titik_morph             &QuestionMorph            &kp ENTER
                                       &layer_hold_tap_dance 3 0  &custom_hold_tap LEFT_SHIFT SPACE  &kp SPACE  &holdCapsTapDance LEFT_ALT 0    &mt RALT RA(TAB)  &CustomHoldTapSticky RIGHT_WIN RSHFT  &holdMo_tapKp 3 SPACE  &custom_hold_tap RCTRL SPACE
             >;
 
