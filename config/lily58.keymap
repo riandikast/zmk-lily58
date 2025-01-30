@@ -290,8 +290,8 @@
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <400>;
-            flavor = "tap-preferred";
+            tapping-term-ms = <350>;
+            flavor = "hold-preferred";
         };
 
         to_to: to_to {
