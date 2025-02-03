@@ -18,7 +18,39 @@
 #include <dt-bindings/zmk/pointing.h>
 
 / {
-    combos { compatible = "zmk,combos"; };
+    combos {
+        compatible = "zmk,combos";
+
+        spam_W {
+            bindings = <&kt W>;
+            key-positions = <25 14 27>;
+            layers = <5>;
+        };
+
+        spam_s {
+            bindings = <&kt S>;
+            key-positions = <25 26 27>;
+            layers = <5>;
+        };
+
+        spam_d {
+            bindings = <&kt D>;
+            key-positions = <26 27>;
+            layers = <5>;
+        };
+
+        spam_a {
+            bindings = <&kt A>;
+            key-positions = <26 25>;
+            layers = <5>;
+        };
+
+        spam_f {
+            bindings = <&spam_f>;
+            key-positions = <25 26 28>;
+            layers = <5>;
+        };
+    };
 
     macros {
         kurung: kurung {
@@ -290,7 +322,7 @@
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <350>;
+            tapping-term-ms = <379>;
             flavor = "hold-preferred";
         };
 
@@ -775,10 +807,10 @@
         RBackspaceMorphFinal: RBackspaceMorphFinal {
             compatible = "zmk,behavior-mod-morph";
             label = "RBACKSPACEMORPHFINAL";
-            bindings = <&RBackspaceMorph>, <&kp PLUS>;
+            bindings = <&kp BACKSPACE>, <&kp DELETE>;
 
             #binding-cells = <0>;
-            mods = <(MOD_LSFT)>;
+            mods = <(MOD_LCTL|MOD_RCTL)>;
         };
 
         CommaTapDance: CommaTapDance {
@@ -902,7 +934,7 @@
         semicolon_morph: semicolon_morph {
             compatible = "zmk,behavior-mod-morph";
             label = "SEMICOLON_MORPH";
-            bindings = <&kp SEMICOLON>, <&TapDancePetik>;
+            bindings = <&kp SEMICOLON>, <&kp DOUBLE_QUOTES>;
 
             #binding-cells = <0>;
             mods = <(MOD_LCTL|MOD_RCTL)>;
@@ -1111,7 +1143,25 @@
         QuestionMorph: QuestionMorph {
             compatible = "zmk,behavior-mod-morph";
             label = "QUESTIONMORPH";
-            bindings = <&QuestionMarkTapDance>, <&AtauGarisTapDance>;
+            bindings = <&QuestionMarkTapDance>, <&kp NON_US_BACKSLASH>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL|MOD_RCTL)>;
+        };
+
+        left_kurung_morph: left_kurung_morph {
+            compatible = "zmk,behavior-mod-morph";
+            label = "LEFT_KURUNG_MORPH";
+            bindings = <&kp N9>, <&kp LEFT_BRACE>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL|MOD_RCTL)>;
+        };
+
+        right_kurung_morph: right_kurung_morph {
+            compatible = "zmk,behavior-mod-morph";
+            label = "RIGHT_KURUNG_MORPH";
+            bindings = <&kp N0>, <&kp RIGHT_BRACE>;
 
             #binding-cells = <0>;
             mods = <(MOD_LCTL|MOD_RCTL)>;
@@ -1130,11 +1180,11 @@
             //                     | ALT  | GUI  | LOWER|  ENTER |  | SPACE | RAISE| BSPC  | GUI   |
 
             bindings = <
-&LBackspaceMorph      &kp N1  &kp N2  &kp N3                     &kp N4                             &kp N5                                                       &kp N6                                &kp N7                 &kp N8                        &HoldTapLeftKurung N9 0  &HoldTapRightKurung N0 0  &RBackspaceMorphFinal
-&kp TAB               &kp Q   &kp W   &kp E                      &kp R                              &kp T                                                        &kp Y                                 &kp U                  &kp I                         &kp O                    &kp P                     &minus_morph
-&kp LCTRL             &kp A   &kp S   &kp D                      &kp F                              &kp G                                                        &kp H                                 &kp J                  &kp K                         &kp L                    &semicolon_morph          &short_layer_tap 7 ENTER
-&leftClickCommentOut  &kp Z   &kp X   &kp C                      &kp V                              &kp B      &lt 4 N                         &lt 4 B           &kp N                                 &kp M                  &comma_morph                  &titik_morph             &QuestionMorph            &kp ENTER
-                                      &layer_hold_tap_dance 3 0  &custom_hold_tap LEFT_SHIFT SPACE  &kp SPACE  &holdCapsTapDance LEFT_ALT 0    &mt RALT RA(TAB)  &CustomHoldTapSticky RIGHT_WIN RSHFT  &holdMo_tapKp 3 SPACE  &custom_hold_tap RCTRL SPACE
+&kp GRAVE             &kp N1  &kp N2  &kp N3           &kp N4                             &kp N5                                                       &kp N6                                &kp N7                 &kp N8                        &left_kurung_morph  &right_kurung_morph  &RBackspaceMorphFinal
+&kp TAB               &kp Q   &kp W   &kp E            &kp R                              &kp T                                                        &kp Y                                 &kp U                  &kp I                         &kp O               &kp P                &minus_morph
+&kp LCTRL             &kp A   &kp S   &kp D            &kp F                              &kp G                                                        &kp H                                 &kp J                  &kp K                         &kp L               &semicolon_morph     &short_layer_tap 7 ENTER
+&leftClickCommentOut  &kp Z   &kp X   &kp C            &kp V                              &kp B      &lt 4 N                         &lt 4 B           &kp N                                 &kp M                  &comma_morph                  &titik_morph        &QuestionMorph       &kp ENTER
+                                      &mo_tap 3 SPACE  &custom_hold_tap LEFT_SHIFT SPACE  &kp SPACE  &holdCapsTapDance LEFT_ALT 0    &mt RALT RA(TAB)  &CustomHoldTapSticky RIGHT_WIN RSHFT  &holdMo_tapKp 3 SPACE  &custom_hold_tap RCTRL SPACE
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -1180,11 +1230,11 @@
 
         symbol_layer {
             bindings = <
-&EscDeleteTapDance  &kp LS(NUMBER_1)  &kp LS(NUMBER_2)  &kp LS(NUMBER_3)  &kp LS(NUMBER_4)  &kp LS(N5)                                     &kp LS(NUMBER_6)  &kp LS(N7)            &kp LS(N8)       &kp LS(N9)         &kp LS(N0)    &kp BACKSPACE
-&kp LS(LG(Q))       &kp NUMBER_7      &kp NUMBER_8      &kp NUMBER_9      &kp MINUS         &trans                                         &trans            &kp LC(LS(UP_ARROW))  &kp LEFT_BRACE   &kp GRAVE          &kp PIPE      &kp EQUAL
-&kp NUMBER_0        &kp NUMBER_4      &kp NUMBER_5      &kp NUMBER_6      &kp PLUS          &mkp MB3                                       &kp TILDE         &kp LC(LS(DOWN))      &kp RIGHT_BRACE  &kp DOUBLE_QUOTES  &kp COLON     &kp LS(ENTER)
-&mkp LCLK           &kp NUMBER_1      &kp NUMBER_2      &kp NUMBER_3      &kp EQUAL         &to 3                  &to 5    &trans         &kp SQT           &kp SQT               &kp LEFT_BRACE   &kp RIGHT_BRACE    &kp QUESTION  &trans
-                                                        &mo 7             &mo_tap 7 SPACE   &tapKp_holdTo 0 SPACE  &to 0    &kp LC(SLASH)  &kp END           &kp LSHFT             &kp LEFT_SHIFT
+&to 8          &kp LS(NUMBER_1)  &kp LS(NUMBER_2)  &kp LS(NUMBER_3)  &to 7            &to 5                                          &kp LS(NUMBER_6)  &kp LS(N7)            &kp LS(N8)       &kp LS(N9)         &kp LS(N0)  &kp BACKSPACE
+&kp LS(LG(Q))  &kp NUMBER_7      &kp NUMBER_8      &kp NUMBER_9      &kp MINUS        &trans                                         &trans            &kp LC(LS(UP_ARROW))  &kp LEFT_BRACE   &kp GRAVE          &kp PIPE    &kp PLUS
+&kp NUMBER_0   &kp NUMBER_4      &kp NUMBER_5      &kp NUMBER_6      &kp PLUS         &mkp MB3                                       &kp TILDE         &kp LC(LS(DOWN))      &kp RIGHT_BRACE  &kp DOUBLE_QUOTES  &kp SQT     &kp LS(ENTER)
+&mkp LCLK      &kp NUMBER_1      &kp NUMBER_2      &kp NUMBER_3      &kp EQUAL        &to 3                  &to 5    &trans         &kp SQT           &kp SQT               &kp LEFT_BRACE   &kp RIGHT_BRACE    &kp PIPE    &trans
+                                                   &mo 7             &mo_tap 7 SPACE  &tapKp_holdTo 0 SPACE  &to 0    &kp LC(SLASH)  &kp END           &kp LSHFT             &kp LEFT_SHIFT
             >;
         };
 
@@ -1200,11 +1250,11 @@
 
         game_layer {
             bindings = <
-&mTapDance                &kp NUMBER_1        &kp N2              &kp N3                            &kp N4              &kp N5                                                                       &kp N6        &kp N7                 &kp N8                             &kp N9   &kp N0    &kp BACKSPACE
-&custom_hold_tap TAB TAB  &kp Q               &wHoldTapDance W 0  &kp E                             &kp R               &kp T                                                                        &kp Y         &kp U                  &kp I                              &kp O    &kp P     &kp MINUS
-&kp LCTRL                 &aHoldTapDance A 0  &sHoldTapDance S 0  &dHoldTapDance D 0                &fHoldTapDance F 0  &kp G                                                                        &kp H         &kp J                  &kp K                              &kp L    &kp SEMI  &kp ENTER
-&mkp LCLK                 &kp Z               &kp X               &kp C                             &kp V               &kp B         &custom_hold_tap LS(LG(Q)) LEFT_WIN    &kp LG(LC(LEFT_ARROW))  &kp N         &kp M                  &kp COMMA                          &kp DOT  &kp FSLH  &kp ENTER
-                                                                  &DoubleShiftHoldTap LEFT_SHIFT 0  &kp SPACE           &kp LEFT_ALT  &to_mo 10 0                            &kp LG(LS(Q))           &kp LEFT_WIN  &mo_with_tapdance 3 0  &custom_hold_tap LEFT_SHIFT SPACE
+&mTapDance  &kp NUMBER_1  &kp N2  &kp N3          &kp N4     &kp N5                                                                       &kp N6        &kp N7                 &kp N8                             &kp N9   &kp N0    &kp BACKSPACE
+&kp TAB     &kp Q         &kp W   &kp E           &kp R      &kp T                                                                        &kp Y         &kp U                  &kp I                              &kp O    &kp P     &kp MINUS
+&kp LCTRL   &kp A         &kp S   &kp D           &kp F      &kp G                                                                        &kp H         &kp J                  &kp K                              &kp L    &kp SEMI  &kp ENTER
+&mkp LCLK   &kp Z         &kp X   &kp C           &kp V      &kp B         &custom_hold_tap LS(LG(Q)) LEFT_WIN    &kp LG(LC(LEFT_ARROW))  &kp N         &kp M                  &kp COMMA                          &kp DOT  &kp FSLH  &kp ENTER
+                                  &kp LEFT_SHIFT  &kp SPACE  &kp LEFT_ALT  &to_mo 10 0                            &kp LG(LS(Q))           &kp LEFT_WIN  &mo_with_tapdance 3 0  &custom_hold_tap LEFT_SHIFT SPACE
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
