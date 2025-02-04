@@ -50,6 +50,36 @@
             key-positions = <25 26 28>;
             layers = <5>;
         };
+
+        esc {
+            bindings = <&kp ESCAPE>;
+            key-positions = <0 37>;
+            layers = <0>;
+        };
+
+        batch_right {
+            bindings = <&batch_right>;
+            key-positions = <26 27>;
+            layers = <7>;
+        };
+
+        batch_left {
+            bindings = <&batch_left>;
+            key-positions = <26 25>;
+            layers = <7>;
+        };
+
+        to8 {
+            bindings = <&to 8>;
+            key-positions = <25 27>;
+            layers = <0>;
+        };
+
+        to0 {
+            bindings = <&to 0>;
+            key-positions = <25 27>;
+            layers = <8>;
+        };
     };
 
     macros {
