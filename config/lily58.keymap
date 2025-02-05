@@ -358,7 +358,7 @@
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <379>;
+            tapping-term-ms = <400>;
             flavor = "hold-preferred";
         };
 
@@ -1233,11 +1233,11 @@
             //                     | ALT  | GUI  | LOWER|  ENTER |  | SPACE | RAISE| BSPC  | GUI   |
 
             bindings = <
-&kp GRAVE             &kp N1  &kp N2  &kp N3                  &kp N4     &kp N5                                                             &kp N6                                &kp N7                             &kp N8                        &left_kurung_morph  &right_kurung_morph  &RBackspaceMorphFinal
-&kp TAB               &kp Q   &kp W   &kp E                   &kp R      &kp T                                                              &kp Y                                 &kp U                              &kp I                         &kp O               &kp P                &minus_morph
-&kp LCTRL             &kp A   &kp S   &kp D                   &kp F      &kp G                                                              &kp H                                 &kp J                              &kp K                         &kp L               &semicolon_morph     &short_layer_tap 7 ENTER
-&leftClickCommentOut  &kp Z   &kp X   &kp C                   &kp V      &kp B      &lt 4 N                         &lt 4 B                 &kp N                                 &kp M                              &comma_morph                  &titik_morph        &QuestionMorph       &kp ENTER
-                                      &momentary_tap 3 SPACE  &kp SPACE  &kp SPACE  &holdCapsTapDance LEFT_ALT 0    &mt LEFT_SHIFT RA(TAB)  &CustomHoldTapSticky RIGHT_WIN RSHFT  &custom_hold_tap LEFT_SHIFT SPACE  &custom_hold_tap RCTRL SPACE
+&kp GRAVE             &kp N1  &kp N2  &kp N3                  &kp N4                             &kp N5                                                             &kp N6                                &kp N7                             &kp N8                        &left_kurung_morph  &right_kurung_morph  &RBackspaceMorphFinal
+&kp TAB               &kp Q   &kp W   &kp E                   &kp R                              &kp T                                                              &kp Y                                 &kp U                              &kp I                         &kp O               &kp P                &minus_morph
+&kp LCTRL             &kp A   &kp S   &kp D                   &kp F                              &kp G                                                              &kp H                                 &kp J                              &kp K                         &kp L               &semicolon_morph     &short_layer_tap 7 ENTER
+&leftClickCommentOut  &kp Z   &kp X   &kp C                   &kp V                              &kp B      &lt 4 N                         &lt 4 B                 &kp N                                 &kp M                              &comma_morph                  &titik_morph        &QuestionMorph       &kp ENTER
+                                      &momentary_tap 3 SPACE  &custom_hold_tap LEFT_SHIFT SPACE  &kp SPACE  &holdCapsTapDance LEFT_ALT 0    &mt LEFT_SHIFT RA(TAB)  &CustomHoldTapSticky RIGHT_WIN RSHFT  &custom_hold_tap LEFT_SHIFT SPACE  &custom_hold_tap RCTRL SPACE
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -1337,11 +1337,11 @@
 
         mouse_layerr {
             bindings = <
-&kp DELETE      &none           &username_pc_kantor  &pw_pc_kantor    &pass_windows_kantor  &gap_port                    &kp N5  &trans  &trans  &trans  &trans  &trans
-&kp LA(TAB)     &none           &mmv MOVE_UP         &mkp RCLK        &msc SCRL_UP          &none                        &kp T   &trans  &trans  &trans  &trans  &trans
-&kp LEFT_SHIFT  &mmv MOVE_LEFT  &mmv MOVE_DOWN       &mmv MOVE_RIGHT  &kp LC(F)             &kp H                        &kp G   &trans  &trans  &trans  &trans  &trans
-&mkp LCLK       &msc SCRL_LEFT  &msc SCRL_RIGHT      &mkp LCLK        &msc SCRL_DOWN        &none      &trans    &trans  &kp B   &trans  &trans  &trans  &trans  &trans
-                                                     &to 0            &kp SPACE             &kp SPACE  &to 0     &trans  &trans  &trans  &trans
+&kp DELETE      &none           &username_pc_kantor  &pw_pc_kantor    &pass_windows_kantor               &gap_port                    &kp N5  &trans  &trans  &trans  &trans  &trans
+&kp LA(TAB)     &none           &mmv MOVE_UP         &mkp RCLK        &msc SCRL_UP                       &none                        &kp T   &trans  &trans  &trans  &trans  &trans
+&kp LEFT_SHIFT  &mmv MOVE_LEFT  &mmv MOVE_DOWN       &mmv MOVE_RIGHT  &kp LC(F)                          &kp H                        &kp G   &trans  &trans  &trans  &trans  &trans
+&mkp LCLK       &msc SCRL_LEFT  &msc SCRL_RIGHT      &mkp LCLK        &msc SCRL_DOWN                     &none      &trans    &trans  &kp B   &trans  &trans  &trans  &trans  &trans
+                                                     &to 0            &custom_hold_tap LEFT_SHIFT SPACE  &kp SPACE  &to 0     &trans  &trans  &trans  &trans
             >;
         };
 
