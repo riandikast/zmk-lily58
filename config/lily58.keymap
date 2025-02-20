@@ -69,9 +69,9 @@
             layers = <7>;
         };
 
-        to8 {
-            bindings = <&to 8>;
-            key-positions = <25 27 14>;
+        to3w2 {
+            bindings = <&to 3>;
+            key-positions = <14 50>;
             layers = <0>;
         };
 
@@ -699,7 +699,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "CAPSTAPDANCE";
             #binding-cells = <0>;
-            bindings = <&sl 2>, <&kp CLCK>;
+            bindings = <&kp LA(TAB)>, <&kp CLCK>;
 
             tapping-term-ms = <280>;
         };
@@ -970,7 +970,7 @@
         semicolon_morph: semicolon_morph {
             compatible = "zmk,behavior-mod-morph";
             label = "SEMICOLON_MORPH";
-            bindings = <&kp SEMICOLON>, <&kp DOUBLE_QUOTES>;
+            bindings = <&kp SEMICOLON>, <&kp SQT>;
 
             #binding-cells = <0>;
             mods = <(MOD_LCTL|MOD_RCTL)>;
@@ -1188,7 +1188,7 @@
         left_kurung_morph: left_kurung_morph {
             compatible = "zmk,behavior-mod-morph";
             label = "LEFT_KURUNG_MORPH";
-            bindings = <&kp N9>, <&kp LEFT_BRACE>;
+            bindings = <&kp N9>, <&kp LEFT_BRACKET>;
 
             #binding-cells = <0>;
             mods = <(MOD_LCTL|MOD_RCTL)>;
@@ -1197,7 +1197,7 @@
         right_kurung_morph: right_kurung_morph {
             compatible = "zmk,behavior-mod-morph";
             label = "RIGHT_KURUNG_MORPH";
-            bindings = <&kp N0>, <&kp RIGHT_BRACE>;
+            bindings = <&kp N0>, <&kp RIGHT_BRACKET>;
 
             #binding-cells = <0>;
             mods = <(MOD_LCTL|MOD_RCTL)>;
@@ -1219,6 +1219,24 @@
             #binding-cells = <1>;
             release-after-ms = <700>;
         };
+
+        esc_morph: esc_morph {
+            compatible = "zmk,behavior-mod-morph";
+            label = "ESC_MORPH";
+            bindings = <&kp GRAVE>, <&kp ESCAPE>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL|MOD_RCTL)>;
+        };
+
+        custom_hold_esc_morph: custom_hold_esc_morph {
+            compatible = "zmk,behavior-hold-tap";
+            label = "CUSTOM_HOLD_ESC_MORPH";
+            bindings = <&kp>, <&esc_morph>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <400>;
+        };
     };
 
     keymap {
@@ -1233,11 +1251,11 @@
             //                     | ALT  | GUI  | LOWER|  ENTER |  | SPACE | RAISE| BSPC  | GUI   |
 
             bindings = <
-&kp GRAVE             &kp N1  &kp N2  &kp N3                  &kp N4                             &kp N5                                                             &kp N6                                &kp N7                             &kp N8                        &left_kurung_morph  &right_kurung_morph  &RBackspaceMorphFinal
-&kp TAB               &kp Q   &kp W   &kp E                   &kp R                              &kp T                                                              &kp Y                                 &kp U                              &kp I                         &kp O               &kp P                &minus_morph
-&kp LCTRL             &kp A   &kp S   &kp D                   &kp F                              &kp G                                                              &kp H                                 &kp J                              &kp K                         &kp L               &semicolon_morph     &short_layer_tap 7 ENTER
-&leftClickCommentOut  &kp Z   &kp X   &kp C                   &kp V                              &kp B      &lt 4 N                         &lt 4 B                 &kp N                                 &kp M                              &comma_morph                  &titik_morph        &QuestionMorph       &kp ENTER
-                                      &momentary_tap 3 SPACE  &custom_hold_tap LEFT_SHIFT SPACE  &kp SPACE  &holdCapsTapDance LEFT_ALT 0    &mt LEFT_SHIFT RA(TAB)  &CustomHoldTapSticky RIGHT_WIN RSHFT  &custom_hold_tap LEFT_SHIFT SPACE  &custom_hold_tap RCTRL SPACE
+&custom_hold_esc_morph LEFT_WIN 0  &kp N1  &kp N2  &kp N3                  &kp N4                             &kp N5                                                             &kp N6     &kp N7                             &kp N8                        &left_kurung_morph  &right_kurung_morph  &RBackspaceMorphFinal
+&kp TAB                            &kp Q   &kp W   &kp E                   &kp R                              &kp T                                                              &kp Y      &kp U                              &kp I                         &kp O               &kp P                &minus_morph
+&kp LCTRL                          &kp A   &kp S   &kp D                   &kp F                              &kp G                                                              &kp H      &kp J                              &kp K                         &kp L               &semicolon_morph     &short_layer_tap 7 ENTER
+&leftClickCommentOut               &kp Z   &kp X   &kp C                   &kp V                              &kp B      &lt 4 N                         &lt 4 B                 &kp N      &kp M                              &comma_morph                  &titik_morph        &QuestionMorph       &kp ENTER
+                                                   &momentary_tap 8 SPACE  &custom_hold_tap LEFT_SHIFT SPACE  &kp SPACE  &holdCapsTapDance LEFT_ALT 0    &mt LEFT_SHIFT RA(TAB)  &kp EQUAL  &custom_hold_tap LEFT_SHIFT SPACE  &custom_hold_tap RCTRL SPACE
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
