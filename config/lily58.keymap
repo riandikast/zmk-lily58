@@ -1332,13 +1332,13 @@
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
-        symbol_layer {
+        numpad_layer {
             bindings = <
-&kp PERCENT    &kp LS(PAGE_UP)  &kp LS(PAGE_DOWN)  &kp LS(PRINTSCREEN)     &to 7                   &to 5                                          &kp LS(NUMBER_6)  &kp LS(N7)            &kp LS(N8)       &kp LEFT_BRACKET   &kp RIGHT_BRACKET  &kp MINUS
-&kp DOLLAR     &kp NUMBER_1     &kp NUMBER_2       &kp NUMBER_3            &kp MINUS               &trans                                         &trans            &kp LC(LS(UP_ARROW))  &kp LEFT_BRACE   &kp GRAVE          &kp PIPE           &kp PLUS
-&kp AMPERSAND  &kp NUMBER_4     &kp NUMBER_5       &kp NUMBER_6            &kp PLUS                &mkp MB3                                       &kp TILDE         &kp LC(LS(DOWN))      &kp RIGHT_BRACE  &kp DOUBLE_QUOTES  &kp SQT            &short_layer_tap 7 ENTER
-&kp CARET      &kp N7           &kp N8             &kp N9                  &kp EQUAL               &kp SLASH              &to 5    &trans         &kp SQT           &kp SQT               &kp LEFT_BRACE   &kp RIGHT_BRACE    &kp PIPE           &trans
-                                                   &momentary_tap 8 SPACE  &momentary_tap 8 SPACE  &tapKp_holdTo 0 SPACE  &to 0    &kp LC(SLASH)  &kp END           &kp LSHFT             &kp LEFT_SHIFT
+&kp PERCENT    &kp LS(PAGE_UP)  &kp LS(PAGE_DOWN)  &kp LS(PRINTSCREEN)     &to 7      &to 5                                          &kp LS(NUMBER_6)  &kp LS(N7)            &kp LS(N8)       &kp LEFT_BRACKET   &kp RIGHT_BRACKET  &kp BACKSPACE
+&kp DOLLAR     &kp NUMBER_1     &kp NUMBER_2       &kp NUMBER_3            &kp MINUS  &trans                                         &trans            &kp LC(LS(UP_ARROW))  &kp LEFT_BRACE   &kp GRAVE          &kp PIPE           &kp PLUS
+&kp AMPERSAND  &kp NUMBER_4     &kp NUMBER_5       &kp NUMBER_6            &kp PLUS   &mkp MB3                                       &kp TILDE         &kp LC(LS(DOWN))      &kp RIGHT_BRACE  &kp DOUBLE_QUOTES  &kp SQT            &short_layer_tap 7 ENTER
+&kp CARET      &kp N7           &kp N8             &kp N9                  &kp EQUAL  &kp SLASH              &to 5    &trans         &kp SQT           &kp SQT               &kp LEFT_BRACE   &kp RIGHT_BRACE    &kp PIPE           &trans
+                                                   &momentary_tap 8 SPACE  &kp N0     &tapKp_holdTo 0 SPACE  &to 0    &kp LC(SLASH)  &kp END           &kp LSHFT             &kp BACKSPACE
             >;
         };
 
