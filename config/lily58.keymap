@@ -1388,11 +1388,11 @@
 
         mouse_layerr {
             bindings = <
-&kp DELETE    &hold_scroll_up    &username_pc_kantor  &pw_pc_kantor    &pass_windows_kantor               &gap_port                    &kp N5  &trans  &trans  &trans             &Left_Scroll     &Right_Scroll
-&kp LA(TAB)   &hold_scroll_down  &mmv MOVE_UP         &mkp RCLK        &msc SCRL_UP                       &none                        &kp T   &trans  &trans  &hold_scroll_up    &msc SCRL_UP     &mkp RCLK
-&Left_Scroll  &mmv MOVE_LEFT     &mmv MOVE_DOWN       &mmv MOVE_RIGHT  &Right_Scroll                      &kp H                        &kp G   &trans  &trans  &hold_scroll_down  &msc SCRL_DOWN   &mkp LCLK
-&mkp LCLK     &msc SCRL_LEFT     &msc SCRL_RIGHT      &mkp LCLK        &msc SCRL_DOWN                     &none      &trans    &trans  &kp B   &trans  &trans  &msc SCRL_LEFT     &msc SCRL_RIGHT  &trans
-                                                      &to 0            &custom_hold_tap LEFT_SHIFT SPACE  &kp SPACE  &to 0     &trans  &trans  &trans  &trans
+&kp DELETE   &none           &username_pc_kantor  &pw_pc_kantor    &pass_windows_kantor               &gap_port                    &kp N5  &trans  &trans  &trans             &none            &none
+&kp LA(TAB)  &none           &mmv MOVE_UP         &mkp RCLK        &msc SCRL_UP                       &none                        &kp T   &trans  &trans  &none              &msc SCRL_UP     &mkp RCLK
+&none        &mmv MOVE_LEFT  &mmv MOVE_DOWN       &mmv MOVE_RIGHT  &none                              &kp H                        &kp G   &trans  &trans  &hold_scroll_down  &msc SCRL_DOWN   &mkp LCLK
+&mkp LCLK    &msc SCRL_LEFT  &msc SCRL_RIGHT      &mkp LCLK        &msc SCRL_DOWN                     &none      &trans    &trans  &kp B   &trans  &trans  &msc SCRL_LEFT     &msc SCRL_RIGHT  &trans
+                                                  &to 0            &custom_hold_tap LEFT_SHIFT SPACE  &kp SPACE  &to 0     &trans  &trans  &trans  &trans
             >;
         };
 
