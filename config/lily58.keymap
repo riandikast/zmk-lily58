@@ -284,6 +284,24 @@
     };
 
     behaviors {
+        left_scroll_toggle: left_scroll_toggle {
+            compatible = "zmk,behavior-toggle-macro";
+            #binding-cells = <0>;
+            bindings = <&left_scroll_on>, <&left_scroll_off>;
+        };
+
+        left_scroll_on: left_scroll_on {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press>, <&msc SCRL_LEFT>;
+        };
+
+        left_scroll_off: left_scroll_off {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_release>, <&msc SCRL_LEFT>;
+        };
+
         mo_stickyKey: mo_stickyKey {
             compatible = "zmk,behavior-hold-tap";
             label = "MO_STICKYKEY";
