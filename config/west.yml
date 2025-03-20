@@ -8,8 +8,7 @@ manifest:
       url-base: https://github.com/caksoylar
     - name: pete
       url-base: https://github.com/petejohanson
-    - name: badjeff
-      url-base: https://github.com/badjeff
+
   projects:
     - name: zmk
       remote: zmkfirmware
