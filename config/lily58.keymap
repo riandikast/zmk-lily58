@@ -1270,18 +1270,6 @@
             #binding-cells = <2>;
             tapping-term-ms = <400>;
         };
-
-        mouse: mouse {
-            compatible = "zmk,behavior-mouse-key-press";
-            label = "MOUSE";
-            #binding-cells = <1>;
-        };
-
-        new_behavior: new_behavior {
-            compatible = "zmk,behavior-key-toggle";
-            label = "NEW_BEHAVIOR";
-            #binding-cells = <1>;
-        };
     };
 
     keymap {
