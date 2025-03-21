@@ -1398,11 +1398,11 @@
 
         mouse_layerr {
             bindings = <
-&kp DELETE   &none                  &username_pc_kantor     &pw_pc_kantor    &pass_windows_kantor               &gap_port                    &kp N5  &trans  &trans  &trans             &none            &none
-&kp LA(TAB)  &none                  &mmv MOVE_UP            &mkp RCLK        &custom_msc MOVE_UP                &none                        &kp T   &trans  &trans  &none              &msc SCRL_UP     &mkp RCLK
-&none        &mmv MOVE_LEFT         &mmv MOVE_DOWN          &mmv MOVE_RIGHT  &none                              &kp H                        &kp G   &trans  &trans  &hold_scroll_down  &msc SCRL_DOWN   &mkp LCLK
-&mkp LCLK    &custom_msc MOVE_LEFT  &custom_msc MOVE_RIGHT  &mkp LCLK        &custom_msc MOVE_DOWN              &none      &trans    &trans  &kp B   &trans  &trans  &msc SCRL_LEFT     &msc SCRL_RIGHT  &trans
-                                                            &to 0            &custom_hold_tap LEFT_SHIFT SPACE  &kp SPACE  &to 0     &trans  &trans  &trans  &trans
+&kp DELETE   &none            &username_pc_kantor  &pw_pc_kantor    &pass_windows_kantor               &gap_port                    &kp N5  &trans  &trans  &trans             &none           &none
+&kp LA(TAB)  &none            &mmv MOVE_UP         &mkp RCLK        &msc SCRL_DOWN                     &none                        &kp T   &trans  &trans  &none              &msc SCRL_UP    &mkp RCLK
+&none        &mmv MOVE_LEFT   &mmv MOVE_DOWN       &mmv MOVE_RIGHT  &none                              &kp H                        &kp G   &trans  &trans  &hold_scroll_down  &msc SCRL_UP    &mkp LCLK
+&mkp LCLK    &msc SCRL_RIGHT  &msc SCRL_LEFT       &mkp LCLK        &msc SCRL_UP                       &none      &trans    &trans  &kp B   &trans  &trans  &msc SCRL_RIGHT    &msc SCRL_LEFT  &trans
+                                                   &to 0            &custom_hold_tap LEFT_SHIFT SPACE  &kp SPACE  &to 0     &trans  &trans  &trans  &trans
             >;
         };
 
