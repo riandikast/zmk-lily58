@@ -355,7 +355,7 @@
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <440>;
+            tapping-term-ms = <480>;
             flavor = "hold-preferred";
         };
 
@@ -1280,6 +1280,15 @@
             time-to-max-speed-ms = <300>;
             acceleration-exponent = <1>;
         };
+
+        Left_Arrow_morph: Left_Arrow_morph {
+            compatible = "zmk,behavior-mod-morph";
+            label = "LEFT_ARROW_MORPH";
+            bindings = <&kp LEFT_ARROW>, <&key_repeat>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
     };
 
     keymap {
@@ -1388,11 +1397,11 @@
 
         copy_paste_layer {
             bindings = <
-&kp ESCAPE          &kp F1                  &kp F2        &kp F3                        &kp F4                                 &kp F5                             &trans        &trans  &trans          &kp LG(LS(A))  &kp LG(LS(S))         &kp DEL
-&batch_left_select  &kp LC(LS(LEFT_ARROW))  &kp UP_ARROW  &kp LC(LS(RIGHT))             &batch_right_select                    &trans                             &trans        &trans  &trans          &kp LC(LS(F))  &kp NON_US_BACKSLASH  &kp EQUAL
-&kp HOME            &kp LEFT_ARROW          &kp DOWN      &kp RIGHT                     &kp END                                &block_and_copy                    &trans        &trans  &trans          &kp SQT        &kp PLUS              &kp ENTER
-&mkp LCLK           &kp LC(Z)               &kp LC(X)     &kp LC(C)                     &kp LC(V)                              &replace          &to 5    &trans  &trans        &trans  &kp GRAVE       &trans         &trans                &trans
-                                                          &custom_hold_tap LC(Y) LC(Y)  &custom_hold_tap LEFT_SHIFT LC(LS(Z))  &mo_tap 12 SPACE  &to 0    &trans  &kp LEFT_ALT  &to 0   &kp LEFT_SHIFT
+&kp ESCAPE          &bt BT_SEL 0            &bt BT_SEL 1  &bt BT_SEL 2                  &bt BT_SEL 3                           &bt BT_SEL 4                                        &trans        &trans  &trans          &kp LG(LS(A))  &kp LG(LS(S))         &kp DEL
+&batch_left_select  &kp LC(LS(LEFT_ARROW))  &kp UP_ARROW  &kp LC(LS(RIGHT))             &batch_right_select                    &trans                                              &trans        &trans  &trans          &kp LC(LS(F))  &kp NON_US_BACKSLASH  &kp EQUAL
+&kp HOME            &Left_Arrow_morph       &kp DOWN      &kp RIGHT                     &kp END                                &block_and_copy                                     &trans        &trans  &trans          &kp SQT        &kp PLUS              &kp ENTER
+&mkp LCLK           &kp LC(Z)               &kp LC(X)     &kp LC(C)                     &kp LC(V)                              &replace                           &to 5    &trans  &trans        &trans  &kp GRAVE       &trans         &trans                &trans
+                                                          &custom_hold_tap LC(Y) LC(Y)  &custom_hold_tap LEFT_SHIFT LC(LS(Z))  &custom_hold_tap LEFT_SHIFT SPACE  &to 0    &trans  &kp LEFT_ALT  &to 0   &kp LEFT_SHIFT
             >;
         };
 
