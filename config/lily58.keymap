@@ -282,10 +282,24 @@
             label = "RIGHT_SCROLL";
         };
 
-        spam_left_a: spam_left_a {
+        repeat: spam_left_a {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_tap>, <&kp LEFT_ARROW>;
+            bindings =
+                <&macro_press>,
+                <&key_repeat>,
+                <&macro_wait_time 50>,
+                <&key_repeat>,
+                <&macro_wait_time 50>,
+                <&key_repeat>,
+                <&macro_wait_time 50>,
+                <&key_repeat>,
+                <&macro_wait_time 50>,
+                <&key_repeat>,
+                <&macro_wait_time 50>,
+                <&key_repeat>,
+                <&macro_wait_time 50>,
+                <&key_repeat>;
 
             label = "SPAM_LEFT_A";
         };
@@ -1306,6 +1320,42 @@
             #binding-cells = <2>;
             tapping-term-ms = <350>;
         };
+
+        lrepeat_tap_dance: lrepeat_tap_dance {
+            compatible = "zmk,behavior-tap-dance";
+            label = "LREPEAT_TAP_DANCE";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_ARROW>, <&repeat>;
+
+            tapping-term-ms = <250>;
+        };
+
+        brepeat_tap_dance: brepeat_tap_dance {
+            compatible = "zmk,behavior-tap-dance";
+            label = "BREPEAT_TAP_DANCE";
+            #binding-cells = <0>;
+            bindings = <&kp DOWN_ARROW>, <&repeat>;
+
+            tapping-term-ms = <250>;
+        };
+
+        rrepeat_tap_dance: rrepeat_tap_dance {
+            compatible = "zmk,behavior-tap-dance";
+            label = "RREPEAT_TAP_DANCE";
+            #binding-cells = <0>;
+            bindings = <&kp RIGHT>, <&repeat>;
+
+            tapping-term-ms = <250>;
+        };
+
+        urepeat_tap_dance: urepeat_tap_dance {
+            compatible = "zmk,behavior-tap-dance";
+            label = "UREPEAT_TAP_DANCE";
+            #binding-cells = <0>;
+            bindings = <&kp UP_ARROW>, <&repeat>;
+
+            tapping-term-ms = <250>;
+        };
     };
 
     keymap {
@@ -1414,11 +1464,11 @@
 
         copy_paste_layer {
             bindings = <
-&kp ESCAPE  &bt BT_SEL 0            &bt BT_SEL 1  &bt BT_SEL 2                  &bt BT_SEL 3                 &bt BT_SEL 4                                        &trans        &trans  &trans          &kp LG(LS(A))  &kp LG(LS(S))         &kp DEL
-&caps_word  &kp LC(LS(LEFT_ARROW))  &kp UP_ARROW  &kp LC(LS(RIGHT))             &batch_right_select          &trans                                              &trans        &trans  &trans          &kp LC(LS(F))  &kp NON_US_BACKSLASH  &kp EQUAL
-&kp HOME    &kp LEFT_ARROW          &kp DOWN      &kp RIGHT                     &kp END                      &block_and_copy                                     &trans        &trans  &trans          &kp SQT        &kp PLUS              &kp ENTER
-&mkp LCLK   &kp LC(Z)               &kp LC(X)     &kp LC(C)                     &kp LC(V)                    &replace                           &to 4    &trans  &trans        &trans  &kp GRAVE       &trans         &trans                &trans
-                                                  &custom_hold_tap LC(Y) LC(Y)  &key_repeat_tap 0 LC(LS(Z))  &custom_hold_tap LEFT_SHIFT SPACE  &to 0    &trans  &kp LEFT_ALT  &to 0   &kp LEFT_SHIFT
+&kp ESCAPE  &bt BT_SEL 0            &bt BT_SEL 1        &bt BT_SEL 2                  &bt BT_SEL 3                 &bt BT_SEL 4                                        &trans        &trans  &trans          &kp LG(LS(A))  &kp LG(LS(S))         &kp DEL
+&caps_word  &kp LC(LS(LEFT_ARROW))  &urepeat_tap_dance  &kp LC(LS(RIGHT))             &batch_right_select          &trans                                              &trans        &trans  &trans          &kp LC(LS(F))  &kp NON_US_BACKSLASH  &kp EQUAL
+&kp HOME    &lrepeat_tap_dance      &brepeat_tap_dance  &rrepeat_tap_dance            &kp END                      &block_and_copy                                     &trans        &trans  &trans          &kp SQT        &kp PLUS              &kp ENTER
+&mkp LCLK   &kp LC(Z)               &kp LC(X)           &kp LC(C)                     &kp LC(V)                    &replace                           &to 4    &trans  &trans        &trans  &kp GRAVE       &trans         &trans                &trans
+                                                        &custom_hold_tap LC(Y) LC(Y)  &key_repeat_tap 0 LC(LS(Z))  &custom_hold_tap LEFT_SHIFT SPACE  &to 0    &trans  &kp LEFT_ALT  &to 0   &kp LEFT_SHIFT
             >;
         };
 
