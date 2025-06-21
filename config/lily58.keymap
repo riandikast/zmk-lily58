@@ -724,9 +724,9 @@
             compatible = "zmk,behavior-tap-dance";
             label = "CAPSTAPDANCE";
             #binding-cells = <0>;
-            bindings = <&macro_alt_tab>, <&kp CLCK>;
+            bindings = <&kp LA(TAB)>, <&kp CLCK>;
 
-            tapping-term-ms = <280>;
+            tapping-term-ms = <300>;
         };
 
         holdTapMsc: holdTapMsc {
