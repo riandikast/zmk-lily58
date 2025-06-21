@@ -301,6 +301,14 @@
 
             label = "SPAM_LEFT_A";
         };
+
+        macro_alt_tab: macro_alt_tab {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press>, <&kp LEFT_ALT>, <&macro_tap>, <&kp TAB>;
+
+            label = "MACRO_ALT_TAB";
+        };
     };
 
     behaviors {
@@ -716,7 +724,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "CAPSTAPDANCE";
             #binding-cells = <0>;
-            bindings = <&kp LA(TAB)>, <&kp CLCK>;
+            bindings = <&macro_alt_tab>, <&kp CLCK>;
 
             tapping-term-ms = <280>;
         };
@@ -1390,6 +1398,60 @@
 
             tapping-term-ms = <300>;
         };
+
+        q_gui_num: q_gui_num {
+            compatible = "zmk,behavior-mod-morph";
+            label = "Q_GUI_NUM";
+            bindings = <&kp Q>, <&kp RG(NUMBER_4)>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_RGUI)>;
+        };
+
+        w_gui_num: w_gui_num {
+            compatible = "zmk,behavior-mod-morph";
+            label = "W_GUI_NUM";
+            bindings = <&kp W>, <&kp RG(NUMBER_5)>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_RGUI)>;
+        };
+
+        e_gui_num: e_gui_num {
+            compatible = "zmk,behavior-mod-morph";
+            label = "E_GUI_NUM";
+            bindings = <&kp E>, <&kp RG(NUMBER_6)>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_RGUI)>;
+        };
+
+        a_gui_num: a_gui_num {
+            compatible = "zmk,behavior-mod-morph";
+            label = "A_GUI_NUM";
+            bindings = <&kp A>, <&kp RG(NUMBER_7)>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_RGUI)>;
+        };
+
+        s_gui_num: s_gui_num {
+            compatible = "zmk,behavior-mod-morph";
+            label = "S_GUI_NUM";
+            bindings = <&kp S>, <&kp RG(NUMBER_8)>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_RGUI)>;
+        };
+
+        d_gui_num: d_gui_num {
+            compatible = "zmk,behavior-mod-morph";
+            label = "D_GUI_NUM";
+            bindings = <&kp D>, <&kp RG(NUMBER_9)>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_RGUI)>;
+        };
     };
 
     keymap {
@@ -1404,11 +1466,11 @@
             //                     | ALT  | GUI  | LOWER|  ENTER |  | SPACE | RAISE| BSPC  | GUI   |
 
             bindings = <
-&custom_hold_esc_morph LEFT_WIN 0  &kp N1  &kp N2  &kp N3               &kp N4                             &kp N5                                                                      &kp N6                                  &kp N7                        &kp N8                            &left_kurung_morph  &right_kurung_morph  &RBackspaceMorphFinal
-&mo_tap 7 TAB                      &kp Q   &kp W   &kp E                &kp R                              &kp T                                                                       &kp Y                                   &kp U                         &kp I                             &kp O               &kp P                &short_layer_tap 3 MINUS
-&capsrow_tap_dance                 &kp A   &kp S   &kp D                &kp F                              &kp G                                                                       &kp H                                   &kp J                         &kp K                             &kp L               &semicolon_morph     &short_layer_tap 7 ENTER
-&leftClickCommentOut               &kp Z   &kp X   &kp C                &kp V                              &kp B      &mo_tap 4 N                     &lt 4 B                          &kp N                                   &kp M                         &comma_morph                      &titik_morph        &QuestionMorph       &kp ENTER
-                                                   &mo8_redo_morph 8 0  &custom_hold_tap LEFT_SHIFT SPACE  &kp SPACE  &holdCapsTapDance LEFT_ALT 0    &holdCapsTapDance PRINTSCREEN 0  &custom_hold_pageup_morph LEFT_SHIFT 0  &custom_hold_tap RCTRL EQUAL  &custom_hold_pagedown_morph 11 0
+&custom_hold_esc_morph RIGHT_WIN 0  &kp N1      &kp N2      &kp N3               &kp N4                             &kp N5                                                                      &kp N6                                  &kp N7                        &kp N8                            &left_kurung_morph  &right_kurung_morph  &RBackspaceMorphFinal
+&mo_tap 7 TAB                       &q_gui_num  &w_gui_num  &e_gui_num           &kp R                              &kp T                                                                       &kp Y                                   &kp U                         &kp I                             &kp O               &kp P                &short_layer_tap 3 MINUS
+&capsrow_tap_dance                  &a_gui_num  &s_gui_num  &d_gui_num           &kp F                              &kp G                                                                       &kp H                                   &kp J                         &kp K                             &kp L               &semicolon_morph     &short_layer_tap 7 ENTER
+&leftClickCommentOut                &kp Z       &kp X       &kp C                &kp V                              &kp B      &mo_tap 4 N                     &lt 4 B                          &kp N                                   &kp M                         &comma_morph                      &titik_morph        &QuestionMorph       &kp ENTER
+                                                            &mo8_redo_morph 8 0  &custom_hold_tap LEFT_SHIFT SPACE  &kp SPACE  &holdCapsTapDance LEFT_ALT 0    &holdCapsTapDance PRINTSCREEN 0  &custom_hold_pageup_morph LEFT_SHIFT 0  &custom_hold_tap RCTRL EQUAL  &custom_hold_pagedown_morph 11 0
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
