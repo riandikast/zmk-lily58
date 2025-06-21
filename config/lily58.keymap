@@ -1363,13 +1363,13 @@
             tapping-term-ms = <250>;
         };
 
-        capsrow_tap_dance: capsrow_tap_dance {
+        ctrl_paste_tap_dance: ctrl_paste_tap_dance {
             compatible = "zmk,behavior-tap-dance";
-            label = "CAPSROW_TAP_DANCE";
+            label = "CTRL_PASTE_TAP_DANCE";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_CONTROL>, <&caps_word>;
+            bindings = <&kp LEFT_CONTROL>, <&kp LC(V)>;
 
-            tapping-term-ms = <150>;
+            tapping-term-ms = <350>;
         };
 
         space_redo_mroph: space_redo_mroph {
@@ -1468,7 +1468,7 @@
             bindings = <
 &custom_hold_esc_morph RIGHT_WIN 0  &kp N1      &kp N2      &kp N3               &kp N4                             &kp N5                                                                      &kp N6                                  &kp N7                        &kp N8                            &left_kurung_morph  &right_kurung_morph  &RBackspaceMorphFinal
 &mo_tap 7 TAB                       &q_gui_num  &w_gui_num  &e_gui_num           &kp R                              &kp T                                                                       &kp Y                                   &kp U                         &kp I                             &kp O               &kp P                &short_layer_tap 3 MINUS
-&capsrow_tap_dance                  &a_gui_num  &s_gui_num  &d_gui_num           &kp F                              &kp G                                                                       &kp H                                   &kp J                         &kp K                             &kp L               &semicolon_morph     &short_layer_tap 7 ENTER
+&ctrl_paste_tap_dance               &a_gui_num  &s_gui_num  &d_gui_num           &kp F                              &kp G                                                                       &kp H                                   &kp J                         &kp K                             &kp L               &semicolon_morph     &short_layer_tap 7 ENTER
 &leftClickCommentOut                &kp Z       &kp X       &kp C                &kp V                              &kp B      &mo_tap 4 N                     &lt 4 B                          &kp N                                   &kp M                         &comma_morph                      &titik_morph        &QuestionMorph       &kp ENTER
                                                             &mo8_redo_morph 8 0  &custom_hold_tap LEFT_SHIFT SPACE  &kp SPACE  &holdCapsTapDance LEFT_ALT 0    &holdCapsTapDance PRINTSCREEN 0  &custom_hold_pageup_morph LEFT_SHIFT 0  &custom_hold_tap RCTRL EQUAL  &custom_hold_pagedown_morph 11 0
             >;
@@ -1562,7 +1562,7 @@
             bindings = <
 &kp LA(LS(F))  &kp ENTER               &kp LS(UP_ARROW)    &bt BT_SEL 2                  &bt BT_SEL 3                 &bt BT_SEL 4                                        &trans        &trans  &trans          &kp LG(LS(A))  &kp LG(LS(S))  &kp DEL
 &kp LC(A)      &kp LC(LS(LEFT_ARROW))  &kp UP_ARROW        &kp LC(LS(RIGHT))             &batch_right_select          &trans                                              &trans        &trans  &trans          &kp LC(LS(F))  &kp LC(A)      &kp EQUAL
-&kp LC(V)      &kp LEFT_ARROW          &kp DOWN_ARROW      &kp RIGHT                     &kp END                      &block_and_copy                                     &trans        &trans  &trans          &kp SQT        &kp LC(C)      &kp ENTER
+&kp LC(HOME)   &kp LEFT_ARROW          &kp DOWN_ARROW      &kp RIGHT                     &kp END                      &block_and_copy                                     &trans        &trans  &trans          &kp SQT        &kp LC(C)      &kp ENTER
 &kp LC(C)      &kp LC(Z)               &kp LS(DOWN_ARROW)  &kp LC(C)                     &kp LC(V)                    &replace                           &to 4    &trans  &trans        &trans  &kp GRAVE       &trans         &kp LC(V)      &trans
                                                            &custom_hold_tap LC(Y) LC(Y)  &key_repeat_tap 0 LC(LS(Z))  &custom_hold_tap LEFT_SHIFT SPACE  &to 0    &trans  &kp LEFT_ALT  &to 0   &kp LEFT_SHIFT
             >;
