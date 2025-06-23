@@ -751,7 +751,7 @@
         leftClickCommentOut: leftClickCommentOut {
             compatible = "zmk,behavior-mod-morph";
             label = "LEFTCLICKCOMMENTOUT";
-            bindings = <&click_paste_morph>, <&kp LC(SLASH)>;
+            bindings = <&click_copy_morph>, <&kp LC(SLASH)>;
 
             #binding-cells = <0>;
             mods = <(MOD_LCTL)>;
@@ -1453,10 +1453,10 @@
             mods = <(MOD_RGUI)>;
         };
 
-        tab_backspace_morph: tab_backspace_morph {
+        tab_formatter_morph: tab_formatter_morph {
             compatible = "zmk,behavior-mod-morph";
-            label = "TAB_BACKSPACE_MORPH";
-            bindings = <&kp TAB>, <&none>;
+            label = "TAB_FORMATTER_MORPH";
+            bindings = <&kp TAB>, <&kp LS(LA(F))>;
 
             #binding-cells = <0>;
             mods = <(MOD_RGUI)>;
@@ -1465,16 +1465,16 @@
         mo_tab_morph: mo_tab_morph {
             compatible = "zmk,behavior-hold-tap";
             label = "MO_TAB_MORPH";
-            bindings = <&mo>, <&tab_backspace_morph>;
+            bindings = <&mo>, <&tab_formatter_morph>;
 
             #binding-cells = <2>;
             tapping-term-ms = <299>;
         };
 
-        click_paste_morph: click_paste_morph {
+        click_copy_morph: click_copy_morph {
             compatible = "zmk,behavior-mod-morph";
-            label = "CLICK_PASTE_MORPH";
-            bindings = <&mkp LCLK>, <&kp LC(V)>;
+            label = "CLICK_COPY_MORPH";
+            bindings = <&mkp LCLK>, <&kp LC(C)>;
 
             #binding-cells = <0>;
             mods = <(MOD_RGUI)>;
@@ -1596,10 +1596,10 @@
 
         copy_paste_layer {
             bindings = <
-&kp LA(LS(F))  &kp ENTER               &kp LS(UP_ARROW)    &bt BT_SEL 2                  &bt BT_SEL 3                 &bt BT_SEL 4                                        &trans        &trans  &trans          &kp LG(LS(A))  &kp LG(LS(S))  &kp DEL
+&kp BACKSPACE  &kp ENTER               &kp LS(UP_ARROW)    &bt BT_SEL 2                  &bt BT_SEL 3                 &bt BT_SEL 4                                        &trans        &trans  &trans          &kp LG(LS(A))  &kp LG(LS(S))  &kp DEL
 &kp LC(A)      &kp LC(LS(LEFT_ARROW))  &kp UP_ARROW        &kp LC(LS(RIGHT))             &batch_right_select          &trans                                              &trans        &trans  &trans          &kp LC(LS(F))  &kp LC(A)      &kp EQUAL
 &kp HOME       &kp LEFT_ARROW          &kp DOWN_ARROW      &kp RIGHT                     &kp END                      &block_and_copy                                     &trans        &trans  &trans          &kp SQT        &kp LC(C)      &kp ENTER
-&kp LC(C)      &kp LC(Z)               &kp LS(DOWN_ARROW)  &kp LC(C)                     &kp LC(V)                    &replace                           &to 4    &trans  &trans        &trans  &kp GRAVE       &trans         &kp LC(V)      &trans
+&kp LC(V)      &kp LC(Z)               &kp LS(DOWN_ARROW)  &kp LC(C)                     &kp LC(V)                    &replace                           &to 4    &trans  &trans        &trans  &kp GRAVE       &trans         &kp LC(V)      &trans
                                                            &custom_hold_tap LC(Y) LC(Y)  &key_repeat_tap 0 LC(LS(Z))  &custom_hold_tap LEFT_SHIFT SPACE  &to 0    &trans  &kp LEFT_ALT  &to 0   &kp LEFT_SHIFT
             >;
         };
