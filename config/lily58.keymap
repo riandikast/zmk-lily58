@@ -757,7 +757,7 @@
         leftClickCommentOut: leftClickCommentOut {
             compatible = "zmk,behavior-mod-morph";
             label = "LEFTCLICKCOMMENTOUT";
-            bindings = <&click_copy_morph>, <&kp LC(SLASH)>;
+            bindings = <&click_morph>, <&kp LC(SLASH)>;
 
             #binding-cells = <0>;
             mods = <(MOD_LCTL)>;
@@ -1254,10 +1254,10 @@
         esc_morph: esc_morph {
             compatible = "zmk,behavior-mod-morph";
             label = "ESC_MORPH";
-            bindings = <&kp GRAVE>, <&kp BACKSPACE>;
+            bindings = <&kp GRAVE>, <&kp ESCAPE>;
 
             #binding-cells = <0>;
-            mods = <(MOD_LCTL|MOD_RCTL)>;
+            mods = <(MOD_LCTL)>;
         };
 
         custom_hold_esc_morph: custom_hold_esc_morph {
@@ -1266,7 +1266,7 @@
             bindings = <&lgui_morph>, <&esc_morp_tap_dance>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <400>;
+            tapping-term-ms = <300>;
         };
 
         pageup_morph: pageup_morph {
@@ -1400,7 +1400,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "ESC_MORP_TAP_DANCE";
             #binding-cells = <0>;
-            bindings = <&esc_morph>, <&kp ESCAPE>;
+            bindings = <&esc_morph>, <&sk LS(LEFT_WIN)>, <&sk LEFT_GUI>;
 
             tapping-term-ms = <300>;
         };
@@ -1477,10 +1477,10 @@
             tapping-term-ms = <299>;
         };
 
-        click_copy_morph: click_copy_morph {
+        click_morph: click_morph {
             compatible = "zmk,behavior-mod-morph";
-            label = "CLICK_COPY_MORPH";
-            bindings = <&mkp LCLK>, <&kp LC(C)>;
+            label = "CLICK_MORPH";
+            bindings = <&mkp LCLK>, <&kp LC(V)>;
 
             #binding-cells = <0>;
             mods = <(MOD_RGUI)>;
@@ -1503,6 +1503,19 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT)>;
         };
+
+        ctrl_tap_dance: ctrl_tap_dance {
+            compatible = "zmk,behavior-tap-dance";
+            label = "CTRL_TAP_DANCE";
+            #binding-cells = <0>;
+            bindings =
+                <&ctrl_enter_morph>,
+                <&kp LC(A)>,
+                <&kp LC(C)>,
+                <&kp LC(V)>;
+
+            tapping-term-ms = <280>;
+        };
     };
 
     keymap {
@@ -1519,7 +1532,7 @@
             bindings = <
 &custom_hold_esc_morph RIGHT_WIN 0  &kp N1      &kp N2      &kp N3               &kp N4                             &kp N5                                                                      &kp N6                                &kp N7                        &kp N8                            &left_kurung_morph  &right_kurung_morph  &RBackspaceMorphFinal
 &mo_tab_morph 7 0                   &q_gui_num  &w_gui_num  &e_gui_num           &kp R                              &kp T                                                                       &kp Y                                 &kp U                         &kp I                             &kp O               &kp P                &short_layer_tap 3 MINUS
-&ctrl_enter_morph                   &a_gui_num  &s_gui_num  &d_gui_num           &kp F                              &kp G                                                                       &kp H                                 &kp J                         &kp K                             &kp L               &semicolon_morph     &short_layer_tap 7 ENTER
+&ctrl_tap_dance                     &a_gui_num  &s_gui_num  &d_gui_num           &kp F                              &kp G                                                                       &kp H                                 &kp J                         &kp K                             &kp L               &semicolon_morph     &short_layer_tap 7 ENTER
 &leftClickCommentOut                &kp Z       &kp X       &kp C                &kp V                              &kp B      &mo_tap 4 N                     &lt 4 B                          &kp N                                 &kp M                         &comma_morph                      &titik_morph        &QuestionMorph       &kp ENTER
                                                             &mo8_redo_morph 8 0  &custom_hold_tap LEFT_SHIFT SPACE  &kp SPACE  &holdCapsTapDance LEFT_ALT 0    &holdCapsTapDance PRINTSCREEN 0  &custom_hold_pageup_morph LEFT_GUI 0  &custom_hold_tap RCTRL EQUAL  &custom_hold_pagedown_morph 11 0
             >;
@@ -1611,7 +1624,7 @@
 
         copy_paste_layer {
             bindings = <
-&kp BACKSPACE  &kp ENTER               &kp LS(UP_ARROW)    &bt BT_SEL 2                  &bt BT_SEL 3                 &bt BT_SEL 4                                        &trans        &trans  &trans          &kp LG(LS(A))  &kp LG(LS(S))  &kp DEL
+&kp LA(LS(F))  &kp ENTER               &kp LS(UP_ARROW)    &bt BT_SEL 2                  &bt BT_SEL 3                 &bt BT_SEL 4                                        &trans        &trans  &trans          &kp LG(LS(A))  &kp LG(LS(S))  &kp DEL
 &kp LC(A)      &kp LC(LS(LEFT_ARROW))  &kp UP_ARROW        &kp LC(LS(RIGHT))             &batch_right_select          &trans                                              &trans        &trans  &trans          &kp LC(LS(F))  &kp LC(A)      &kp EQUAL
 &kp HOME       &kp LEFT_ARROW          &kp DOWN_ARROW      &kp RIGHT                     &kp END                      &block_and_copy                                     &trans        &trans  &trans          &kp SQT        &kp LC(C)      &kp ENTER
 &kp LC(V)      &kp LC(Z)               &kp LS(DOWN_ARROW)  &kp LC(C)                     &kp LC(V)                    &replace                           &to 4    &trans  &trans        &trans  &kp GRAVE       &trans         &kp LC(V)      &trans
@@ -1621,11 +1634,11 @@
 
         mouse_layerr {
             bindings = <
-&kp DELETE  &kp RC(C)       &username_pc_kantor  &pw_pc_kantor    &pass_windows_kantor               &gap_port                    &kp N5  &trans  &trans  &trans             &none            &none
-&kp RC(A)   &kp RC(V)       &mmv MOVE_UP         &mkp RCLK        &msc SCRL_UP                       &none                        &kp T   &trans  &trans  &none              &msc SCRL_UP     &mkp RCLK
-&caps_word  &mmv MOVE_LEFT  &mmv MOVE_DOWN       &mmv MOVE_RIGHT  &none                              &kp H                        &kp G   &trans  &trans  &hold_scroll_down  &msc SCRL_DOWN   &mkp LCLK
-&mkp LCLK   &msc SCRL_LEFT  &msc SCRL_RIGHT      &mkp LCLK        &msc SCRL_DOWN                     &none      &trans    &trans  &kp B   &trans  &trans  &msc SCRL_LEFT     &msc SCRL_RIGHT  &trans
-                                                 &to 0            &custom_hold_tap LEFT_SHIFT SPACE  &kp SPACE  &to 0     &trans  &trans  &trans  &trans
+&kp DELETE     &kp RC(C)       &username_pc_kantor  &pw_pc_kantor    &pass_windows_kantor               &gap_port                    &kp N5  &trans  &trans  &trans             &none            &none
+&kp RC(A)      &kp RC(V)       &mmv MOVE_UP         &mkp RCLK        &msc SCRL_UP                       &none                        &kp T   &trans  &trans  &none              &msc SCRL_UP     &mkp RCLK
+&caps_word     &mmv MOVE_LEFT  &mmv MOVE_DOWN       &mmv MOVE_RIGHT  &none                              &kp H                        &kp G   &trans  &trans  &hold_scroll_down  &msc SCRL_DOWN   &mkp LCLK
+&kp LC(SLASH)  &msc SCRL_LEFT  &msc SCRL_RIGHT      &mkp LCLK        &msc SCRL_DOWN                     &none      &trans    &trans  &kp B   &trans  &trans  &msc SCRL_LEFT     &msc SCRL_RIGHT  &trans
+                                                    &to 0            &custom_hold_tap LEFT_SHIFT SPACE  &kp SPACE  &to 0     &trans  &trans  &trans  &trans
             >;
         };
 
