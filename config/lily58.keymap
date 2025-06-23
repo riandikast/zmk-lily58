@@ -1562,7 +1562,7 @@
             bindings = <
 &kp LA(LS(F))  &kp ENTER               &kp LS(UP_ARROW)    &bt BT_SEL 2                  &bt BT_SEL 3                 &bt BT_SEL 4                                        &trans        &trans  &trans          &kp LG(LS(A))  &kp LG(LS(S))  &kp DEL
 &kp LC(A)      &kp LC(LS(LEFT_ARROW))  &kp UP_ARROW        &kp LC(LS(RIGHT))             &batch_right_select          &trans                                              &trans        &trans  &trans          &kp LC(LS(F))  &kp LC(A)      &kp EQUAL
-&kp LC(HOME)   &kp LEFT_ARROW          &kp DOWN_ARROW      &kp RIGHT                     &kp END                      &block_and_copy                                     &trans        &trans  &trans          &kp SQT        &kp LC(C)      &kp ENTER
+&kp HOME       &kp LEFT_ARROW          &kp DOWN_ARROW      &kp RIGHT                     &kp END                      &block_and_copy                                     &trans        &trans  &trans          &kp SQT        &kp LC(C)      &kp ENTER
 &kp LC(C)      &kp LC(Z)               &kp LS(DOWN_ARROW)  &kp LC(C)                     &kp LC(V)                    &replace                           &to 4    &trans  &trans        &trans  &kp GRAVE       &trans         &kp LC(V)      &trans
                                                            &custom_hold_tap LC(Y) LC(Y)  &key_repeat_tap 0 LC(LS(Z))  &custom_hold_tap LEFT_SHIFT SPACE  &to 0    &trans  &kp LEFT_ALT  &to 0   &kp LEFT_SHIFT
             >;
