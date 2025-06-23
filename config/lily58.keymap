@@ -751,7 +751,7 @@
         leftClickCommentOut: leftClickCommentOut {
             compatible = "zmk,behavior-mod-morph";
             label = "LEFTCLICKCOMMENTOUT";
-            bindings = <&mkp LCLK>, <&kp LC(SLASH)>;
+            bindings = <&click_paste_morph>, <&kp LC(SLASH)>;
 
             #binding-cells = <0>;
             mods = <(MOD_LCTL)>;
@@ -1363,11 +1363,11 @@
             tapping-term-ms = <250>;
         };
 
-        ctrl_paste_tap_dance: ctrl_paste_tap_dance {
+        ctrl_enter_tap_dance: ctrl_enter_tap_dance {
             compatible = "zmk,behavior-tap-dance";
-            label = "CTRL_PASTE_TAP_DANCE";
+            label = "CTRL_ENTER_TAP_DANCE";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_CONTROL>, <&kp LC(V)>;
+            bindings = <&kp LEFT_CONTROL>, <&kp LC(ENTER)>;
 
             tapping-term-ms = <350>;
         };
@@ -1452,6 +1452,42 @@
             #binding-cells = <0>;
             mods = <(MOD_RGUI)>;
         };
+
+        tab_backspace_morph: tab_backspace_morph {
+            compatible = "zmk,behavior-mod-morph";
+            label = "TAB_BACKSPACE_MORPH";
+            bindings = <&kp TAB>, <&none>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_RGUI)>;
+        };
+
+        mo_tab_morph: mo_tab_morph {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MO_TAB_MORPH";
+            bindings = <&mo>, <&tab_backspace_morph>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <299>;
+        };
+
+        click_paste_morph: click_paste_morph {
+            compatible = "zmk,behavior-mod-morph";
+            label = "CLICK_PASTE_MORPH";
+            bindings = <&mkp LCLK>, <&kp LC(V)>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_RGUI)>;
+        };
+
+        ctrl_enter_morph: ctrl_enter_morph {
+            compatible = "zmk,behavior-mod-morph";
+            label = "CTRL_ENTER_MORPH";
+            bindings = <&kp LCTRL>, <&kp ENTER>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_RGUI)>;
+        };
     };
 
     keymap {
@@ -1467,8 +1503,8 @@
 
             bindings = <
 &custom_hold_esc_morph RIGHT_WIN 0  &kp N1      &kp N2      &kp N3               &kp N4                             &kp N5                                                                      &kp N6                                  &kp N7                        &kp N8                            &left_kurung_morph  &right_kurung_morph  &RBackspaceMorphFinal
-&mo_tap 7 TAB                       &q_gui_num  &w_gui_num  &e_gui_num           &kp R                              &kp T                                                                       &kp Y                                   &kp U                         &kp I                             &kp O               &kp P                &short_layer_tap 3 MINUS
-&ctrl_paste_tap_dance               &a_gui_num  &s_gui_num  &d_gui_num           &kp F                              &kp G                                                                       &kp H                                   &kp J                         &kp K                             &kp L               &semicolon_morph     &short_layer_tap 7 ENTER
+&mo_tab_morph 7 0                   &q_gui_num  &w_gui_num  &e_gui_num           &kp R                              &kp T                                                                       &kp Y                                   &kp U                         &kp I                             &kp O               &kp P                &short_layer_tap 3 MINUS
+&ctrl_enter_morph                   &a_gui_num  &s_gui_num  &d_gui_num           &kp F                              &kp G                                                                       &kp H                                   &kp J                         &kp K                             &kp L               &semicolon_morph     &short_layer_tap 7 ENTER
 &leftClickCommentOut                &kp Z       &kp X       &kp C                &kp V                              &kp B      &mo_tap 4 N                     &lt 4 B                          &kp N                                   &kp M                         &comma_morph                      &titik_morph        &QuestionMorph       &kp ENTER
                                                             &mo8_redo_morph 8 0  &custom_hold_tap LEFT_SHIFT SPACE  &kp SPACE  &holdCapsTapDance LEFT_ALT 0    &holdCapsTapDance PRINTSCREEN 0  &custom_hold_pageup_morph LEFT_SHIFT 0  &custom_hold_tap RCTRL EQUAL  &custom_hold_pagedown_morph 11 0
             >;
