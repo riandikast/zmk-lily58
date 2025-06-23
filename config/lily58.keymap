@@ -95,6 +95,12 @@
             key-positions = <0 24>;
             layers = <0>;
         };
+
+        rclick_single_left_hand {
+            bindings = <&mkp RCLK>;
+            key-positions = <0 36>;
+            layers = <0>;
+        };
     };
 
     macros {
