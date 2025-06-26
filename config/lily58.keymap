@@ -1254,7 +1254,7 @@
         esc_morph: esc_morph {
             compatible = "zmk,behavior-mod-morph";
             label = "ESC_MORPH";
-            bindings = <&kp GRAVE>, <&kp ESCAPE>;
+            bindings = <&kp GRAVE>, <&kp BACKSPACE>;
 
             #binding-cells = <0>;
             mods = <(MOD_LCTL)>;
@@ -1402,7 +1402,7 @@
             #binding-cells = <0>;
             bindings = <&esc_morph>, <&sk LS(LEFT_WIN)>, <&sk LEFT_GUI>;
 
-            tapping-term-ms = <300>;
+            tapping-term-ms = <270>;
         };
 
         q_gui_num: q_gui_num {
@@ -1459,10 +1459,10 @@
             mods = <(MOD_RGUI)>;
         };
 
-        tab_formatter_morph: tab_formatter_morph {
+        tab_esc_morph: tab_esc_morph {
             compatible = "zmk,behavior-mod-morph";
-            label = "TAB_FORMATTER_MORPH";
-            bindings = <&kp TAB>, <&kp LS(LA(F))>;
+            label = "TAB_ESC_MORPH";
+            bindings = <&tab_enter_tap_dance>, <&kp ESCAPE>;
 
             #binding-cells = <0>;
             mods = <(MOD_RGUI)>;
@@ -1471,7 +1471,7 @@
         mo_tab_morph: mo_tab_morph {
             compatible = "zmk,behavior-hold-tap";
             label = "MO_TAB_MORPH";
-            bindings = <&mo>, <&tab_formatter_morph>;
+            bindings = <&mo>, <&tab_esc_morph>;
 
             #binding-cells = <2>;
             tapping-term-ms = <299>;
@@ -1508,13 +1508,53 @@
             compatible = "zmk,behavior-tap-dance";
             label = "CTRL_TAP_DANCE";
             #binding-cells = <0>;
-            bindings =
-                <&ctrl_enter_morph>,
-                <&kp LC(A)>,
-                <&kp LC(C)>,
-                <&kp LC(V)>;
+            bindings = <&ctrl_enter_morph>, <&kp LC(A)>, <&kp LC(V)>, <&sl 11>;
 
             tapping-term-ms = <280>;
+        };
+
+        c_gui_morph: c_gui_morph {
+            compatible = "zmk,behavior-mod-morph";
+            label = "C_GUI_MORPH";
+            bindings = <&kp C>, <&kp LC(C)>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_RGUI)>;
+        };
+
+        v_gui_morph: v_gui_morph {
+            compatible = "zmk,behavior-mod-morph";
+            label = "V_GUI_MORPH";
+            bindings = <&kp V>, <&kp LC(V)>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_RGUI)>;
+        };
+
+        z_gui_morph: z_gui_morph {
+            compatible = "zmk,behavior-mod-morph";
+            label = "Z_GUI_MORPH";
+            bindings = <&kp Z>, <&kp LC(Z)>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_RGUI)>;
+        };
+
+        fn_gui_morph: fn_gui_morph {
+            compatible = "zmk,behavior-mod-morph";
+            label = "FN_GUI_MORPH";
+            bindings = <&mo8_redo_morph 8 0>, <&kp LC(LS(Z))>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_RGUI)>;
+        };
+
+        tab_enter_tap_dance: tab_enter_tap_dance {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAB_ENTER_TAP_DANCE";
+            #binding-cells = <0>;
+            tapping-term-ms = <270>;
+            bindings = <&kp TAB>, <&kp ENTER>;
         };
     };
 
@@ -1530,11 +1570,11 @@
             //                     | ALT  | GUI  | LOWER|  ENTER |  | SPACE | RAISE| BSPC  | GUI   |
 
             bindings = <
-&custom_hold_esc_morph RIGHT_WIN 0  &kp N1      &kp N2      &kp N3               &kp N4                             &kp N5                                                                      &kp N6                                &kp N7                        &kp N8                            &left_kurung_morph  &right_kurung_morph  &RBackspaceMorphFinal
-&mo_tab_morph 7 0                   &q_gui_num  &w_gui_num  &e_gui_num           &kp R                              &kp T                                                                       &kp Y                                 &kp U                         &kp I                             &kp O               &kp P                &short_layer_tap 3 MINUS
-&ctrl_tap_dance                     &a_gui_num  &s_gui_num  &d_gui_num           &kp F                              &kp G                                                                       &kp H                                 &kp J                         &kp K                             &kp L               &semicolon_morph     &short_layer_tap 7 ENTER
-&leftClickCommentOut                &kp Z       &kp X       &kp C                &kp V                              &kp B      &mo_tap 4 N                     &lt 4 B                          &kp N                                 &kp M                         &comma_morph                      &titik_morph        &QuestionMorph       &kp ENTER
-                                                            &mo8_redo_morph 8 0  &custom_hold_tap LEFT_SHIFT SPACE  &kp SPACE  &holdCapsTapDance LEFT_ALT 0    &holdCapsTapDance PRINTSCREEN 0  &custom_hold_pageup_morph LEFT_GUI 0  &custom_hold_tap RCTRL EQUAL  &custom_hold_pagedown_morph 11 0
+&custom_hold_esc_morph RIGHT_WIN 0  &kp N1        &kp N2      &kp N3         &kp N4                             &kp N5                                                                      &kp N6                                &kp N7                        &kp N8                            &left_kurung_morph  &right_kurung_morph  &RBackspaceMorphFinal
+&mo_tab_morph 7 0                   &q_gui_num    &w_gui_num  &e_gui_num     &kp R                              &kp T                                                                       &kp Y                                 &kp U                         &kp I                             &kp O               &kp P                &short_layer_tap 3 MINUS
+&ctrl_tap_dance                     &a_gui_num    &s_gui_num  &d_gui_num     &kp F                              &kp G                                                                       &kp H                                 &kp J                         &kp K                             &kp L               &semicolon_morph     &short_layer_tap 7 ENTER
+&leftClickCommentOut                &z_gui_morph  &kp X       &c_gui_morph   &z_gui_morph                       &kp B      &mo_tap 4 N                     &lt 4 B                          &kp N                                 &kp M                         &comma_morph                      &titik_morph        &QuestionMorph       &kp ENTER
+                                                              &fn_gui_morph  &custom_hold_tap LEFT_SHIFT SPACE  &kp SPACE  &holdCapsTapDance LEFT_ALT 0    &holdCapsTapDance PRINTSCREEN 0  &custom_hold_pageup_morph LEFT_GUI 0  &custom_hold_tap RCTRL EQUAL  &custom_hold_pagedown_morph 11 0
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -1627,7 +1667,7 @@
 &kp LA(LS(F))  &kp ENTER               &kp LS(UP_ARROW)    &bt BT_SEL 2                  &bt BT_SEL 3                 &bt BT_SEL 4                                        &trans        &trans  &trans          &kp LG(LS(A))  &kp LG(LS(S))  &kp DEL
 &kp LC(A)      &kp LC(LS(LEFT_ARROW))  &kp UP_ARROW        &kp LC(LS(RIGHT))             &batch_right_select          &trans                                              &trans        &trans  &trans          &kp LC(LS(F))  &kp LC(A)      &kp EQUAL
 &kp HOME       &kp LEFT_ARROW          &kp DOWN_ARROW      &kp RIGHT                     &kp END                      &block_and_copy                                     &trans        &trans  &trans          &kp SQT        &kp LC(C)      &kp ENTER
-&kp LC(V)      &kp LC(Z)               &kp LS(DOWN_ARROW)  &kp LC(C)                     &kp LC(V)                    &replace                           &to 4    &trans  &trans        &trans  &kp GRAVE       &trans         &kp LC(V)      &trans
+&kp LC(C)      &kp LC(Z)               &kp LS(DOWN_ARROW)  &kp LC(C)                     &kp LC(V)                    &replace                           &to 4    &trans  &trans        &trans  &kp GRAVE       &trans         &kp LC(V)      &trans
                                                            &custom_hold_tap LC(Y) LC(Y)  &key_repeat_tap 0 LC(LS(Z))  &custom_hold_tap LEFT_SHIFT SPACE  &to 0    &trans  &kp LEFT_ALT  &to 0   &kp LEFT_SHIFT
             >;
         };
@@ -1669,7 +1709,7 @@
 &kp LEFT_WIN    &kp F2  &kp F3  &to 3    &to 4      &to 5                                 &kp F7  &kp F8  &kp F9          &kp F10  &kp F11  &kp BACKSPACE
 &kp LEFT_ALT    &kp F1  &kp F2  &kp F3   &kp LC(R)  &kp ASTERISK                          &trans  &trans  &trans          &trans   &trans   &kp TAB
 &kp LCTRL       &kp F4  &kp F5  &kp F6   &kp LC(F)  &kp PLUS                              &trans  &trans  &trans          &trans   &trans   &kp ENTER
-&kp LEFT_SHIFT  &kp F7  &kp F8  &kp F9   &kp LC(V)  &kp MINUS     &trans    &trans        &trans  &trans  &trans          &trans   &trans   &trans
+&sk LEFT_SHIFT  &kp F7  &kp F8  &kp F9   &kp LC(V)  &kp MINUS     &trans    &trans        &trans  &trans  &trans          &trans   &trans   &trans
                                 &kp F10  &kp F11    &kp F12       &to 0     &kp CAPSLOCK  &trans  &mo 3   &kp LEFT_SHIFT
             >;
         };
