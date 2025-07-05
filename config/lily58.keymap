@@ -1556,6 +1556,42 @@
             tapping-term-ms = <270>;
             bindings = <&kp TAB>, <&kp ENTER>;
         };
+
+        left_morph: left_morph {
+            compatible = "zmk,behavior-mod-morph";
+            label = "LEFT_MORPH";
+            bindings = <&kp LEFT_ARROW>, <&kp LC(LEFT_ARROW)>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT)>;
+        };
+
+        right_morph: right_morph {
+            compatible = "zmk,behavior-mod-morph";
+            label = "RIGHT_MORPH";
+            bindings = <&kp RIGHT>, <&kp LC(RIGHT)>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT)>;
+        };
+
+        down_morph: down_morph {
+            compatible = "zmk,behavior-mod-morph";
+            label = "DOWN_MORPH";
+            bindings = <&kp DOWN>, <&kp LC(DOWN_ARROW)>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT)>;
+        };
+
+        up_morph: up_morph {
+            compatible = "zmk,behavior-mod-morph";
+            label = "UP_MORPH";
+            bindings = <&kp UP_ARROW>, <&kp LC(UP_ARROW)>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT)>;
+        };
     };
 
     keymap {
@@ -1665,8 +1701,8 @@
         copy_paste_layer {
             bindings = <
 &kp LA(LS(F))  &custom_hold_tap LC(LS(Z)) LC(LS(Z))  &kp LS(UP_ARROW)    &none                         &none                              &none                              &trans        &trans  &trans          &kp LG(LS(A))  &kp LG(LS(S))  &kp DEL
-&kp LC(A)      &kp LC(LS(LEFT_ARROW))                &kp UP_ARROW        &kp LC(LS(RIGHT))             &batch_right_select                &trans                             &trans        &trans  &trans          &kp LC(LS(F))  &kp LC(A)      &kp EQUAL
-&kp HOME       &kp LEFT_ARROW                        &kp DOWN_ARROW      &kp RIGHT                     &kp END                            &block_and_copy                    &trans        &trans  &trans          &kp SQT        &kp LC(C)      &kp ENTER
+&kp LC(A)      &kp LC(LS(LEFT_ARROW))                &up_morph           &kp LC(LS(RIGHT))             &batch_right_select                &trans                             &trans        &trans  &trans          &kp LC(LS(F))  &kp LC(A)      &kp EQUAL
+&kp HOME       &left_morph                           &down_morph         &right_morph                  &kp END                            &block_and_copy                    &trans        &trans  &trans          &kp SQT        &kp LC(C)      &kp ENTER
 &kp GRAVE      &kp LC(Z)                             &kp LS(DOWN_ARROW)  &kp LC(C)                     &kp LC(V)                          &replace          &to 4    &trans  &trans        &trans  &kp GRAVE       &trans         &kp LC(V)      &trans
                                                                          &custom_hold_tap LC(Y) LC(Y)  &custom_hold_tap LEFT_SHIFT SPACE  &sticky_layer 11  &to 0    &trans  &kp LEFT_ALT  &to 0   &kp LEFT_SHIFT
             >;
