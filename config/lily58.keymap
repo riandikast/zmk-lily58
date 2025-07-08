@@ -1489,7 +1489,7 @@
         ctrl_enter_morph: ctrl_enter_morph {
             compatible = "zmk,behavior-mod-morph";
             label = "CTRL_ENTER_MORPH";
-            bindings = <&kp LCTRL>, <&kp ENTER>;
+            bindings = <&kp LCTRL>, <&kp LC(C)>;
 
             #binding-cells = <0>;
             mods = <(MOD_RGUI)>;
