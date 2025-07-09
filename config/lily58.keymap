@@ -1719,10 +1719,10 @@
 
         mouse_layerr {
             bindings = <
-&kp DELETE     &kp RC(C)       &username_pc_kantor  &pw_pc_kantor    &pass_windows_kantor               &gap_port                    &kp N5  &trans  &trans  &trans             &none            &none
-&kp RC(A)      &kp RC(V)       &mmv MOVE_UP         &mkp RCLK        &msc SCRL_UP                       &none                        &kp T   &trans  &trans  &none              &msc SCRL_UP     &mkp RCLK
-&caps_word     &mmv MOVE_LEFT  &mmv MOVE_DOWN       &mmv MOVE_RIGHT  &none                              &kp H                        &kp G   &trans  &trans  &hold_scroll_down  &msc SCRL_DOWN   &mkp LCLK
-&kp LC(SLASH)  &msc SCRL_LEFT  &msc SCRL_RIGHT      &mkp LCLK        &msc SCRL_DOWN                     &none      &trans    &trans  &kp B   &trans  &trans  &msc SCRL_LEFT     &msc SCRL_RIGHT  &trans
+&kp DELETE     &kp RC(C)       &username_pc_kantor  &pw_pc_kantor    &pass_windows_kantor               &gap_port                    &kp N5  &trans  &trans  &trans          &none            &none
+&kp RC(A)      &kp RC(V)       &mmv MOVE_UP         &mkp RCLK        &msc SCRL_UP                       &none                        &kp T   &trans  &trans  &none           &msc SCRL_UP     &mkp RCLK
+&caps_word     &mmv MOVE_LEFT  &mmv MOVE_DOWN       &mmv MOVE_RIGHT  &none                              &kp H                        &kp G   &trans  &trans  &none           &msc SCRL_DOWN   &mkp LCLK
+&kp LC(SLASH)  &msc SCRL_LEFT  &msc SCRL_RIGHT      &mkp LCLK        &msc SCRL_DOWN                     &none      &trans    &trans  &kp B   &trans  &trans  &msc SCRL_LEFT  &msc SCRL_RIGHT  &trans
                                                     &to 0            &custom_hold_tap LEFT_SHIFT SPACE  &kp SPACE  &to 0     &trans  &trans  &trans  &trans
             >;
         };
