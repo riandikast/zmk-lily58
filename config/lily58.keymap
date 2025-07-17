@@ -1480,7 +1480,7 @@
         click_morph: click_morph {
             compatible = "zmk,behavior-mod-morph";
             label = "CLICK_MORPH";
-            bindings = <&mkp LCLK>, <&kp LC(V)>;
+            bindings = <&mkp LCLK>, <&LeftClickCustomHoldTap 13 LC(V)>;
 
             #binding-cells = <0>;
             mods = <(MOD_RGUI)>;
@@ -1633,6 +1633,15 @@
             compatible = "zmk,behavior-hold-tap";
             label = "GUILAYERSHIFTTAP";
             bindings = <&GuiLayerShiftMorph>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <350>;
+        };
+
+        LeftClickCustomHoldTap: LeftClickCustomHoldTap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LEFTCLICKCUSTOMHOLDTAP";
+            bindings = <&mo>, <&kp>;
 
             #binding-cells = <2>;
             tapping-term-ms = <350>;
@@ -1807,11 +1816,11 @@
 
         Gui_Layer {
             bindings = <
-&trans  &kp LC(C)        &kp LC(V)    &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp LC(LS(TAB))  &kp LC(TAB)  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans           &mkp LCLK    &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans           &kp LC(A)    &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                                      &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans
+&trans         &kp LC(C)        &kp LC(V)    &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&kp LS(ENTER)  &kp LC(LS(TAB))  &kp LC(TAB)  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&kp ENTER      &trans           &mkp LCLK    &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans         &trans           &kp LC(A)    &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                                             &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans
             >;
         };
     };
