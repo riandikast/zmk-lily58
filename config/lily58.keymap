@@ -1381,7 +1381,7 @@
         space_redo_mroph: space_redo_mroph {
             compatible = "zmk,behavior-mod-morph";
             label = "SPACE_REDO_MROPH";
-            bindings = <&CtrlShiftTabMorph>, <&kp LC(LS(Z))>;
+            bindings = <&kp SPACE>, <&kp LC(LS(Z))>;
 
             #binding-cells = <0>;
             mods = <(MOD_LCTL)>;
@@ -1602,15 +1602,6 @@
             mods = <(MOD_LSFT)>;
         };
 
-        CtrlShiftTabMorph: CtrlShiftTabMorph {
-            compatible = "zmk,behavior-mod-morph";
-            label = "CTRLSHIFTTABMORPH";
-            bindings = <&kp SPACE>, <&kp LC(LS(TAB))>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_RGUI)>;
-        };
-
         CtrlTabMorph: CtrlTabMorph {
             compatible = "zmk,behavior-mod-morph";
             label = "CTRLTABMORPH";
@@ -1624,6 +1615,24 @@
             compatible = "zmk,behavior-hold-tap";
             label = "CTRLTABHOLDTAP";
             bindings = <&kp>, <&CtrlTabMorph>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <350>;
+        };
+
+        GuiLayerShiftMorph: GuiLayerShiftMorph {
+            compatible = "zmk,behavior-mod-morph";
+            label = "GUILAYERSHIFTMORPH";
+            bindings = <&kp LEFT_SHIFT>, <&mo 13>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_RGUI)>;
+        };
+
+        GuiLayerShiftTap: GuiLayerShiftTap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "GUILAYERSHIFTTAP";
+            bindings = <&GuiLayerShiftMorph>, <&kp>;
 
             #binding-cells = <2>;
             tapping-term-ms = <350>;
@@ -1642,11 +1651,11 @@
             //                     | ALT  | GUI  | LOWER|  ENTER |  | SPACE | RAISE| BSPC  | GUI   |
 
             bindings = <
-&custom_hold_esc_morph RIGHT_WIN 0  &kp N1        &kp N2      &kp N3         &kp N4                        &kp N5                                                                      &kp N6                                &kp N7                        &kp N8                            &left_kurung_morph  &right_kurung_morph  &RBackspaceMorphFinal
-&mo_tab_morph 7 0                   &q_gui_num    &w_gui_num  &e_gui_num     &kp R                         &kp T                                                                       &kp Y                                 &kp U                         &kp I                             &kp O               &kp P                &short_layer_tap 3 MINUS
-&ctrl_tap_dance                     &a_gui_num    &s_gui_num  &d_gui_num     &kp F                         &kp G                                                                       &kp H                                 &kp J                         &kp K                             &kp L               &semicolon_morph     &short_layer_tap 7 ENTER
-&leftClickCommentOut                &z_gui_morph  &kp X       &c_gui_morph   &v_gui_morph                  &kp B      &mo_tap 4 N                     &lt 4 B                          &kp N                                 &kp M                         &comma_morph                      &titik_morph        &QuestionMorph       &kp ENTER
-                                                              &fn_gui_morph  &CtrlTabHoldTap LEFT_SHIFT 0  &kp SPACE  &holdCapsTapDance LEFT_ALT 0    &holdCapsTapDance PRINTSCREEN 0  &custom_hold_pageup_morph LEFT_GUI 0  &custom_hold_tap RCTRL EQUAL  &custom_hold_pagedown_morph 11 0
+&custom_hold_esc_morph RIGHT_WIN 0  &kp N1        &kp N2      &kp N3         &kp N4                     &kp N5                                                                      &kp N6                                &kp N7                        &kp N8                            &left_kurung_morph  &right_kurung_morph  &RBackspaceMorphFinal
+&mo_tab_morph 7 0                   &q_gui_num    &w_gui_num  &e_gui_num     &kp R                      &kp T                                                                       &kp Y                                 &kp U                         &kp I                             &kp O               &kp P                &short_layer_tap 3 MINUS
+&ctrl_tap_dance                     &a_gui_num    &s_gui_num  &d_gui_num     &kp F                      &kp G                                                                       &kp H                                 &kp J                         &kp K                             &kp L               &semicolon_morph     &short_layer_tap 7 ENTER
+&leftClickCommentOut                &z_gui_morph  &kp X       &c_gui_morph   &v_gui_morph               &kp B      &mo_tap 4 N                     &lt 4 B                          &kp N                                 &kp M                         &comma_morph                      &titik_morph        &QuestionMorph       &kp ENTER
+                                                              &fn_gui_morph  &GuiLayerShiftTap 0 SPACE  &kp SPACE  &holdCapsTapDance LEFT_ALT 0    &holdCapsTapDance PRINTSCREEN 0  &custom_hold_pageup_morph LEFT_GUI 0  &custom_hold_tap RCTRL EQUAL  &custom_hold_pagedown_morph 11 0
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -1793,6 +1802,16 @@
 &batch_left         &kp LEFT_ARROW          &kp DOWN      &kp RIGHT                         &batch_right         &block_and_copy                   &trans        &trans  &trans          &kp SQT        &kp PLUS              &kp ENTER
 &mkp LCLK           &kp HOME                &kp END       &kp LC(C)                         &kp LC(V)            &replace         &to 5    &trans  &trans        &trans  &kp GRAVE       &trans         &trans                &trans
                                                           &custom_hold_tap LC(Y) LC(LS(Z))  &kp LC(Z)            &mo_tap 7 SPACE  &to 0    &trans  &kp LEFT_ALT  &to 0   &kp LEFT_SHIFT
+            >;
+        };
+
+        Gui_Layer {
+            bindings = <
+&trans  &kp LC(C)        &kp LC(V)    &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp LC(LS(TAB))  &kp LC(TAB)  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans           &mkp LCLK    &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans           &kp LC(A)    &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                                      &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans
             >;
         };
     };
