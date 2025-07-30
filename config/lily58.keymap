@@ -18,90 +18,6 @@
     combos {
         compatible = "zmk,combos";
 
-        spam_W {
-            bindings = <&kt W>;
-            key-positions = <25 14 27>;
-            layers = <4>;
-        };
-
-        spam_s {
-            bindings = <&kt S>;
-            key-positions = <25 26 39>;
-            layers = <4>;
-        };
-
-        spam_d {
-            bindings = <&kt D>;
-            key-positions = <26 27 51>;
-            layers = <4>;
-        };
-
-        spam_a {
-            bindings = <&kt A>;
-            key-positions = <26 25 51>;
-            layers = <4>;
-        };
-
-        spam_f {
-            bindings = <&spam_f>;
-            key-positions = <28 14>;
-            layers = <4>;
-        };
-
-        esc {
-            bindings = <&kp ESCAPE>;
-            key-positions = <0 37>;
-            layers = <0>;
-        };
-
-        batch_right {
-            bindings = <&batch_right>;
-            key-positions = <26 27>;
-            layers = <3>;
-        };
-
-        batch_left {
-            bindings = <&batch_left>;
-            key-positions = <26 25>;
-            layers = <3>;
-        };
-
-        to3w2 {
-            bindings = <&to 1>;
-            key-positions = <14 50>;
-            layers = <0>;
-        };
-
-        to3 {
-            bindings = <&to 1>;
-            key-positions = <25 27 26>;
-            layers = <0>;
-        };
-
-        layer_10_sticky {
-            bindings = <&sl 9>;
-            key-positions = <25 26 27>;
-            layers = <4>;
-        };
-
-        altshiftf {
-            bindings = <&kp LA(LS(F))>;
-            key-positions = <24 12>;
-            layers = <0>;
-        };
-
-        backspace {
-            bindings = <&kp BACKSPACE>;
-            key-positions = <0 24>;
-            layers = <0>;
-        };
-
-        rclick_single_left_hand {
-            bindings = <&mkp RCLK>;
-            key-positions = <0 36>;
-            layers = <0>;
-        };
-
         sticky_win {
             bindings = <&sk LGUI>;
             key-positions = <1 3>;
@@ -114,6 +30,27 @@
             key-positions = <1 2>;
             layers = <0>;
             timeout-ms = <2000>;
+        };
+
+        r_click {
+            bindings = <&mkp RCLK>;
+            key-positions = <36 1>;
+            layers = <0>;
+            timeout-ms = <1500>;
+        };
+
+        backspace {
+            bindings = <&kp BACKSPACE>;
+            key-positions = <36 13>;
+            timeout-ms = <1500>;
+            layers = <0>;
+        };
+
+        esc {
+            bindings = <&kp ESCAPE>;
+            key-positions = <13 37>;
+            timeout-ms = <1500>;
+            layers = <0>;
         };
     };
 
@@ -1728,11 +1665,11 @@
             //                     | ALT  | GUI  | LOWER|  ENTER |  | SPACE | RAISE| BSPC  | GUI   |
 
             bindings = <
-&custom_hold_esc_morph RIGHT_WIN GRAVE  &kp N1  &kp N2  &kp N3         &kp N4          &kp N5                                                                      &kp N6                                &kp N7                        &kp N8                            &left_kurung_morph  &right_kurung_morph  &RBackspaceMorphFinal
-&mo_tab_morph 3 0                       &kp Q   &kp W   &kp E          &kp R           &kp T                                                                       &kp Y                                 &kp U                         &kp I                             &kp O               &kp P                &short_layer_tap 1 MINUS
-&ctrl_and_ctrl_layer LCTRL 14           &kp A   &kp S   &kp D          &kp F           &kp G                                                                       &kp H                                 &kp J                         &kp K                             &kp L               &semicolon_morph     &short_layer_tap 3 ENTER
-&leftClickCommentOut                    &kp Z   &kp X   &kp C          &kp V           &kp B      &mo_tap 6 N                     &lt 6 B                          &kp N                                 &kp M                         &comma_morph                      &titik_morph        &QuestionMorph       &kp ENTER
-                                                        &fn_gui_morph  &kp LEFT_SHIFT  &kp SPACE  &holdCapsTapDance LEFT_ALT 0    &holdCapsTapDance PRINTSCREEN 0  &custom_hold_pageup_morph LEFT_GUI 0  &custom_hold_tap RCTRL EQUAL  &custom_hold_pagedown_morph 10 0
+&custom_hold_esc_morph RIGHT_WIN GRAVE  &kp N1  &kp N2  &kp N3         &kp N4                             &kp N5                                                                      &kp N6                                &kp N7                        &kp N8                            &left_kurung_morph  &right_kurung_morph  &RBackspaceMorphFinal
+&mo_tab_morph 3 0                       &kp Q   &kp W   &kp E          &kp R                              &kp T                                                                       &kp Y                                 &kp U                         &kp I                             &kp O               &kp P                &short_layer_tap 1 MINUS
+&ctrl_and_ctrl_layer LCTRL 14           &kp A   &kp S   &kp D          &kp F                              &kp G                                                                       &kp H                                 &kp J                         &kp K                             &kp L               &semicolon_morph     &short_layer_tap 3 ENTER
+&leftClickCommentOut                    &kp Z   &kp X   &kp C          &kp V                              &kp B      &mo_tap 6 N                     &lt 6 B                          &kp N                                 &kp M                         &comma_morph                      &titik_morph        &QuestionMorph       &kp ENTER
+                                                        &fn_gui_morph  &custom_hold_tap LEFT_SHIFT SPACE  &kp SPACE  &holdCapsTapDance LEFT_ALT 0    &holdCapsTapDance PRINTSCREEN 0  &custom_hold_pageup_morph LEFT_GUI 0  &custom_hold_tap RCTRL EQUAL  &custom_hold_pagedown_morph 10 0
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
