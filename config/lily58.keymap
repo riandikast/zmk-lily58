@@ -1646,6 +1646,60 @@
             #binding-cells = <2>;
             tapping-term-ms = <350>;
         };
+
+        left_up_morph: left_up_morph {
+            compatible = "zmk,behavior-mod-morph";
+            label = "LEFT_UP_MORPH";
+            bindings = <&kp LEFT>, <&kp UP_ARROW>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT)>;
+        };
+
+        right_down_morph: right_down_morph {
+            compatible = "zmk,behavior-mod-morph";
+            label = "RIGHT_DOWN_MORPH";
+            bindings = <&kp RIGHT>, <&kp DOWN>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT)>;
+        };
+
+        enter_copy_morph: enter_copy_morph {
+            compatible = "zmk,behavior-mod-morph";
+            label = "ENTER_COPY_MORPH";
+            bindings = <&kp ENTER>, <&kp LC(V)>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT)>;
+        };
+
+        select_all_copy_morph: select_all_copy_morph {
+            compatible = "zmk,behavior-mod-morph";
+            label = "SELECT_ALL_COPY_MORPH";
+            bindings = <&kp LC(A)>, <&kp LC(C)>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT)>;
+        };
+
+        ctrl_and_ctrl_layer: ctrl_and_ctrl_layer {
+            compatible = "zmk,behavior-hold-tap";
+            label = "CTRL_AND_CTRL_LAYER";
+            bindings = <&kp>, <&to>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+        };
+
+        paste_left_click_morph: paste_left_click_morph {
+            compatible = "zmk,behavior-mod-morph";
+            label = "PASTE_LEFT_CLICK_MORPH";
+            bindings = <&kp LC(V)>, <&mkp LCLK>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT)>;
+        };
     };
 
     keymap {
@@ -1662,7 +1716,7 @@
             bindings = <
 &custom_hold_esc_morph RIGHT_WIN GRAVE  &kp N1        &kp N2      &kp N3         &kp N4                     &kp N5                                                                      &kp N6                                &kp N7                        &kp N8                            &left_kurung_morph  &right_kurung_morph  &RBackspaceMorphFinal
 &mo_tab_morph 3 0                       &q_gui_num    &w_gui_num  &e_gui_num     &kp R                      &kp T                                                                       &kp Y                                 &kp U                         &kp I                             &kp O               &kp P                &short_layer_tap 1 MINUS
-&ctrl_tap_dance                         &a_gui_num    &s_gui_num  &d_gui_num     &kp F                      &kp G                                                                       &kp H                                 &kp J                         &kp K                             &kp L               &semicolon_morph     &short_layer_tap 3 ENTER
+&ctrl_and_ctrl_layer LCTRL 14           &a_gui_num    &s_gui_num  &d_gui_num     &kp F                      &kp G                                                                       &kp H                                 &kp J                         &kp K                             &kp L               &semicolon_morph     &short_layer_tap 3 ENTER
 &leftClickCommentOut                    &z_gui_morph  &kp X       &c_gui_morph   &v_gui_morph               &kp B      &mo_tap 6 N                     &lt 6 B                          &kp N                                 &kp M                         &comma_morph                      &titik_morph        &QuestionMorph       &kp ENTER
                                                                   &fn_gui_morph  &GuiLayerShiftTap 0 SPACE  &kp SPACE  &holdCapsTapDance LEFT_ALT 0    &holdCapsTapDance PRINTSCREEN 0  &custom_hold_pageup_morph LEFT_GUI 0  &custom_hold_tap RCTRL EQUAL  &custom_hold_pagedown_morph 10 0
             >;
@@ -1736,11 +1790,11 @@
 
         mouse_layerr {
             bindings = <
-&kp DELETE     &kp RC(C)       &username_pc_kantor  &pw_pc_kantor    &pass_windows_kantor               &gap_port                    &kp N5  &trans  &trans  &trans          &none            &none
-&kp RC(A)      &kp RC(V)       &mmv MOVE_UP         &mkp RCLK        &msc SCRL_UP                       &none                        &kp T   &trans  &trans  &none           &msc SCRL_UP     &mkp RCLK
-&caps_word     &mmv MOVE_LEFT  &mmv MOVE_DOWN       &mmv MOVE_RIGHT  &none                              &kp H                        &kp G   &trans  &trans  &none           &msc SCRL_DOWN   &mkp LCLK
-&kp LC(SLASH)  &msc SCRL_LEFT  &msc SCRL_RIGHT      &mkp LCLK        &msc SCRL_DOWN                     &none      &trans    &trans  &kp B   &trans  &trans  &msc SCRL_LEFT  &msc SCRL_RIGHT  &trans
-                                                    &to 0            &custom_hold_tap LEFT_SHIFT SPACE  &kp SPACE  &to 0     &trans  &trans  &trans  &trans
+&kp DELETE     &kp RC(Z)       &kp LC(Y)        &pw_pc_kantor    &pass_windows_kantor               &gap_port                              &kp N5  &trans  &trans  &trans          &none            &none
+&kp RC(A)      &kp LC(LS(Z))   &mmv MOVE_UP     &mkp RCLK        &msc SCRL_UP                       &username_pc_kantor                    &kp T   &trans  &trans  &none           &msc SCRL_UP     &mkp RCLK
+&caps_word     &mmv MOVE_LEFT  &mmv MOVE_DOWN   &mmv MOVE_RIGHT  &none                              &kp H                                  &kp G   &trans  &trans  &none           &msc SCRL_DOWN   &mkp LCLK
+&kp LC(SLASH)  &msc SCRL_LEFT  &msc SCRL_RIGHT  &mkp LCLK        &msc SCRL_DOWN                     &none                &trans    &trans  &kp B   &trans  &trans  &msc SCRL_LEFT  &msc SCRL_RIGHT  &trans
+                                                &to 0            &custom_hold_tap LEFT_SHIFT SPACE  &kp SPACE            &to 0     &trans  &trans  &trans  &trans
             >;
         };
 
@@ -1788,11 +1842,31 @@
 
         L_GUI_MORPH {
             bindings = <
-&trans     &kp LG(NUMBER_1)  &kp LG(NUMBER_2)  &kp LG(NUMBER_3)  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&kp ENTER  &kp LG(NUMBER_4)  &kp LG(N5)        &kp LG(NUMBER_6)  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&kp LC(C)  &kp LG(N7)        &kp LG(N8)        &kp LG(N9)        &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&kp LC(V)  &trans            &trans            &trans            &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                                               &trans            &trans  &trans  &trans    &trans  &trans  &trans  &trans
+&trans                   &kp LG(NUMBER_1)  &kp LG(NUMBER_2)  &kp LG(NUMBER_3)  &trans     &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&kp LEFT_SHIFT           &kp LG(NUMBER_4)  &kp LG(N5)        &kp LG(NUMBER_6)  &trans     &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&kp LC(C)                &kp LG(N7)        &kp LG(N8)        &kp LG(N9)        &trans     &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&paste_left_click_morph  &kp LC(LS(TAB))   &kp LC(TAB)       &none             &none      &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                                                             &kp ENTER         &kp LC(Y)  &trans  &trans    &trans  &trans  &trans  &trans
+            >;
+        };
+
+        tab_layer {
+            bindings = <
+&kp LA(LS(F))  &kp LC(C)  &kp LC(V)  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans         &kp LC(A)  &trans     &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&kp ENTER      &trans     &trans     &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&kp LS(ENTER)  &trans     &trans     &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                                     &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans
+            >;
+        };
+
+        ctrl_layer {
+            bindings = <
+&trans  &kp LEFT_SHIFT  &enter_copy_morph       &trans          &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans          &kp ENTER               &trans          &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&to 0   &left_up_morph  &right_down_morph       &trans          &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans          &select_all_copy_morph  &trans          &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                                                &kp LEFT_SHIFT  &trans  &trans  &to 0     &trans  &trans  &trans  &trans
             >;
         };
 
