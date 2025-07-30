@@ -34,16 +34,9 @@
 
         r_click {
             bindings = <&mkp RCLK>;
-            key-positions = <36 1>;
+            key-positions = <37 25>;
             layers = <0>;
             timeout-ms = <1500>;
-        };
-
-        backspace {
-            bindings = <&kp BACKSPACE>;
-            key-positions = <36 13>;
-            timeout-ms = <1500>;
-            layers = <0>;
         };
 
         esc {
@@ -1813,11 +1806,11 @@
 
         ctrl_layer {
             bindings = <
-&trans  &kp LEFT_SHIFT  &enter_copy_morph       &trans          &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans          &kp ENTER               &trans          &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&to 0   &left_up_morph  &right_down_morph       &trans          &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans          &select_all_copy_morph  &trans          &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                                                &kp LEFT_SHIFT  &trans  &trans  &to 0     &trans  &trans  &trans  &trans
+&kp BACKSPACE  &kp LEFT_SHIFT  &enter_copy_morph       &trans          &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans         &trans          &kp ENTER               &trans          &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&to 0          &left_up_morph  &right_down_morph       &trans          &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&mkp LCLK      &trans          &select_all_copy_morph  &trans          &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                                                       &kp LEFT_SHIFT  &trans  &trans  &to 0     &trans  &trans  &trans  &trans
             >;
         };
 
