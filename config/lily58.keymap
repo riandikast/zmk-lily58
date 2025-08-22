@@ -21,14 +21,12 @@
         sticky_win {
             bindings = <&sk LGUI>;
             key-positions = <53 42>;
-            layers = <0>;
             timeout-ms = <2000>;
         };
 
         sticky_shift_lgui {
             bindings = <&sk LS(LGUI)>;
             key-positions = <1 2>;
-            layers = <0>;
             timeout-ms = <2000>;
         };
 
@@ -272,6 +270,13 @@
             bindings = <&none>, <&macro_press>;
 
             label = "SPAM_W";
+        };
+
+        enter_to_0: enter_to_0 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp ENTER &to 0>;
+            label = "ENTER_TO_0";
         };
     };
 
@@ -1748,7 +1753,7 @@
 
         mouse_layerr {
             bindings = <
-&kp DELETE     &kp RC(Z)       &kp LC(Y)        &pw_pc_kantor    &pass_windows_kantor               &gap_port                              &kp N5  &trans  &trans  &trans          &none            &none
+&kp BACKSPACE  &kp RC(Z)       &kp LC(Y)        &pw_pc_kantor    &pass_windows_kantor               &gap_port                              &kp N5  &trans  &trans  &trans          &none            &none
 &kp RC(A)      &kp LC(LS(Z))   &mmv MOVE_UP     &mkp RCLK        &msc SCRL_UP                       &username_pc_kantor                    &kp T   &trans  &trans  &none           &msc SCRL_UP     &mkp RCLK
 &caps_word     &mmv MOVE_LEFT  &mmv MOVE_DOWN   &mmv MOVE_RIGHT  &none                              &kp H                                  &kp G   &trans  &trans  &none           &msc SCRL_DOWN   &mkp LCLK
 &kp LC(SLASH)  &msc SCRL_LEFT  &msc SCRL_RIGHT  &mkp LCLK        &msc SCRL_DOWN                     &none                &trans    &trans  &kp B   &trans  &trans  &msc SCRL_LEFT  &msc SCRL_RIGHT  &trans
@@ -1820,11 +1825,11 @@
 
         ctrl_layer {
             bindings = <
-&kp BACKSPACE  &kp LEFT_SHIFT  &enter_copy_morph       &trans          &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans         &trans          &kp ENTER               &trans          &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&to 0          &left_up_morph  &right_down_morph       &trans          &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&mkp LCLK      &trans          &select_all_copy_morph  &trans          &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                                                       &kp LEFT_SHIFT  &trans  &trans  &to 0     &trans  &trans  &trans  &trans
+&kp DELETE   &kp LEFT_SHIFT  &enter_copy_morph       &trans          &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&enter_to_0  &trans          &kp ENTER               &trans          &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&to 0        &left_up_morph  &right_down_morph       &trans          &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&mkp LCLK    &trans          &select_all_copy_morph  &trans          &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                                                     &kp LEFT_SHIFT  &trans  &trans  &to 0     &trans  &trans  &trans  &trans
             >;
         };
 
