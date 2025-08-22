@@ -1825,11 +1825,11 @@
 
         ctrl_layer {
             bindings = <
-&kp DELETE   &kp LEFT_SHIFT  &enter_copy_morph       &trans          &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&enter_to_0  &trans          &kp ENTER               &trans          &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&to 0        &left_up_morph  &right_down_morph       &trans          &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&mkp LCLK    &trans          &select_all_copy_morph  &trans          &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                                                     &kp LEFT_SHIFT  &trans  &trans  &to 0     &trans  &trans  &trans  &trans
+&kp DELETE        &kp LC(Y)       &enter_copy_morph  &trans         &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&sk LS(LEFT_WIN)  &sk LEFT_WIN    &kp ENTER          &trans         &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&to 0             &left_up_morph  &right_down_morph  &trans         &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&mkp LCLK         &kp LC(Z)       &kp LC(A)          &trans         &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                                                     &kp LC(LS(Z))  &trans  &trans  &to 0     &trans  &trans  &trans  &trans
             >;
         };
 
