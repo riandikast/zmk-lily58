@@ -18,18 +18,6 @@
     combos {
         compatible = "zmk,combos";
 
-        sticky_win {
-            bindings = <&sk LGUI>;
-            key-positions = <53 42>;
-            timeout-ms = <2000>;
-        };
-
-        sticky_shift_lgui {
-            bindings = <&sk LS(LGUI)>;
-            key-positions = <1 2>;
-            timeout-ms = <2000>;
-        };
-
         r_click {
             bindings = <&mkp RCLK>;
             key-positions = <37 25>;
