@@ -1646,7 +1646,7 @@
         paste_left_click_morph: paste_left_click_morph {
             compatible = "zmk,behavior-mod-morph";
             label = "PASTE_LEFT_CLICK_MORPH";
-            bindings = <&kp LC(V)>, <&mkp LCLK>;
+            bindings = <&kp LS(ENTER)>, <&mkp LCLK>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT)>;
@@ -1697,11 +1697,11 @@
 
         copy_paste_layer {
             bindings = <
-&kp LA(LS(F))  &custom_hold_tap LC(LS(Z)) LC(LS(Z))  &kp LS(UP_ARROW)    &none                         &none                              &none                              &trans        &trans  &trans          &kp LG(LS(A))  &kp LG(LS(S))  &kp DEL
-&kp LC(A)      &kp LC(LS(LEFT_ARROW))                &up_morph           &kp LC(LS(RIGHT))             &batch_right_select                &trans                             &trans        &trans  &trans          &kp LC(LS(F))  &kp LC(A)      &kp EQUAL
-&kp HOME       &left_morph                           &down_morph         &right_morph                  &kp END                            &block_and_copy                    &trans        &trans  &trans          &kp SQT        &kp LC(C)      &kp ENTER
-&kp LC(R)      &kp LC(Z)                             &kp LS(DOWN_ARROW)  &kp LC(C)                     &kp LC(V)                          &replace          &to 6    &trans  &trans        &trans  &kp GRAVE       &trans         &kp LC(V)      &trans
-                                                                         &custom_hold_tap LC(Y) LC(Y)  &custom_hold_tap LEFT_SHIFT SPACE  &sticky_layer 10  &to 0    &trans  &kp LEFT_ALT  &to 0   &kp LEFT_SHIFT
+&kp LA(LS(F))  &custom_hold_tap LC(Y) LC(Y)  &kp LS(UP_ARROW)    &none                                 &none                              &none                              &trans        &trans  &trans          &kp LG(LS(A))  &kp LG(LS(S))  &kp DEL
+&kp LC(A)      &kp LC(LS(LEFT_ARROW))        &up_morph           &kp LC(LS(RIGHT))                     &batch_right_select                &trans                             &trans        &trans  &trans          &kp LC(LS(F))  &kp LC(A)      &kp EQUAL
+&kp HOME       &left_morph                   &down_morph         &right_morph                          &kp END                            &block_and_copy                    &trans        &trans  &trans          &kp SQT        &kp LC(C)      &kp ENTER
+&kp LC(F)      &kp LC(Z)                     &kp LS(DOWN_ARROW)  &kp LC(C)                             &kp LC(V)                          &replace          &to 6    &trans  &trans        &trans  &kp GRAVE       &trans         &kp LC(V)      &trans
+                                                                 &custom_hold_tap LC(LS(Z)) LC(LS(Z))  &custom_hold_tap LEFT_SHIFT SPACE  &sticky_layer 10  &to 0    &trans  &kp LEFT_ALT  &to 0   &kp LEFT_SHIFT
             >;
         };
 
@@ -1742,7 +1742,7 @@
         mouse_layerr {
             bindings = <
 &kp BACKSPACE  &kp RC(Z)       &kp LC(Y)        &pw_pc_kantor    &pass_windows_kantor               &gap_port                              &kp N5  &trans  &trans  &trans          &none            &none
-&kp RC(A)      &kp LC(LS(Z))   &mmv MOVE_UP     &mkp RCLK        &msc SCRL_UP                       &username_pc_kantor                    &kp T   &trans  &trans  &none           &msc SCRL_UP     &mkp RCLK
+&kp RC(ENTER)  &kp LC(LS(Z))   &mmv MOVE_UP     &mkp RCLK        &msc SCRL_UP                       &username_pc_kantor                    &kp T   &trans  &trans  &none           &msc SCRL_UP     &mkp RCLK
 &caps_word     &mmv MOVE_LEFT  &mmv MOVE_DOWN   &mmv MOVE_RIGHT  &none                              &kp H                                  &kp G   &trans  &trans  &none           &msc SCRL_DOWN   &mkp LCLK
 &kp LC(SLASH)  &msc SCRL_LEFT  &msc SCRL_RIGHT  &mkp LCLK        &msc SCRL_DOWN                     &none                &trans    &trans  &kp B   &trans  &trans  &msc SCRL_LEFT  &msc SCRL_RIGHT  &trans
                                                 &to 0            &custom_hold_tap LEFT_SHIFT SPACE  &kp SPACE            &to 0     &trans  &trans  &trans  &trans
@@ -1796,8 +1796,8 @@
 &trans                   &kp LG(NUMBER_1)  &kp LG(NUMBER_2)  &kp LG(NUMBER_3)  &trans     &trans                    &trans  &trans  &trans  &trans  &trans  &trans
 &kp LS(ENTER)            &kp LG(NUMBER_4)  &kp LG(N5)        &kp LG(NUMBER_6)  &trans     &trans                    &trans  &trans  &trans  &trans  &trans  &trans
 &kp LC(C)                &kp LG(N7)        &kp LG(N8)        &kp LG(N9)        &trans     &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&paste_left_click_morph  &kp LC(LS(TAB))   &kp LC(TAB)       &none             &none      &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                                                             &kp ENTER         &kp LC(Y)  &trans  &trans    &trans  &trans  &trans  &trans
+&paste_left_click_morph  &kp LC(C)         &kp LC(TAB)       &none             &none      &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                                                             &kp LC(V)         &kp LC(Y)  &trans  &trans    &trans  &trans  &trans  &trans
             >;
         };
 
