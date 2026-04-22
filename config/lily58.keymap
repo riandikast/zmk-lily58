@@ -58,8 +58,8 @@
             layers = <0>;
         };
 
-        click_undo {
-            bindings = <&kp LC(Z)>;
+        click_select_all {
+            bindings = <&kp LC(A)>;
             key-positions = <50 25>;
             timeout-ms = <350>;
             layers = <0>;
@@ -110,6 +110,13 @@
         click_alt_tab {
             bindings = <&kp LA(TAB)>;
             key-positions = <50 38>;
+            timeout-ms = <350>;
+            layers = <0>;
+        };
+
+        click_undo {
+            bindings = <&kp LC(Z)>;
+            key-positions = <50 37>;
             timeout-ms = <350>;
             layers = <0>;
         };
