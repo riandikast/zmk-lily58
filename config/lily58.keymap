@@ -71,6 +71,48 @@
             layers = <0>;
             timeout-ms = <350>;
         };
+
+        click_shift_enter {
+            bindings = <&kp LS(ENTER)>;
+            key-positions = <50 12>;
+            layers = <0>;
+            timeout-ms = <350>;
+        };
+
+        click_enter {
+            bindings = <&kp ENTER>;
+            key-positions = <50 39>;
+            layers = <0>;
+            timeout-ms = <350>;
+        };
+
+        click_ctrl_y {
+            bindings = <&kp LC(Y)>;
+            key-positions = <50 13>;
+            timeout-ms = <350>;
+            layers = <0>;
+        };
+
+        click_backspace {
+            bindings = <&kp LC(BACKSPACE)>;
+            key-positions = <50 0>;
+            timeout-ms = <350>;
+            layers = <0>;
+        };
+
+        click_delete {
+            bindings = <&kp DELETE>;
+            key-positions = <50 1>;
+            layers = <0>;
+            timeout-ms = <350>;
+        };
+
+        click_alt_tab {
+            bindings = <&kp LA(TAB)>;
+            key-positions = <50 38>;
+            timeout-ms = <350>;
+            layers = <0>;
+        };
     };
 
     macros {
