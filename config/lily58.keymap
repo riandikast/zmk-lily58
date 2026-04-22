@@ -1704,7 +1704,16 @@
             label = "LEFT_RIGHT_CLICK";
             #binding-cells = <0>;
             tapping-term-ms = <300>;
-            bindings = <&mkp LCLK>, <&mkp RCLK>;
+            bindings = <&mkp_hold_tap LCLK LCLK>, <&mkp RCLK>;
+        };
+
+        mkp_hold_tap: mkp_hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MKP_HOLD_TAP";
+            bindings = <&mkp>, <&mkp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <250>;
         };
     };
 
